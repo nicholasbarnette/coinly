@@ -1,0 +1,55 @@
+//*******************************************************
+//*******************************************************
+//*						Homepage
+//*******************************************************
+//*******************************************************
+@import 'globals.less';
+
+
+.homepageContainer {
+	margin: 0;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	height: 100%;
+}
+
+.bodyContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+}
+
+.bodyContent {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 60%;
+}
+
+.bodyContent {
+	h1 {
+		font-size: 4rem;
+		margin: 0 0 0.5rem 0;
+		color: @accentColor;
+	}
+	
+	p {
+		font-size: 1.25rem;
+		margin: 0 0 1rem 0;
+		color: @textColorDefault;
+	}
+}
+
+.button {
+	background: transparent;
+	border: 2px solid @accentColor;
+	padding: 0.25rem 2rem;
+	border-radius: 0.125rem;
+	color: @textColorDefault;
+	margin: 0.25rem;
+}
