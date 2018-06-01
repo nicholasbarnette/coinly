@@ -19,12 +19,9 @@ class HomeBodyContent extends React.Component {
 	}
 	
 	openLeftNav() {
-		//this.setState({width: "10rem"});
-		console.log(this.state.width);
 		this.setState({
 			width: this.state.width === '10rem' ? '0' : '10rem'
 		});
-		console.log(this.state.width);
 	}
 	
 	render() {
