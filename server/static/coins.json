@@ -1,0 +1,2397 @@
+{
+  "dimes": {
+    "roosevelt": {
+      "name": "Roosevelt",
+      "nickname": "",
+      "value": 10,
+      "startYear": 1946,
+      "endYear": 2018,
+      "coins": [
+        {
+          "year": 1946,
+          "mint": "",
+          "quantity": 255250000
+        },
+        {
+          "year": 1946,
+          "mint": "D",
+          "quantity": 61043500
+        },
+        {
+          "year": 1946,
+          "mint": "S",
+          "quantity": 27900000
+        },
+        {
+          "year": 1947,
+          "mint": "",
+          "quantity": 121520000
+        },
+        {
+          "year": 1947,
+          "mint": "D",
+          "quantity": 46835000
+        },
+        {
+          "year": 1947,
+          "mint": "S",
+          "quantity": 34840000
+        },
+        {
+          "year": 1948,
+          "mint": "",
+          "quantity": 74950000
+        },
+        {
+          "year": 1948,
+          "mint": "D",
+          "quantity": 52841000
+        },
+        {
+          "year": 1948,
+          "mint": "S",
+          "quantity": 35520000
+        },
+        {
+          "year": 1949,
+          "mint": "",
+          "quantity": 30940000
+        },
+        {
+          "year": 1949,
+          "mint": "D",
+          "quantity": 26034000
+        },
+        {
+          "year": 1949,
+          "mint": "S",
+          "quantity": 13510000
+        },
+        {
+          "year": 1950,
+          "mint": "",
+          "quantity": 50130114
+        },
+        {
+          "year": 1950,
+          "mint": "D",
+          "quantity": 46803000
+        },
+        {
+          "year": 1950,
+          "mint": "S",
+          "quantity": 20440000
+        },
+        {
+          "year": 1951,
+          "mint": "",
+          "quantity": 103880102
+        },
+        {
+          "year": 1951,
+          "mint": "D",
+          "quantity": 56529000
+        },
+        {
+          "year": 1951,
+          "mint": "S",
+          "quantity": 31630000
+        },
+        {
+          "year": 1952,
+          "mint": "",
+          "quantity": 99040093
+        },
+        {
+          "year": 1952,
+          "mint": "D",
+          "quantity": 122100000
+        },
+        {
+          "year": 1952,
+          "mint": "S",
+          "quantity": 44419500
+        },
+        {
+          "year": 1953,
+          "mint": "",
+          "quantity": 53490120
+        },
+        {
+          "year": 1953,
+          "mint": "D",
+          "quantity": 136433000
+        },
+        {
+          "year": 1953,
+          "mint": "S",
+          "quantity": 39180000
+        },
+        {
+          "year": 1954,
+          "mint": "",
+          "quantity": 114010203
+        },
+        {
+          "year": 1954,
+          "mint": "D",
+          "quantity": 106397000
+        },
+        {
+          "year": 1954,
+          "mint": "S",
+          "quantity": 22860000
+        },
+        {
+          "year": 1955,
+          "mint": "",
+          "quantity": 12450181
+        },
+        {
+          "year": 1955,
+          "mint": "D",
+          "quantity": 13959000
+        },
+        {
+          "year": 1955,
+          "mint": "S",
+          "quantity": 18510000
+        },
+        {
+          "year": 1956,
+          "mint": "",
+          "quantity": 108640000
+        },
+        {
+          "year": 1956,
+          "mint": "D",
+          "quantity": 108015100
+        },
+        {
+          "year": 1957,
+          "mint": "",
+          "quantity": 160160000
+        },
+        {
+          "year": 1957,
+          "mint": "D",
+          "quantity": 113354330
+        },
+        {
+          "year": 1958,
+          "mint": "",
+          "quantity": 31910000
+        },
+        {
+          "year": 1958,
+          "mint": "D",
+          "quantity": 136564600
+        },
+        {
+          "year": 1959,
+          "mint": "",
+          "quantity": 85780000
+        },
+        {
+          "year": 1959,
+          "mint": "D",
+          "quantity": 164919790
+        },
+        {
+          "year": 1960,
+          "mint": "",
+          "quantity": 70390000
+        },
+        {
+          "year": 1960,
+          "mint": "D",
+          "quantity": 200160400
+        },
+        {
+          "year": 1961,
+          "mint": "",
+          "quantity": 93730000
+        },
+        {
+          "year": 1961,
+          "mint": "D",
+          "quantity": 209146550
+        },
+        {
+          "year": 1962,
+          "mint": "",
+          "quantity": 72450000
+        },
+        {
+          "year": 1962,
+          "mint": "D",
+          "quantity": 334948380
+        },
+        {
+          "year": 1963,
+          "mint": "",
+          "quantity": 123650000
+        },
+        {
+          "year": 1963,
+          "mint": "D",
+          "quantity": 421476530
+        },
+        {
+          "year": 1964,
+          "mint": "",
+          "quantity": 929360000
+        },
+        {
+          "year": 1964,
+          "mint": "D",
+          "quantity": 1357517180
+        },
+        {
+          "year": 1965,
+          "mint": "",
+          "quantity": 1652140570
+        },
+        {
+          "year": 1966,
+          "mint": "",
+          "quantity": 1382734540
+        },
+        {
+          "year": 1967,
+          "mint": "",
+          "quantity": 2244007320
+        },
+        {
+          "year": 1968,
+          "mint": "",
+          "quantity": 424470400
+        },
+        {
+          "year": 1968,
+          "mint": "D",
+          "quantity": 480748280
+        },
+        {
+          "year": 1969,
+          "mint": "",
+          "quantity": 145790000
+        },
+        {
+          "year": 1969,
+          "mint": "D",
+          "quantity": 563323870
+        },
+        {
+          "year": 1970,
+          "mint": "",
+          "quantity": 345570000
+        },
+        {
+          "year": 1970,
+          "mint": "D",
+          "quantity": 754942100
+        },
+        {
+          "year": 1971,
+          "mint": "D",
+          "quantity": 162690000
+        },
+        {
+          "year": 1971,
+          "mint": "D",
+          "quantity": 377914240
+        },
+        {
+          "year": 1972,
+          "mint": "D",
+          "quantity": 431540000
+        },
+        {
+          "year": 1972,
+          "mint": "D",
+          "quantity": 330290000
+        },
+        {
+          "year": 1973,
+          "mint": "",
+          "quantity": 315670000
+        },
+        {
+          "year": 1973,
+          "mint": "D",
+          "quantity": 455032426
+        },
+        {
+          "year": 1974,
+          "mint": "",
+          "quantity": 470248000
+        },
+        {
+          "year": 1974,
+          "mint": "D",
+          "quantity": 571083000
+        },
+        {
+          "year": 1975,
+          "mint": "",
+          "quantity": 585673900
+        },
+        {
+          "year": 1975,
+          "mint": "D",
+          "quantity": 313705300
+        },
+        {
+          "year": 1976,
+          "mint": "",
+          "quantity": 568760000
+        },
+        {
+          "year": 1976,
+          "mint": "D",
+          "quantity": 695222774
+        },
+        {
+          "year": 1977,
+          "mint": "",
+          "quantity": 796930000
+        },
+        {
+          "year": 1977,
+          "mint": "D",
+          "quantity": 376607228
+        },
+        {
+          "year": 1978,
+          "mint": "",
+          "quantity": 663980000
+        },
+        {
+          "year": 1978,
+          "mint": "D",
+          "quantity": 282847540
+        },
+        {
+          "year": 1979,
+          "mint": "",
+          "quantity": 315440000
+        },
+        {
+          "year": 1979,
+          "mint": "D",
+          "quantity": 390921184
+        },
+        {
+          "year": 1980,
+          "mint": "P",
+          "quantity": 735170000
+        },
+        {
+          "year": 1980,
+          "mint": "D",
+          "quantity": 719354321
+        },
+        {
+          "year": 1981,
+          "mint": "P",
+          "quantity": 676650000
+        },
+        {
+          "year": 1981,
+          "mint": "D",
+          "quantity": 712284143
+        },
+        {
+          "year": 1982,
+          "mint": "P",
+          "quantity": 519475000
+        },
+        {
+          "year": 1982,
+          "mint": "D",
+          "quantity": 542713584
+        },
+        {
+          "year": 1983,
+          "mint": "P",
+          "quantity": 647025000
+        },
+        {
+          "year": 1983,
+          "mint": "D",
+          "quantity": 730129224
+        },
+        {
+          "year": 1984,
+          "mint": "P",
+          "quantity": 856669000
+        },
+        {
+          "year": 1984,
+          "mint": "D",
+          "quantity": 704803976
+        },
+        {
+          "year": 1985,
+          "mint": "P",
+          "quantity": 705200962
+        },
+        {
+          "year": 1985,
+          "mint": "D",
+          "quantity": 587979970
+        },
+        {
+          "year": 1986,
+          "mint": "P",
+          "quantity": 682649693
+        },
+        {
+          "year": 1986,
+          "mint": "D",
+          "quantity": 473326970
+        },
+        {
+          "year": 1987,
+          "mint": "P",
+          "quantity": 762709481
+        },
+        {
+          "year": 1987,
+          "mint": "D",
+          "quantity": 653203402
+        },
+        {
+          "year": 1988,
+          "mint": "P",
+          "quantity": 1030550000
+        },
+        {
+          "year": 1988,
+          "mint": "D",
+          "quantity": 962385489
+        },
+        {
+          "year": 1989,
+          "mint": "P",
+          "quantity": 1298400000
+        },
+        {
+          "year": 1989,
+          "mint": "D",
+          "quantity": 896535597
+        },
+        {
+          "year": 1990,
+          "mint": "P",
+          "quantity": 1034340000
+        },
+        {
+          "year": 1990,
+          "mint": "D",
+          "quantity": 839995824
+        },
+        {
+          "year": 1991,
+          "mint": "P",
+          "quantity": 927220000
+        },
+        {
+          "year": 1991,
+          "mint": "D",
+          "quantity": 601241114
+        },
+        {
+          "year": 1992,
+          "mint": "P",
+          "quantity": 593500000
+        },
+        {
+          "year": 1992,
+          "mint": "D",
+          "quantity": 616273932
+        },
+        {
+          "year": 1993,
+          "mint": "P",
+          "quantity": 766180000
+        },
+        {
+          "year": 1993,
+          "mint": "D",
+          "quantity": 750110166
+        },
+        {
+          "year": 1994,
+          "mint": "P",
+          "quantity": 1189000000
+        },
+        {
+          "year": 1994,
+          "mint": "D",
+          "quantity": 1303268110
+        },
+        {
+          "year": 1995,
+          "mint": "P",
+          "quantity": 1125500000
+        },
+        {
+          "year": 1995,
+          "mint": "D",
+          "quantity": 1274890000
+        },
+        {
+          "year": 1996,
+          "mint": "P",
+          "quantity": 1421163000
+        },
+        {
+          "year": 1996,
+          "mint": "D",
+          "quantity": 1400300000
+        },
+        {
+          "year": 1996,
+          "mint": "W",
+          "quantity": 1457000
+        },
+        {
+          "year": 1997,
+          "mint": "P",
+          "quantity": 991640000
+        },
+        {
+          "year": 1997,
+          "mint": "D",
+          "quantity": 979810000
+        },
+        {
+          "year": 1998,
+          "mint": "P",
+          "quantity": 1163000000
+        },
+        {
+          "year": 1998,
+          "mint": "D",
+          "quantity": 1172250000
+        },
+        {
+          "year": 1999,
+          "mint": "P",
+          "quantity": 2164000000
+        },
+        {
+          "year": 1999,
+          "mint": "D",
+          "quantity": 1397750000
+        },
+        {
+          "year": 2000,
+          "mint": "P",
+          "quantity": 1842500000
+        },
+        {
+          "year": 2000,
+          "mint": "D",
+          "quantity": 1818700000
+        },
+        {
+          "year": 2001,
+          "mint": "P",
+          "quantity": 1369590000
+        },
+        {
+          "year": 2001,
+          "mint": "D",
+          "quantity": 1412800000
+        },
+        {
+          "year": 2002,
+          "mint": "P",
+          "quantity": 1187500000
+        },
+        {
+          "year": 2002,
+          "mint": "D",
+          "quantity": 1379500000
+        },
+        {
+          "year": 2003,
+          "mint": "P",
+          "quantity": 1085500000
+        },
+        {
+          "year": 2003,
+          "mint": "D",
+          "quantity": 986500000
+        },
+        {
+          "year": 2004,
+          "mint": "P",
+          "quantity": 1328000000
+        },
+        {
+          "year": 2004,
+          "mint": "D",
+          "quantity": 1159500000
+        },
+        {
+          "year": 2005,
+          "mint": "D",
+          "quantity": 1412000000
+        },
+        {
+          "year": 2005,
+          "mint": "D",
+          "quantity": 1423500000
+        },
+        {
+          "year": 2006,
+          "mint": "P",
+          "quantity": 1381000000
+        },
+        {
+          "year": 2006,
+          "mint": "D",
+          "quantity": 1447000000
+        },
+        {
+          "year": 2007,
+          "mint": "P",
+          "quantity": 391000000
+        },
+        {
+          "year": 2007,
+          "mint": "D",
+          "quantity": 624500000
+        },
+        {
+          "year": 2008,
+          "mint": "P",
+          "quantity": 413000000
+        },
+        {
+          "year": 2008,
+          "mint": "D",
+          "quantity": 637500000
+        },
+        {
+          "year": 2009,
+          "mint": "P",
+          "quantity": 96500000
+        },
+        {
+          "year": 2009,
+          "mint": "D",
+          "quantity": 49500000
+        },
+        {
+          "year": 2010,
+          "mint": "P",
+          "quantity": 557000000
+        },
+        {
+          "year": 2010,
+          "mint": "D",
+          "quantity": 562000000
+        },
+        {
+          "year": 2011,
+          "mint": "P",
+          "quantity": 748000000
+        },
+        {
+          "year": 2011,
+          "mint": "D",
+          "quantity": 754000000
+        },
+        {
+          "year": 2012,
+          "mint": "P",
+          "quantity": 808000000
+        },
+        {
+          "year": 2012,
+          "mint": "D",
+          "quantity": 868000000
+        },
+        {
+          "year": 2013,
+          "mint": "P",
+          "quantity": 1086500000
+        },
+        {
+          "year": 2013,
+          "mint": "D",
+          "quantity": 1025500000
+        },
+        {
+          "year": 2014,
+          "mint": "P",
+          "quantity": 1023000000
+        },
+        {
+          "year": 2014,
+          "mint": "D",
+          "quantity": 1080500000
+        },
+        {
+          "year": 2015,
+          "mint": "P",
+          "quantity": 1497510000
+        },
+        {
+          "year": 2015,
+          "mint": "D",
+          "quantity": 1543500000
+        },
+        {
+          "year": 2015,
+          "mint": "W",
+          "quantity": 75000
+        },
+        {
+          "year": 2016,
+          "mint": "P",
+          "quantity": 1517000000
+        },
+        {
+          "year": 2016,
+          "mint": "D",
+          "quantity": 1437000000
+        }
+      ]
+    },
+    "mercury": {
+      "name": "Winged Liberty Head",
+      "nickname": "Mercury",
+      "value": 10,
+      "startYear": 1916,
+      "endYear": 1945,
+      "coins": [
+        {
+          "year": 1916,
+          "mint": "",
+          "quantity": 22180080
+        },
+        {
+          "year": 1916,
+          "mint": "D",
+          "quantity": 264000
+        },
+        {
+          "year": 1916,
+          "mint": "S",
+          "quantity": 10450000
+        },
+        {
+          "year": 1917,
+          "mint": "",
+          "quantity": 55230000
+        },
+        {
+          "year": 1917,
+          "mint": "D",
+          "quantity": 9402000
+        },
+        {
+          "year": 1917,
+          "mint": "S",
+          "quantity": 27330000
+        },
+        {
+          "year": 1918,
+          "mint": "",
+          "quantity": 26680000
+        },
+        {
+          "year": 1918,
+          "mint": "D",
+          "quantity": 22674800
+        },
+        {
+          "year": 1918,
+          "mint": "S",
+          "quantity": 19300000
+        },
+        {
+          "year": 1919,
+          "mint": "",
+          "quantity": 35740000
+        },
+        {
+          "year": 1919,
+          "mint": "D",
+          "quantity": 9939000
+        },
+        {
+          "year": 1919,
+          "mint": "S",
+          "quantity": 8850000
+        },
+        {
+          "year": 1920,
+          "mint": "",
+          "quantity": 59030000
+        },
+        {
+          "year": 1920,
+          "mint": "D",
+          "quantity": 19171000
+        },
+        {
+          "year": 1920,
+          "mint": "S",
+          "quantity": 13820000
+        },
+        {
+          "year": 1921,
+          "mint": "",
+          "quantity": 1230000
+        },
+        {
+          "year": 1921,
+          "mint": "D",
+          "quantity": 1080000
+        },
+        {
+          "year": 1923,
+          "mint": "",
+          "quantity": 50130000
+        },
+        {
+          "year": 1923,
+          "mint": "S",
+          "quantity": 6440000
+        },
+        {
+          "year": 1924,
+          "mint": "",
+          "quantity": 24010000
+        },
+        {
+          "year": 1924,
+          "mint": "D",
+          "quantity": 6810000
+        },
+        {
+          "year": 1924,
+          "mint": "S",
+          "quantity": 7120000
+        },
+        {
+          "year": 1925,
+          "mint": "",
+          "quantity": 25610000
+        },
+        {
+          "year": 1925,
+          "mint": "D",
+          "quantity": 5117000
+        },
+        {
+          "year": 1925,
+          "mint": "S",
+          "quantity": 5850000
+        },
+        {
+          "year": 1926,
+          "mint": "",
+          "quantity": 32160000
+        },
+        {
+          "year": 1926,
+          "mint": "D",
+          "quantity": 6828000
+        },
+        {
+          "year": 1926,
+          "mint": "S",
+          "quantity": 1520000
+        },
+        {
+          "year": 1927,
+          "mint": "",
+          "quantity": 28080000
+        },
+        {
+          "year": 1927,
+          "mint": "D",
+          "quantity": 4812000
+        },
+        {
+          "year": 1927,
+          "mint": "S",
+          "quantity": 4770000
+        },
+        {
+          "year": 1928,
+          "mint": "",
+          "quantity": 19480000
+        },
+        {
+          "year": 1928,
+          "mint": "D",
+          "quantity": 4161000
+        },
+        {
+          "year": 1928,
+          "mint": "S",
+          "quantity": 7400000
+        },
+        {
+          "year": 1929,
+          "mint": "",
+          "quantity": 25970000
+        },
+        {
+          "year": 1929,
+          "mint": "D",
+          "quantity": 5034000
+        },
+        {
+          "year": 1929,
+          "mint": "S",
+          "quantity": 4730000
+        },
+        {
+          "year": 1930,
+          "mint": "",
+          "quantity": 6770000
+        },
+        {
+          "year": 1930,
+          "mint": "S",
+          "quantity": 1843000
+        },
+        {
+          "year": 1931,
+          "mint": "",
+          "quantity": 3150000
+        },
+        {
+          "year": 1931,
+          "mint": "D",
+          "quantity": 1260000
+        },
+        {
+          "year": 1931,
+          "mint": "S",
+          "quantity": 1800000
+        },
+        {
+          "year": 1934,
+          "mint": "",
+          "quantity": 24080000
+        },
+        {
+          "year": 1934,
+          "mint": "D",
+          "quantity": 6772000
+        },
+        {
+          "year": 1935,
+          "mint": "",
+          "quantity": 58830000
+        },
+        {
+          "year": 1935,
+          "mint": "D",
+          "quantity": 10477000
+        },
+        {
+          "year": 1935,
+          "mint": "S",
+          "quantity": 15840000
+        },
+        {
+          "year": 1936,
+          "mint": "",
+          "quantity": 87500000
+        },
+        {
+          "year": 1936,
+          "mint": "D",
+          "quantity": 16132000
+        },
+        {
+          "year": 1936,
+          "mint": "S",
+          "quantity": 9210000
+        },
+        {
+          "year": 1937,
+          "mint": "",
+          "quantity": 56860000
+        },
+        {
+          "year": 1937,
+          "mint": "D",
+          "quantity": 14146000
+        },
+        {
+          "year": 1937,
+          "mint": "S",
+          "quantity": 9740000
+        },
+        {
+          "year": 1938,
+          "mint": "",
+          "quantity": 22190000
+        },
+        {
+          "year": 1938,
+          "mint": "D",
+          "quantity": 5537000
+        },
+        {
+          "year": 1938,
+          "mint": "S",
+          "quantity": 8090000
+        },
+        {
+          "year": 1939,
+          "mint": "",
+          "quantity": 67740000
+        },
+        {
+          "year": 1939,
+          "mint": "D",
+          "quantity": 24394000
+        },
+        {
+          "year": 1939,
+          "mint": "S",
+          "quantity": 10540000
+        },
+        {
+          "year": 1940,
+          "mint": "",
+          "quantity": 65350000
+        },
+        {
+          "year": 1940,
+          "mint": "D",
+          "quantity": 21198000
+        },
+        {
+          "year": 1940,
+          "mint": "S",
+          "quantity": 21560000
+        },
+        {
+          "year": 1941,
+          "mint": "",
+          "quantity": 175090000
+        },
+        {
+          "year": 1941,
+          "mint": "D",
+          "quantity": 45634000
+        },
+        {
+          "year": 1941,
+          "mint": "S",
+          "quantity": 43090000
+        },
+        {
+          "year": 1942,
+          "mint": "",
+          "quantity": 205410000
+        },
+        {
+          "year": 1942,
+          "mint": "D",
+          "quantity": 60740000
+        },
+        {
+          "year": 1942,
+          "mint": "S",
+          "quantity": 49300000
+        },
+        {
+          "year": 1943,
+          "mint": "",
+          "quantity": 191710000
+        },
+        {
+          "year": 1943,
+          "mint": "D",
+          "quantity": 71949000
+        },
+        {
+          "year": 1943,
+          "mint": "S",
+          "quantity": 60400000
+        },
+        {
+          "year": 1944,
+          "mint": "",
+          "quantity": 231410000
+        },
+        {
+          "year": 1944,
+          "mint": "D",
+          "quantity": 62224000
+        },
+        {
+          "year": 1944,
+          "mint": "S",
+          "quantity": 49490000
+        },
+        {
+          "year": 1945,
+          "mint": "",
+          "quantity": 159130000
+        },
+        {
+          "year": 1945,
+          "mint": "D",
+          "quantity": 40245000
+        },
+        {
+          "year": 1945,
+          "mint": "S",
+          "quantity": 41290000
+        }
+      ]
+    },
+    "barber": {
+      "name": "Barber",
+      "nickname": "",
+      "value": 10,
+      "startYear": 1892,
+      "endYear": 1915,
+      "coins": [
+        {
+          "year": 1892,
+          "mint": "",
+          "quantity": 934000
+        },
+        {
+          "year": 1892,
+          "mint": "O",
+          "quantity": 390000
+        },
+        {
+          "year": 1892,
+          "mint": "S",
+          "quantity": 1029028
+        },
+        {
+          "year": 1893,
+          "mint": "",
+          "quantity": 1826000
+        },
+        {
+          "year": 1893,
+          "mint": "O",
+          "quantity": 1389000
+        },
+        {
+          "year": 1893,
+          "mint": "S",
+          "quantity": 740000
+        },
+        {
+          "year": 1894,
+          "mint": "",
+          "quantity": 1148000
+        },
+        {
+          "year": 1894,
+          "mint": "O",
+          "quantity": 2138000
+        },
+        {
+          "year": 1894,
+          "mint": "S",
+          "quantity": 4048960
+        },
+        {
+          "year": 1895,
+          "mint": "",
+          "quantity": 1834338
+        },
+        {
+          "year": 1895,
+          "mint": "O",
+          "quantity": 1766000
+        },
+        {
+          "year": 1895,
+          "mint": "S",
+          "quantity": 1108086
+        },
+        {
+          "year": 1896,
+          "mint": "",
+          "quantity": 950000
+        },
+        {
+          "year": 1896,
+          "mint": "O",
+          "quantity": 924000
+        },
+        {
+          "year": 1896,
+          "mint": "S",
+          "quantity": 1140948
+        },
+        {
+          "year": 1897,
+          "mint": "",
+          "quantity": 2480000
+        },
+        {
+          "year": 1897,
+          "mint": "O",
+          "quantity": 632000
+        },
+        {
+          "year": 1897,
+          "mint": "S",
+          "quantity": 933900
+        },
+        {
+          "year": 1898,
+          "mint": "",
+          "quantity": 2956000
+        },
+        {
+          "year": 1898,
+          "mint": "O",
+          "quantity": 874000
+        },
+        {
+          "year": 1898,
+          "mint": "S",
+          "quantity": 2358550
+        },
+        {
+          "year": 1899,
+          "mint": "",
+          "quantity": 5538000
+        },
+        {
+          "year": 1899,
+          "mint": "O",
+          "quantity": 1724000
+        },
+        {
+          "year": 1899,
+          "mint": "S",
+          "quantity": 1686411
+        },
+        {
+          "year": 1900,
+          "mint": "",
+          "quantity": 4762000
+        },
+        {
+          "year": 1900,
+          "mint": "O",
+          "quantity": 2744000
+        },
+        {
+          "year": 1900,
+          "mint": "S",
+          "quantity": 2560322
+        },
+        {
+          "year": 1901,
+          "mint": "",
+          "quantity": 4268000
+        },
+        {
+          "year": 1901,
+          "mint": "O",
+          "quantity": 1124000
+        },
+        {
+          "year": 1901,
+          "mint": "S",
+          "quantity": 847044
+        },
+        {
+          "year": 1902,
+          "mint": "",
+          "quantity": 4922000
+        },
+        {
+          "year": 1902,
+          "mint": "O",
+          "quantity": 2526000
+        },
+        {
+          "year": 1902,
+          "mint": "S",
+          "quantity": 1460670
+        },
+        {
+          "year": 1903,
+          "mint": "",
+          "quantity": 2278000
+        },
+        {
+          "year": 1903,
+          "mint": "O",
+          "quantity": 2100000
+        },
+        {
+          "year": 1903,
+          "mint": "S",
+          "quantity": 1920772
+        },
+        {
+          "year": 1904,
+          "mint": "",
+          "quantity": 2992000
+        },
+        {
+          "year": 1904,
+          "mint": "O",
+          "quantity": 1117600
+        },
+        {
+          "year": 1904,
+          "mint": "S",
+          "quantity": 553038
+        },
+        {
+          "year": 1905,
+          "mint": "",
+          "quantity": 662000
+        },
+        {
+          "year": 1905,
+          "mint": "O",
+          "quantity": 505000
+        },
+        {
+          "year": 1905,
+          "mint": "S",
+          "quantity": 2494000
+        },
+        {
+          "year": 1906,
+          "mint": "",
+          "quantity": 2638000
+        },
+        {
+          "year": 1906,
+          "mint": "D",
+          "quantity": 4028000
+        },
+        {
+          "year": 1906,
+          "mint": "O",
+          "quantity": 2446000
+        },
+        {
+          "year": 1906,
+          "mint": "S",
+          "quantity": 1740154
+        },
+        {
+          "year": 1907,
+          "mint": "",
+          "quantity": 2598000
+        },
+        {
+          "year": 1907,
+          "mint": "D",
+          "quantity": 3856000
+        },
+        {
+          "year": 1907,
+          "mint": "O",
+          "quantity": 3946000
+        },
+        {
+          "year": 1907,
+          "mint": "S",
+          "quantity": 1250000
+        },
+        {
+          "year": 1908,
+          "mint": "",
+          "quantity": 1354000
+        },
+        {
+          "year": 1908,
+          "mint": "D",
+          "quantity": 3280000
+        },
+        {
+          "year": 1908,
+          "mint": "O",
+          "quantity": 5360000
+        },
+        {
+          "year": 1908,
+          "mint": "S",
+          "quantity": 1644828
+        },
+        {
+          "year": 1909,
+          "mint": "",
+          "quantity": 2368000
+        },
+        {
+          "year": 1909,
+          "mint": "O",
+          "quantity": 925400
+        },
+        {
+          "year": 1909,
+          "mint": "S",
+          "quantity": 1764000
+        },
+        {
+          "year": 1910,
+          "mint": "",
+          "quantity": 418000
+        },
+        {
+          "year": 1910,
+          "mint": "S",
+          "quantity": 1948000
+        },
+        {
+          "year": 1911,
+          "mint": "",
+          "quantity": 1406000
+        },
+        {
+          "year": 1911,
+          "mint": "D",
+          "quantity": 695080
+        },
+        {
+          "year": 1911,
+          "mint": "S",
+          "quantity": 1272000
+        },
+        {
+          "year": 1912,
+          "mint": "",
+          "quantity": 1550000
+        },
+        {
+          "year": 1912,
+          "mint": "D",
+          "quantity": 2300800
+        },
+        {
+          "year": 1912,
+          "mint": "S",
+          "quantity": 1370000
+        },
+        {
+          "year": 1913,
+          "mint": "",
+          "quantity": 188000
+        },
+        {
+          "year": 1913,
+          "mint": "D",
+          "quantity": 534000
+        },
+        {
+          "year": 1913,
+          "mint": "S",
+          "quantity": 604000
+        },
+        {
+          "year": 1914,
+          "mint": "",
+          "quantity": 124230
+        },
+        {
+          "year": 1914,
+          "mint": "S",
+          "quantity": 992000
+        },
+        {
+          "year": 1915,
+          "mint": "",
+          "quantity": 138000
+        },
+        {
+          "year": 1915,
+          "mint": "D",
+          "quantity": 1170400
+        },
+        {
+          "year": 1915,
+          "mint": "S",
+          "quantity": 1604000
+        }
+      ]
+    },
+    "seatedLiberty": {
+      "name": "Seated Liberty",
+      "nickname": "",
+      "value": 10,
+      "startYear": 1837,
+      "endYear": 1891,
+      "coins": [
+        {
+          "year": 1837,
+          "mint": "",
+          "quantity": 682500,
+          "notes": "Obverse without Stars"
+        },
+        {
+          "year": 1838,
+          "mint": "",
+          "quantity": 	1992500,
+          "notes": "Obverse with Star , No Drapery"
+        },
+        {
+          "year": 1838,
+          "mint": "O",
+          "quantity": 406034,
+          "notes": "Obverse without Stars"
+        },
+        {
+          "year": 1839,
+          "mint": "",
+          "quantity": 1053115,
+          "notes": "Obverse with Star , No Drapery"
+        },
+        {
+          "year": 1839,
+          "mint": "O",
+          "quantity": 1323000,
+          "notes": "Obverse with Star , No Drapery"
+        },
+        {
+          "year": 1840,
+          "mint": "",
+          "quantity": 981500,
+          "notes": "Obverse with Star , No Drapery"
+        },
+        {
+          "year": 1840,
+          "mint": "O",
+          "quantity": 1175000,
+          "notes": "Obverse with Star , No Drapery"
+        },
+        {
+          "year": 1840,
+          "mint": "",
+          "quantity": 377500,
+          "notes": "Obverse with Stars and Drapery"
+        },
+        {
+          "year": 1841,
+          "mint": "",
+          "quantity": 1622500,
+          "notes": "Obverse with Stars and Drapery"
+        },
+        {
+          "year": 1841,
+          "mint": "O",
+          "quantity": 2007500,
+          "notes": "Obverse with Stars and Drapery"
+        },
+        {
+          "year": 1842,
+          "mint": "",
+          "quantity": 1887500,
+          "notes": "Obverse with Stars and Drapery"
+        },
+        {
+          "year": 1842,
+          "mint": "O",
+          "quantity": 2020000,
+          "notes": "Obverse with Stars and Drapery"
+        },
+        {
+          "year": 1843,
+          "mint": "",
+          "quantity": 1370000,
+          "notes": "Obverse with Stars and Drapery"
+        },
+        {
+          "year": 1843,
+          "mint": "O",
+          "quantity": 150000,
+          "notes": "Obverse with Stars and Drapery"
+        },
+        {
+          "year": 1844,
+          "mint": "",
+          "quantity": 72500,
+          "notes": "Obverse with Stars and Drapery"
+        },
+        {
+          "year": 1845,
+          "mint": "",
+          "quantity": 1755000,
+          "notes": "Obverse with Stars and Drapery"
+        },
+        {
+          "year": 1845,
+          "mint": "O",
+          "quantity": 230000,
+          "notes": "Obverse with Stars and Drapery"
+        },
+        {
+          "year": 1846,
+          "mint": "",
+          "quantity": 31300,
+          "notes": "Obverse with Stars and Drapery"
+        },
+        {
+          "year": 1847,
+          "mint": "",
+          "quantity": 245000,
+          "notes": "Obverse with Stars and Drapery"
+        },
+        {
+          "year": 1848,
+          "mint": "",
+          "quantity": 451500,
+          "notes": "Obverse with Stars and Drapery"
+        },
+        {
+          "year": 1849,
+          "mint": "",
+          "quantity": 839000,
+          "notes": "Obverse with Stars and Drapery"
+        },
+        {
+          "year": 1849,
+          "mint": "O",
+          "quantity": 300000,
+          "notes": "Obverse with Stars and Drapery"
+        },
+        {
+          "year": 1850,
+          "mint": "",
+          "quantity": 1931500,
+          "notes": "Obverse with Stars and Drapery"
+        },
+        {
+          "year": 1850,
+          "mint": "O",
+          "quantity": 510000,
+          "notes": "Obverse with Stars and Drapery"
+        },
+        {
+          "year": 1851,
+          "mint": "",
+          "quantity": 1026500,
+          "notes": "Obverse with Stars and Drapery"
+        },
+        {
+          "year": 1851,
+          "mint": "O",
+          "quantity": 400000,
+          "notes": "Obverse with Stars and Drapery"
+        },
+        {
+          "year": 1852,
+          "mint": "",
+          "quantity": 1370000,
+          "notes": "Obverse with Stars and Drapery"
+        },
+        {
+          "year": 1852,
+          "mint": "O",
+          "quantity": 430000,
+          "notes": "Obverse with Stars and Drapery"
+        },
+        {
+          "year": 1853,
+          "mint": "",
+          "quantity": 95000,
+          "notes": "Obverse with Stars and Drapery (No Arrows)"
+        },
+        {
+          "year": 1853,
+          "mint": "",
+          "quantity": 12078010,
+          "notes": "Arrowheads at Date"
+        },
+        {
+          "year": 1853,
+          "mint": "O",
+          "quantity": 1100000,
+          "notes": "Arrowheads at Date"
+        },
+        {
+          "year": 1854,
+          "mint": "",
+          "quantity": 4470000,
+          "notes": "Arrowheads at Date"
+        },
+        {
+          "year": 1854,
+          "mint": "O",
+          "quantity": 1770000,
+          "notes": "Arrowheads at Date"
+        },
+        {
+          "year": 1855,
+          "mint": "",
+          "quantity": 2075000,
+          "notes": "Arrowheads at Date"
+        },
+        {
+          "year": 1856,
+          "mint": "",
+          "quantity": 5780000,
+          "notes": "Obverse with Stars and Drapery"
+        },
+        {
+          "year": 1856,
+          "mint": "O",
+          "quantity": 1180000,
+          "notes": "Obverse with Stars and Drapery"
+        },
+        {
+          "year": 1856,
+          "mint": "S",
+          "quantity": 70000,
+          "notes": "Obverse with Stars and Drapery"
+        },
+        {
+          "year": 1857,
+          "mint": "",
+          "quantity": 5580000,
+          "notes": "Obverse with Stars and Drapery"
+        },
+        {
+          "year": 1857,
+          "mint": "O",
+          "quantity": 1540000,
+          "notes": "Obverse with Stars and Drapery"
+        },
+        {
+          "year": 1858,
+          "mint": "",
+          "quantity": 1540000,
+          "notes": "Obverse with Stars and Drapery"
+        },
+        {
+          "year": 1858,
+          "mint": "O",
+          "quantity": 290000,
+          "notes": "Obverse with Stars and Drapery"
+        },
+        {
+          "year": 1859,
+          "mint": "",
+          "quantity": 430000,
+          "notes": "Obverse with Stars and Drapery"
+        },
+        {
+          "year": 1859,
+          "mint": "O",
+          "quantity": 480000,
+          "notes": "Obverse with Stars and Drapery"
+        },
+        {
+          "year": 1859,
+          "mint": "S",
+          "quantity": 60000,
+          "notes": "Obverse with Stars and Drapery"
+        },
+        {
+          "year": 1860,
+          "mint": "S",
+          "quantity": 140000,
+          "notes": "Obverse with Stars and Drapery"
+        },
+        {
+          "year": 1860,
+          "mint": "",
+          "quantity": 606000,
+          "notes": "Obverse with Legend"
+        },
+        {
+          "year": 1860,
+          "mint": "O",
+          "quantity": 40000,
+          "notes": "Obverse with Legend"
+        },
+        {
+          "year": 1861,
+          "mint": "",
+          "quantity": 1883000,
+          "notes": "Obverse with Legend"
+        },
+        {
+          "year": 1861,
+          "mint": "S",
+          "quantity": 172500,
+          "notes": "Obverse with Legend"
+        },
+        {
+          "year": 1862,
+          "mint": "",
+          "quantity": 847000,
+          "notes": "Obverse with Legend"
+        },
+        {
+          "year": 1862,
+          "mint": "S",
+          "quantity": 180750,
+          "notes": "Obverse with Legend"
+        },
+        {
+          "year": 1863,
+          "mint": "",
+          "quantity": 1400,
+          "notes": "Obverse with Legend"
+        },
+        {
+          "year": 1863,
+          "mint": "S",
+          "quantity": 157500,
+          "notes": "Obverse with Legend"
+        },
+        {
+          "year": 1864,
+          "mint": "",
+          "quantity": 11000,
+          "notes": "Obverse with Legend"
+        },
+        {
+          "year": 1864,
+          "mint": "S",
+          "quantity": 230000,
+          "notes": "Obverse with Legend"
+        },
+        {
+          "year": 1865,
+          "mint": "",
+          "quantity": 10000,
+          "notes": "Obverse with Legend"
+        },
+        {
+          "year": 1865,
+          "mint": "S",
+          "quantity": 175000,
+          "notes": "Obverse with Legend"
+        },
+        {
+          "year": 1866,
+          "mint": "",
+          "quantity": 8000,
+          "notes": "Obverse with Legend"
+        },
+        {
+          "year": 1866,
+          "mint": "S",
+          "quantity": 135000,
+          "notes": "Obverse with Legend"
+        },
+        {
+          "year": 1867,
+          "mint": "",
+          "quantity": 6000,
+          "notes": "Obverse with Legend"
+        },
+        {
+          "year": 1867,
+          "mint": "S",
+          "quantity": 140000,
+          "notes": "Obverse with Legend"
+        },
+        {
+          "year": 1868,
+          "mint": "",
+          "quantity": 464000,
+          "notes": "Obverse with Legend"
+        },
+        {
+          "year": 1868,
+          "mint": "S",
+          "quantity": 260000,
+          "notes": "Obverse with Legend"
+        },
+        {
+          "year": 1869,
+          "mint": "",
+          "quantity": 256000,
+          "notes": "Obverse with Legend"
+        },
+        {
+          "year": 1869,
+          "mint": "S",
+          "quantity": 450000,
+          "notes": "Obverse with Legend"
+        },
+        {
+          "year": 1870,
+          "mint": "",
+          "quantity": 470500,
+          "notes": "Obverse with Legend"
+        },
+        {
+          "year": 1870,
+          "mint": "S",
+          "quantity": 50000,
+          "notes": "Obverse with Legend"
+        },
+        {
+          "year": 1871,
+          "mint": "",
+          "quantity": 906750,
+          "notes": "Obverse with Legend"
+        },
+        {
+          "year": 1871,
+          "mint": "S",
+          "quantity": 320000,
+          "notes": "Obverse with Legend"
+        },
+        {
+          "year": 1871,
+          "mint": "CC",
+          "quantity": 20100,
+          "notes": "Obverse with Legend"
+        },
+        {
+          "year": 1872,
+          "mint": "",
+          "quantity": 2395500,
+          "notes": "Obverse with Legend"
+        },
+        {
+          "year": 1872,
+          "mint": "S",
+          "quantity": 190000,
+          "notes": "Obverse with Legend"
+        },
+        {
+          "year": 1872,
+          "mint": "CC",
+          "quantity": 35480,
+          "notes": "Obverse with Legend"
+        },
+        {
+          "year": 1873,
+          "mint": "CC",
+          "quantity": 1568000,
+          "notes": "Obverse with Legend (No Arrows)"
+        },
+        {
+          "year": 1873,
+          "mint": "CC",
+          "quantity": 12400,
+          "notes": "Obverse with Legend (No Arrows)"
+        },
+        {
+          "year": 1873,
+          "mint": "",
+          "quantity": 2377700,
+          "notes": "Obverse with Legend, Arrowheads at Date"
+        },
+        {
+          "year": 1873,
+          "mint": "S",
+          "quantity": 455000,
+          "notes": "Obverse with Legend, Arrowheads at Date"
+        },
+        {
+          "year": 1873,
+          "mint": "CC",
+          "quantity": 18791,
+          "notes": "Obverse with Legend, Arrowheads at Date"
+        },
+        {
+          "year": 1874,
+          "mint": "",
+          "quantity": 2939300,
+          "notes": "Obverse with Legend, Arrowheads at Date"
+        },
+        {
+          "year": 1874,
+          "mint": "S",
+          "quantity": 240000,
+          "notes": "Obverse with Legend, Arrowheads at Date"
+        },
+        {
+          "year": 1874,
+          "mint": "CC",
+          "quantity": 10817,
+          "notes": "Obverse with Legend, Arrowheads at Date"
+        },
+        {
+          "year": 1875,
+          "mint": "",
+          "quantity": 10350000,
+          "notes": "Obverse with Legend, No Arrowheads"
+        },
+        {
+          "year": 1875,
+          "mint": "S",
+          "quantity": 9070000,
+          "notes": "Obverse with Legend, No Arrowheads"
+        },
+        {
+          "year": 1875,
+          "mint": "CC",
+          "quantity": 4645000,
+          "notes": "Obverse with Legend, No Arrowheads"
+        },
+        {
+          "year": 1876,
+          "mint": "",
+          "quantity": 11460000,
+          "notes": "Obverse with Legend, No Arrowheads"
+        },
+        {
+          "year": 1876,
+          "mint": "S",
+          "quantity": 10420000,
+          "notes": "Obverse with Legend, No Arrowheads"
+        },
+        {
+          "year": 1876,
+          "mint": "CC",
+          "quantity": 8270000,
+          "notes": "Obverse with Legend, No Arrowheads"
+        },
+        {
+          "year": 1877,
+          "mint": "",
+          "quantity": 7310000,
+          "notes": "Obverse with Legend, No Arrowheads"
+        },
+        {
+          "year": 1877,
+          "mint": "S",
+          "quantity": 2340000,
+          "notes": "Obverse with Legend, No Arrowheads"
+        },
+        {
+          "year": 1877,
+          "mint": "CC",
+          "quantity": 7700000,
+          "notes": "Obverse with Legend, No Arrowheads"
+        },
+        {
+          "year": 1878,
+          "mint": "",
+          "quantity": 1677200,
+          "notes": "Obverse with Legend, No Arrowheads"
+        },
+        {
+          "year": 1878,
+          "mint": "CC",
+          "quantity": 200000,
+          "notes": "Obverse with Legend, No Arrowheads"
+        },
+        {
+          "year": 1879,
+          "mint": "",
+          "quantity": 14000,
+          "notes": "Obverse with Legend, No Arrowheads"
+        },
+        {
+          "year": 1880,
+          "mint": "",
+          "quantity": 36000,
+          "notes": "Obverse with Legend, No Arrowheads"
+        },
+        {
+          "year": 1881,
+          "mint": "",
+          "quantity": 24000,
+          "notes": "Obverse with Legend, No Arrowheads"
+        },
+        {
+          "year": 1882,
+          "mint": "",
+          "quantity": 3910000,
+          "notes": "Obverse with Legend, No Arrowheads"
+        },
+        {
+          "year": 1883,
+          "mint": "",
+          "quantity": 7674673,
+          "notes": "Obverse with Legend, No Arrowheads"
+        },
+        {
+          "year": 1884,
+          "mint": "",
+          "quantity": 3365505,
+          "notes": "Obverse with Legend, No Arrowheads"
+        },
+        {
+          "year": 1884,
+          "mint": "S",
+          "quantity": 564969,
+          "notes": "Obverse with Legend, No Arrowheads"
+        },
+        {
+          "year": 1885,
+          "mint": "",
+          "quantity": 2532497,
+          "notes": "Obverse with Legend, No Arrowheads"
+        },
+        {
+          "year": 1885,
+          "mint": "S",
+          "quantity": 43690,
+          "notes": "Obverse with Legend, No Arrowheads"
+        },
+        {
+          "year": 1886,
+          "mint": "",
+          "quantity": 6376684,
+          "notes": "Obverse with Legend, No Arrowheads"
+        },
+        {
+          "year": 1886,
+          "mint": "S",
+          "quantity": 206524,
+          "notes": "Obverse with Legend, No Arrowheads"
+        },
+        {
+          "year": 1887,
+          "mint": "",
+          "quantity": 11283229,
+          "notes": "Obverse with Legend, No Arrowheads"
+        },
+        {
+          "year": 1887,
+          "mint": "S",
+          "quantity": 4454450,
+          "notes": "Obverse with Legend, No Arrowheads"
+        },
+        {
+          "year": 1888,
+          "mint": "",
+          "quantity": 5495655,
+          "notes": "Obverse with Legend, No Arrowheads"
+        },
+        {
+          "year": 1888,
+          "mint": "S",
+          "quantity": 1720000,
+          "notes": "Obverse with Legend, No Arrowheads"
+        },
+        {
+          "year": 1889,
+          "mint": "",
+          "quantity": 7380000,
+          "notes": "Obverse with Legend, No Arrowheads"
+        },
+        {
+          "year": 1889 ,
+          "mint": "S",
+          "quantity": 972678,
+          "notes": "Obverse with Legend, No Arrowheads"
+        },
+        {
+          "year": 1890,
+          "mint": "",
+          "quantity": 9910951,
+          "notes": "Obverse with Legend, No Arrowheads"
+        },
+        {
+          "year": 1890,
+          "mint": "S",
+          "quantity": 1423076,
+          "notes": "Obverse with Legend, No Arrowheads"
+        },
+        {
+          "year": 1891,
+          "mint": "",
+          "quantity": 15310000,
+          "notes": "Obverse with Legend, No Arrowheads"
+        },
+        {
+          "year": 1891,
+          "mint": "O",
+          "quantity": 4540000,
+          "notes": "Obverse with Legend, No Arrowheads"
+        },
+        {
+          "year": 1891,
+          "mint": "S",
+          "quantity": 3196116,
+          "notes": "Obverse with Legend, No Arrowheads"
+        }
+      ]
+    },
+    "cappedBust": {
+      "name": "Capped Bust",
+      "nickname": "",
+      "value": 10,
+      "startYear": 1809,
+      "endYear": 1837,
+      "coins": [
+        {
+          "year": 1809,
+          "mint": "",
+          "quantity": 51065
+        },
+        {
+          "year": 1811,
+          "mint": "",
+          "quantity": 65180
+        },
+        {
+          "year": 1814,
+          "mint": "",
+          "quantity": 421500
+        },
+        {
+          "year": 1820,
+          "mint": "",
+          "quantity": 942587
+        },
+        {
+          "year": 1821,
+          "mint": "",
+          "quantity": 1186512
+        },
+        {
+          "year": 1822,
+          "mint": "",
+          "quantity": 100000
+        },
+        {
+          "year": 1823,
+          "mint": "",
+          "quantity": 440000
+        },
+        {
+          "year": 1824,
+          "mint": "",
+          "quantity": 440000
+        },
+        {
+          "year": 1825,
+          "mint": "",
+          "quantity": 510000
+        },
+        {
+          "year": 1827,
+          "mint": "",
+          "quantity": 1215000
+        },
+        {
+          "year": 1828,
+          "mint": "",
+          "quantity": 125000
+        },
+        {
+          "year": 1829,
+          "mint": "",
+          "quantity": 770000
+        },
+        {
+          "year": 1830,
+          "mint": "",
+          "quantity": 510000
+        },
+        {
+          "year": 1831,
+          "mint": "",
+          "quantity": 771350
+        },
+        {
+          "year": 1832,
+          "mint": "",
+          "quantity": 522500
+        },
+        {
+          "year": 1833,
+          "mint": "",
+          "quantity": 485000
+        },
+        {
+          "year": 1834,
+          "mint": "",
+          "quantity": 635000
+        },
+        {
+          "year": 1835,
+          "mint": "",
+          "quantity": 1410000
+        },
+        {
+          "year": 1836,
+          "mint": "",
+          "quantity": 1190000
+        },
+        {
+          "year": 1837,
+          "mint": "",
+          "quantity": 359500
+        }
+      ]
+    },
+    "drapedBust": {
+      "name": "Draped Bust",
+      "nickname": "",
+      "value": 10,
+      "startYear": 1796,
+      "endYear": 1806,
+      "coins": [
+        {
+          "year": 1796,
+          "mint": "",
+          "quantity": 22135
+        },
+        {
+          "year": 1797,
+          "mint": "",
+          "quantity": 25261
+        },
+        {
+          "year": 1798,
+          "mint": "",
+          "quantity": 27550
+        },
+        {
+          "year": 1800,
+          "mint": "",
+          "quantity": 21760
+        },
+        {
+          "year": 1801,
+          "mint": "",
+          "quantity": 34640
+        },
+        {
+          "year": 1802,
+          "mint": "",
+          "quantity": 10975
+        },
+        {
+          "year": 1803,
+          "mint": "",
+          "quantity": 33040
+        },
+        {
+          "year": 1804,
+          "mint": "",
+          "quantity": 8265
+        },
+        {
+          "year": 1805,
+          "mint": "",
+          "quantity": 120780
+        },
+        {
+          "year": 1806,
+          "mint": "",
+          "quantity": 165000
+        }
+      ]
+    }
+  }
+}
