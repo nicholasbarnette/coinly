@@ -93,7 +93,7 @@
 	}
 	
 	.leftNav {
-		height: 100%;
+		height: auto;
 		width: 10rem;
 		background: @navBackgroundColor;
 		z-index: 10;
@@ -102,9 +102,7 @@
 		padding-top: 0.5rem;
 		
 		.navItem {
-			font-size: 1.25rem;
 			width: 90%;
-			color: @accentColor;
 			text-align: center;
 			padding: 0.5rem 0;
 			margin: 0 auto;
@@ -112,18 +110,20 @@
 			
 			&:not(:last-child) {
 				border-bottom: 1px solid #FFFFFF;
-				}
-			
-			&:hover {
+			}
+
+			> a {
+			    color: @accentColor;
+			    font-size: 1.25rem;
+			    text-decoration: none;
+			}
+
+			&:hover > a {
 				color: @accentColorHover;
 				transition: color 0.05s linear;
+				text-decoration: none;
 			}
-			
-			> span {
-				white-space: nowrap;
-				text-overflow: ellipsis;
-				user-select: none;
-			}
+
 		}
 	}
 }

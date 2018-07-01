@@ -1,0 +1,50 @@
+//*******************************************************
+//*******************************************************
+//*						  TILE
+//*******************************************************
+//*******************************************************
+@import 'globals.less';
+
+.tile {
+    height: 300px;
+    width: 200px;
+    border: 1px solid darken(#FFFFFF, 60%);
+    border-radius: 2px;
+
+    .tileImage {
+        height: 50%;
+        width: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+    }
+
+    .tileContent {
+        height: 50%;
+        width: 100%;
+        color: @textColorDefault;
+        padding: 1rem;
+        background-color: lighten(@navBackgroundColor, 5%);
+        overflow: hidden;
+
+        & :first-child {
+            font-size: 1.5rem;
+            color: @accentColor;
+            margin-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        * {
+            font-size: 0.85rem;
+            margin: 0.25rem 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    &:hover {
+        border-color: darken(#FFFFFF, 30%);
+        cursor: pointer;
+    }
+}

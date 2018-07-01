@@ -1,0 +1,1 @@
+To run the react watcher, use 'npm run watch' and to run the server use 'python server.py'.

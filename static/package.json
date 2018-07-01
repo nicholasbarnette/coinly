@@ -1,7 +1,7 @@
 {
-  "name": "financial_store",
+  "name": "coin_storage",
   "version": "1.0.0",
-  "description": "A place to store financial data.",
+  "description": "A place to store coin data.",
   "main": "index.js",
   "scripts": {
     "build": "webpack -p --progress --config webpack.config.js",
@@ -35,6 +35,9 @@
     "webpack": "^3.0.0"
   },
   "dependencies": {
-    "react-bootstrap": "^0.31.5"
+    "file-loader": "^0.11.2",
+    "react-bootstrap": "^0.31.5",
+    "react-router-dom": "^4.3.1",
+    "url-loader": "^1.0.1"
   }
 }

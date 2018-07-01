@@ -1,56 +1,23 @@
-from flask import Flask, render_template
-import sqlite3, json
+from flask import Flask, render_template, request, Response
+import bcrypt, sqlite3
+import json, sys
 import time, datetime
-import sys
+import webbrowser
+from profile import *
+from initFunctions import *
+
+
+# Set the desired host and port
+hostName = '127.0.0.1'
+portNumber = 8000
+
+
+# Sets up/connects to DB
+conn = sqlite3.connect('coins.db')
+c = conn.cursor()
 
 
 app = Flask(__name__, static_folder='../static/dist', template_folder='../static')
-conn = sqlite3.connect('coins.db')
-
-c = conn.cursor()
-
-# Prints errors
-def printErr(e):
-    exc_type, exc_obj, exc_tb = sys.exc_info()
-    print("Error: Line", exc_tb.tb_lineno, "-", datetime.datetime.fromtimestamp(int(time.time())).strftime('%Y-%m-%d %H:%M:%S'), "--", e)
-
-
-# Sets up the coin database
-def initCoinDB():
-    filename = './static/coins.json'
-
-    query = "INSERT INTO Coins(year, mint, name, nickname, value, quantity) VALUES "
-
-    try:
-        if filename:
-            print("Opening file:", filename)
-            with open(filename, 'r') as f:
-                data = json.load(f)
-            print("Inserting data...")
-
-            # Iterates through the dimes
-            for type in data["dimes"]:
-
-                # Sets coins information
-                name = data["dimes"][type]["name"]
-                nickname = data["dimes"][type]["nickname"]
-                value = int(data["dimes"][type]["value"]) / 100
-                coins = data["dimes"][type]["coins"]
-
-                # Adds each coin to the query
-                for coin in coins:
-                    query += "(" + str(coin["year"]) + ",'" + coin["mint"] + "','" + name + "','" + nickname + "'," + str(value) + "," + str(coin["quantity"]) + "), "
-
-
-            return query[:-2]
-        else:
-            print("Could not open file:", filename)
-            return ''
-    except Exception as e:
-        printErr(e)
-        return ''
-
-
 
 
 # Attempts to set up the necessary tables
@@ -69,9 +36,11 @@ try:
     ''')
 
 
+    print("Inserting data...")
     query = initCoinDB()
     c.execute(query)
     conn.commit()
+    print("Data inserted successfully.")
 
 
     # Transactions Table
@@ -91,6 +60,7 @@ try:
     	    CREATE TABLE Users(
     	        userID INTEGER PRIMARY KEY,
                 email TEXT,
+                password TEXT,
                 firstName TEXT,
                 lastName TEXT,
                 birthday TEXT,
@@ -102,11 +72,22 @@ except sqlite3.Error as e:
     printErr(e)
 
 
+print(c.execute('''SELECT COUNT(*) FROM Coins''').fetchall())
+
+
+# Specify browser path to open URL
+# chrome_path = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+
+# Opens URL
+# webbrowser.get(chrome_path).open(hostName + ':' + str(portNumber), new=2)
+
+
 @app.route('/')
+@app.route('/collections')
 def index():
     return render_template('index.html')
 
 
-
 if __name__ == '__main__':
-    app.run()
+    # Runs the application
+    app.run(host=hostName, port=portNumber)
