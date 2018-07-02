@@ -10,16 +10,16 @@ export default class LeftNav extends React.Component {
 			<div className="leftNavContainer">
 				<nav className="leftNav" style={{width: this.props.width}}>
 					<div className="navItem">
+						<a href="/">Home</a>
+					</div>
+					<div className="navItem">
 						<a href="/collections">Collections</a>
 					</div>
 					<div className="navItem">
-						<span>Title 2</span>
+						<a href="/">Explore</a>
 					</div>
 					<div className="navItem">
-						<span>Title 3</span>
-					</div>
-					<div className="navItem">
-						<span>Title 4</span>
+						<a href="/">Activity</a>
 					</div>
 				</nav>
 				{this.props.children}

@@ -5,50 +5,136 @@ import ReactDOM from "react-dom";
 import '../../css/collections.less';
 
 //JS
-import LeftNav from '../components/leftNav.js';
-import TopNavHome from '../components/topNavHome.js';
+import PageNav from '../components/pageNav.js';
 import Tile from '../components/tile.js';
 
 
 class Collections extends React.Component {
 
-    constructor(props) {
-		super(props);
-		this.state = {
-			width: '10rem'
-		}
-		this.openLeftNav = this.openLeftNav.bind(this);
-	}
-
-    openLeftNav() {
-		this.setState({
-			width: this.state.width === '10rem' ? '0' : '10rem'
-		});
-	}
-
 	render() {
-		return	<div className="collectionsContainer">
-					<TopNavHome openLeftNav={this.openLeftNav} />
-					<LeftNav width={this.state.width}>
+		return	<div className="pageContainer">
+					<PageNav>
 					{
 						<div className="collectionsContent">
 						    <div className="pageHeader">
 						        <h1>Collections</h1>
 						    </div>
 						    <div className="collectionsMainContent">
-                                <Tile image={"download.jpg"}>
-                                    {
-                                        <div className="tileContent">
-                                            <h1>Mercury Dimes</h1>
-                                            <p>1916-1943</p>
-                                            <p>Collected: 10/64</p>
-                                        </div>
-                                    }
-                                </Tile>
+						        <div className="groupHeader">
+						            <h1>Value</h1>
+						        </div>
+						        <div className="tileContainer">
+                                    <Tile image={"download.jpg"}>
+                                        {
+                                            <div className="tileContent">
+                                                <h1>Roosevelt Dimes</h1>
+                                                <p>1946-Present</p>
+                                                <p>Collected: 80/142</p>
+                                            </div>
+                                        }
+                                    </Tile><Tile image={"download.jpg"}>
+                                        {
+                                            <div className="tileContent">
+                                                <h1>Roosevelt Dimes</h1>
+                                                <p>1946-Present</p>
+                                                <p>Collected: 80/142</p>
+                                            </div>
+                                        }
+                                    </Tile><Tile image={"download.jpg"}>
+                                        {
+                                            <div className="tileContent">
+                                                <h1>Roosevelt Dimes</h1>
+                                                <p>1946-Present</p>
+                                                <p>Collected: 80/142</p>
+                                            </div>
+                                        }
+                                    </Tile><Tile image={"download.jpg"}>
+                                        {
+                                            <div className="tileContent">
+                                                <h1>Roosevelt Dimes</h1>
+                                                <p>1946-Present</p>
+                                                <p>Collected: 80/142</p>
+                                            </div>
+                                        }
+                                    </Tile><Tile image={"download.jpg"}>
+                                        {
+                                            <div className="tileContent">
+                                                <h1>Roosevelt Dimes</h1>
+                                                <p>1946-Present</p>
+                                                <p>Collected: 80/142</p>
+                                            </div>
+                                        }
+                                    </Tile><Tile image={"download.jpg"}>
+                                        {
+                                            <div className="tileContent">
+                                                <h1>Roosevelt Dimes</h1>
+                                                <p>1946-Present</p>
+                                                <p>Collected: 80/142</p>
+                                            </div>
+                                        }
+                                    </Tile><Tile image={"download.jpg"}>
+                                        {
+                                            <div className="tileContent">
+                                                <h1>Roosevelt Dimes</h1>
+                                                <p>1946-Present</p>
+                                                <p>Collected: 80/142</p>
+                                            </div>
+                                        }
+                                    </Tile><Tile image={"download.jpg"}>
+                                        {
+                                            <div className="tileContent">
+                                                <h1>Roosevelt Dimes</h1>
+                                                <p>1946-Present</p>
+                                                <p>Collected: 80/142</p>
+                                            </div>
+                                        }
+                                    </Tile><Tile image={"download.jpg"}>
+                                        {
+                                            <div className="tileContent">
+                                                <h1>Roosevelt Dimes</h1>
+                                                <p>1946-Present</p>
+                                                <p>Collected: 80/142</p>
+                                            </div>
+                                        }
+                                    </Tile><Tile image={"download.jpg"}>
+                                        {
+                                            <div className="tileContent">
+                                                <h1>Roosevelt Dimes</h1>
+                                                <p>1946-Present</p>
+                                                <p>Collected: 80/142</p>
+                                            </div>
+                                        }
+                                    </Tile><Tile image={"download.jpg"}>
+                                        {
+                                            <div className="tileContent">
+                                                <h1>Roosevelt Dimes</h1>
+                                                <p>1946-Present</p>
+                                                <p>Collected: 80/142</p>
+                                            </div>
+                                        }
+                                    </Tile><Tile image={"download.jpg"}>
+                                        {
+                                            <div className="tileContent">
+                                                <h1>Roosevelt Dimes</h1>
+                                                <p>1946-Present</p>
+                                                <p>Collected: 80/142</p>
+                                            </div>
+                                        }
+                                    </Tile>
+                                    <Tile image={"download.jpg"}>
+                                        {
+                                            <div className="tileContent">
+                                                <h1>Mercury Dimes</h1>
+                                                <p>1916-1943</p>
+                                                <p>Collected: 10/64</p>
+                                            </div>
+                                        }
+                                    </Tile>
+                                </div>
 						    </div>
 					    </div>
 					}
-					</LeftNav>
+					</PageNav>
 				</div>;
 	}
 }

@@ -19,9 +19,47 @@ body {
 	background: @containerBackgroundColor;
 }
 
+.pageContainer {
+	margin: 0;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	height: 100%;
+}
+
+
+//*******************************************************
+//                  TYPOGRAPHY
+//*******************************************************
 h1, h2, h3,
 h4, h5, h6,
 p, span {
     color: @textColorDefault;
     margin: 0;
+}
+
+
+//*******************************************************
+//                  SCROLLBAR
+//*******************************************************
+@scrollbarWidth: 3px;
+@scrollbarArea: 4px;
+@scrollbarTotalWidth: @scrollbarWidth + (2 * @scrollbarArea);
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-color: fade(#FFFFFF, 30%);
+    border: @scrollbarArea solid transparent;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-button {
+    display: none;
 }

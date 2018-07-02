@@ -1,3 +1,11 @@
+//*******************************************************
+//*******************************************************
+//*						Collections
+//*******************************************************
+//*******************************************************
+@import 'globals.less';
+
+
 .collectionsContainer {
     margin: 0;
     overflow: hidden;
@@ -9,8 +17,28 @@
 
 .collectionsContent {
     margin: 1rem;
+    display: flex;
+    flex-direction: column;
 
     .pageHeader > * {
         font-size: 2rem;
     }
+
+    .collectionsMainContent {
+        flex: 1 1 auto;
+        border: 1px solid #FFFFFF;
+        padding: 1rem 2rem;
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+
+        .groupHeader h1 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #fff;
+            padding-bottom: 1rem;
+        }
+    }
+
+
 }
