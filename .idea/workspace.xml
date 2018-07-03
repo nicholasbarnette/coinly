@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/static/js/components/tile.js" line="12" mnemonic="9" />
+    <bookmark url="file://$PROJECT_DIR$/static/js/components/tile.js" line="11" mnemonic="9" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e1e478b-b43e-47b6-afee-057beef14e39" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/server/coins.db" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/server/initFunctions.py" afterPath="$PROJECT_DIR$/server/initFunctions.py" />
       <change beforePath="$PROJECT_DIR$/server/server.py" afterPath="$PROJECT_DIR$/server/server.py" />
-      <change beforePath="$PROJECT_DIR$/static/css/collections.less" afterPath="$PROJECT_DIR$/static/css/collections.less" />
-      <change beforePath="$PROJECT_DIR$/static/css/nav.less" afterPath="$PROJECT_DIR$/static/css/nav.less" />
+      <change beforePath="$PROJECT_DIR$/server/static/coins.json" afterPath="$PROJECT_DIR$/server/static/coins.json" />
       <change beforePath="$PROJECT_DIR$/static/css/tile.less" afterPath="$PROJECT_DIR$/static/css/tile.less" />
       <change beforePath="$PROJECT_DIR$/static/dist/bundle.js" afterPath="$PROJECT_DIR$/static/dist/bundle.js" />
-      <change beforePath="$PROJECT_DIR$/static/js/components/pageNav.js" afterPath="$PROJECT_DIR$/static/js/components/pageNav.js" />
+      <change beforePath="$PROJECT_DIR$/static/images/download.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/images/mercuryDimeFace.jpg" afterPath="$PROJECT_DIR$/static/images/mercury_dime.jpg" />
+      <change beforePath="$PROJECT_DIR$/static/images/mercuryDimeReverse.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/js/components/tile.js" afterPath="$PROJECT_DIR$/static/js/components/tile.js" />
       <change beforePath="$PROJECT_DIR$/static/js/views/collections.js" afterPath="$PROJECT_DIR$/static/js/views/collections.js" />
-      <change beforePath="$PROJECT_DIR$/static/package.json" afterPath="$PROJECT_DIR$/static/package.json" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,11 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="server.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="server.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="453">
-              <caret line="92" column="9" lean-forward="true" selection-start-line="92" selection-start-column="9" selection-end-line="92" selection-end-column="9" />
+            <state relative-caret-position="340">
+              <caret line="125" column="38" lean-forward="false" selection-start-line="125" selection-start-column="38" selection-end-line="125" selection-end-column="38" />
               <folding>
                 <element signature="e#0#68#0" expanded="true" />
               </folding>
@@ -36,22 +39,49 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="collections.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/js/views/collections.js">
+      <file leaf-file-name="initFunctions.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/initFunctions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="67" column="26" lean-forward="true" selection-start-line="67" selection-start-column="26" selection-end-line="67" selection-end-column="26" />
+            <state relative-caret-position="674">
+              <caret line="61" column="17" lean-forward="false" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="collections.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/css/collections.less">
+      <file leaf-file-name="collections.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/js/views/collections.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="16" lean-forward="false" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+            <state relative-caret-position="629">
+              <caret line="109" column="0" lean-forward="false" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tile.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/js/components/tile.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="coins.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/static/coins.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="24" lean-forward="true" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+              <folding>
+                <element signature="e#4944#20022#0" expanded="false" />
+                <element signature="e#20230#27809#0" expanded="false" />
+                <element signature="e#28001#35118#0" expanded="false" />
+                <element signature="e#35340#52252#0" expanded="false" />
+                <element signature="e#52462#54392#0" expanded="false" />
+                <element signature="e#54602#55561#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -77,7 +107,6 @@
       <list>
         <option value="$PROJECT_DIR$/server/initFn.py" />
         <option value="$PROJECT_DIR$/server/init.py" />
-        <option value="$PROJECT_DIR$/server/initFunctions.py" />
         <option value="$PROJECT_DIR$/server/profile.py" />
         <option value="$PROJECT_DIR$/static/js/topNavHome.js" />
         <option value="$PROJECT_DIR$/static/js/topNav.js" />
@@ -100,7 +129,6 @@
         <option value="$PROJECT_DIR$/static/js/main.js" />
         <option value="$PROJECT_DIR$/static/js/components/topNavHome.js" />
         <option value="$PROJECT_DIR$/static/webpack.config.js" />
-        <option value="$PROJECT_DIR$/static/js/components/tile.js" />
         <option value="$PROJECT_DIR$/static/js/components/leftNav.js" />
         <option value="$PROJECT_DIR$/static/js/components/pageContainer.js" />
         <option value="$PROJECT_DIR$/static/js/components/topNav.js" />
@@ -109,11 +137,13 @@
         <option value="$PROJECT_DIR$/static/css/globals.less" />
         <option value="$PROJECT_DIR$/static/js/components/pageNav.js" />
         <option value="$PROJECT_DIR$/static/css/nav.less" />
-        <option value="$PROJECT_DIR$/static/css/tile.less" />
-        <option value="$PROJECT_DIR$/server/static/coins.json" />
         <option value="$PROJECT_DIR$/static/css/collections.less" />
-        <option value="$PROJECT_DIR$/server/server.py" />
+        <option value="$PROJECT_DIR$/static/css/tile.less" />
         <option value="$PROJECT_DIR$/static/js/views/collections.js" />
+        <option value="$PROJECT_DIR$/static/js/components/tile.js" />
+        <option value="$PROJECT_DIR$/server/initFunctions.py" />
+        <option value="$PROJECT_DIR$/server/server.py" />
+        <option value="$PROJECT_DIR$/server/static/coins.json" />
       </list>
     </option>
   </component>
@@ -138,7 +168,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -199,6 +228,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -244,8 +274,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -258,6 +287,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -269,11 +299,39 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/static/js/views/collections.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1139">
+          <caret line="67" column="26" lean-forward="true" selection-start-line="67" selection-start-column="26" selection-end-line="67" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1462">
+          <caret line="92" column="9" lean-forward="true" selection-start-line="92" selection-start-column="9" selection-end-line="92" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/collections.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="16" lean-forward="false" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/server.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#68#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -282,12 +340,12 @@
         <state relative-caret-position="153">
           <caret line="772" column="15" lean-forward="true" selection-start-line="772" selection-start-column="15" selection-end-line="772" selection-end-column="15" />
           <folding>
-            <element signature="n#!!block;n#roosevelt#0;n#!!block;n#dimes#0;n#!!top" expanded="false" />
-            <element signature="e#165#15243#0" expanded="false" />
-            <element signature="n#!!block;n#barber#0;n#!!block;n#dimes#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#seatedLiberty#0;n#!!block;n#dimes#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#cappedBust#0;n#!!block;n#dimes#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#drapedBust#0;n#!!block;n#dimes#0;n#!!top" expanded="false" />
+            <element signature="e#4944#20022#0" expanded="false" />
+            <element signature="e#20230#27809#0" expanded="false" />
+            <element signature="e#28001#35118#0" expanded="false" />
+            <element signature="e#35340#52252#0" expanded="false" />
+            <element signature="e#52462#54392#0" expanded="false" />
+            <element signature="e#54602#55561#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -296,7 +354,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#68#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -305,12 +365,12 @@
         <state relative-caret-position="119">
           <caret line="2394" column="5" lean-forward="true" selection-start-line="2394" selection-start-column="5" selection-end-line="2394" selection-end-column="5" />
           <folding>
-            <element signature="n#!!block;n#roosevelt#0;n#!!block;n#dimes#0;n#!!top" expanded="false" />
-            <element signature="e#165#15243#0" expanded="false" />
-            <element signature="n#!!block;n#barber#0;n#!!block;n#dimes#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#seatedLiberty#0;n#!!block;n#dimes#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#cappedBust#0;n#!!block;n#dimes#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#drapedBust#0;n#!!block;n#dimes#0;n#!!top" expanded="false" />
+            <element signature="e#4944#20022#0" expanded="false" />
+            <element signature="e#20230#27809#0" expanded="false" />
+            <element signature="e#28001#35118#0" expanded="false" />
+            <element signature="e#35340#52252#0" expanded="false" />
+            <element signature="e#52462#54392#0" expanded="false" />
+            <element signature="e#54602#55561#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -319,7 +379,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="918">
           <caret line="56" column="26" lean-forward="false" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
-          <folding />
+          <folding>
+            <element signature="e#0#68#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -328,12 +390,12 @@
         <state relative-caret-position="6783">
           <caret line="399" column="22" lean-forward="true" selection-start-line="399" selection-start-column="22" selection-end-line="399" selection-end-column="22" />
           <folding>
-            <element signature="n#!!block;n#roosevelt#0;n#!!block;n#dimes#0;n#!!top" expanded="false" />
-            <element signature="e#165#15243#0" expanded="false" />
-            <element signature="n#!!block;n#barber#0;n#!!block;n#dimes#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#seatedLiberty#0;n#!!block;n#dimes#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#cappedBust#0;n#!!block;n#dimes#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#drapedBust#0;n#!!block;n#dimes#0;n#!!top" expanded="false" />
+            <element signature="e#4944#20022#0" expanded="false" />
+            <element signature="e#20230#27809#0" expanded="false" />
+            <element signature="e#28001#35118#0" expanded="false" />
+            <element signature="e#35340#52252#0" expanded="false" />
+            <element signature="e#52462#54392#0" expanded="false" />
+            <element signature="e#54602#55561#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -342,7 +404,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="918">
           <caret line="56" column="26" lean-forward="true" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
-          <folding />
+          <folding>
+            <element signature="e#0#68#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -351,29 +415,21 @@
         <state relative-caret-position="170">
           <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
           <folding>
-            <element signature="n#!!block;n#roosevelt#0;n#!!block;n#dimes#0;n#!!top" expanded="false" />
-            <element signature="e#165#15243#0" expanded="false" />
-            <element signature="n#!!block;n#barber#0;n#!!block;n#dimes#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#seatedLiberty#0;n#!!block;n#dimes#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#cappedBust#0;n#!!block;n#dimes#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#drapedBust#0;n#!!block;n#dimes#0;n#!!top" expanded="false" />
+            <element signature="e#4944#20022#0" expanded="false" />
+            <element signature="e#20230#27809#0" expanded="false" />
+            <element signature="e#28001#35118#0" expanded="false" />
+            <element signature="e#35340#52252#0" expanded="false" />
+            <element signature="e#52462#54392#0" expanded="false" />
+            <element signature="e#54602#55561#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/profile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/server/profile.py" />
     <entry file="file://$PROJECT_DIR$/static/dist/bundle.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -381,7 +437,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -390,45 +445,13 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/initFunctions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="21" lean-forward="false" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#16#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/collections.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="7" lean-forward="false" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/pages/components">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="16" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/static/collections.html" />
+    <entry file="file://$PROJECT_DIR$/static/js/pages/components" />
+    <entry file="file://$PROJECT_DIR$/static/js/index.js" />
     <entry file="file://$PROJECT_DIR$/static/js/components/user.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -437,57 +460,20 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
             <caret line="0" column="91" lean-forward="false" selection-start-line="0" selection-start-column="91" selection-end-line="0" selection-end-column="91" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/404.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="45" lean-forward="false" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="10" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="12" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/app.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="18" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/static/test.html" />
+    <entry file="file://$PROJECT_DIR$/static/404.html" />
+    <entry file="file://$PROJECT_DIR$/static/js/routes.js" />
+    <entry file="file://$PROJECT_DIR$/static/js/app.jsx" />
+    <entry file="file://$PROJECT_DIR$/static/js/index.jsx" />
     <entry file="file://$PROJECT_DIR$/static/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -495,7 +481,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
           <caret line="38" column="32" lean-forward="false" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -503,7 +488,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="13" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -511,7 +495,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="20" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="16" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -519,7 +502,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -535,31 +517,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="26" column="13" lean-forward="false" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/components/tile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="1" lean-forward="false" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/components/topNavHome.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="44" lean-forward="true" selection-start-line="1" selection-start-column="44" selection-end-line="1" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/components/topNavHome.js" />
     <entry file="file://$PROJECT_DIR$/static/js/components/topNav.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="15" lean-forward="false" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -575,15 +540,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="19" lean-forward="false" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/tile.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -591,7 +547,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="23" lean-forward="false" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -599,7 +554,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="32" column="30" lean-forward="false" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -607,7 +561,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -615,7 +568,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="47" lean-forward="false" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -623,21 +575,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="24" column="44" lean-forward="false" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/static/coins.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="24" lean-forward="false" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="24" />
-          <folding>
-            <element signature="e#165#15243#0" expanded="false" />
-            <element signature="n#!!block;n#barber#0;n#!!block;n#dimes#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#seatedLiberty#0;n#!!block;n#dimes#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#cappedBust#0;n#!!block;n#dimes#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#drapedBust#0;n#!!block;n#dimes#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -649,20 +586,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/tile.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="31" lean-forward="false" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/images/mercuryDimeReverse.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/images/roosevelt_dime.jpeg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/views/collections.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="67" column="26" lean-forward="true" selection-start-line="67" selection-start-column="26" selection-end-line="67" selection-end-column="26" />
+        <state relative-caret-position="629">
+          <caret line="109" column="0" lean-forward="false" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/components/tile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/initFunctions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="674">
+          <caret line="61" column="17" lean-forward="false" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="92" column="9" lean-forward="true" selection-start-line="92" selection-start-column="9" selection-end-line="92" selection-end-column="9" />
+        <state relative-caret-position="340">
+          <caret line="125" column="38" lean-forward="false" selection-start-line="125" selection-start-column="38" selection-end-line="125" selection-end-column="38" />
           <folding>
             <element signature="e#0#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/static/coins.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="24" lean-forward="true" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+          <folding>
+            <element signature="e#4944#20022#0" expanded="false" />
+            <element signature="e#20230#27809#0" expanded="false" />
+            <element signature="e#28001#35118#0" expanded="false" />
+            <element signature="e#35340#52252#0" expanded="false" />
+            <element signature="e#52462#54392#0" expanded="false" />
+            <element signature="e#54602#55561#0" expanded="false" />
           </folding>
         </state>
       </provider>

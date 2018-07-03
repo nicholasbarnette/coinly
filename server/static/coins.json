@@ -1,11 +1,216 @@
 {
+  "pennies": {
+    "shield": {
+      "name": "Union Shield",
+      "nickname": "Union Shield",
+      "value": 1,
+      "startYear": 2010,
+      "endYear": 2018,
+      "image": "roosevelt_dime.jpg",
+      "coins": []
+    },
+    "bicentennial": {
+      "name": "Lincoln Bicentennial",
+      "nickname": "Lincoln Bicentennial",
+      "value": 1,
+      "startYear": 2009,
+      "endYear": 2009,
+      "image": "roosevelt_dime.jpg",
+      "coins": []
+    },
+    "memorial": {
+      "name": "Lincoln Memorial",
+      "nickname": "Lincoln Memorial",
+      "value": 1,
+      "startYear": 1959,
+      "endYear": 2008,
+      "image": "roosevelt_dime.jpg",
+      "coins": []
+    },
+    "wheat": {
+      "name": "Lincoln Wheat",
+      "nickname": "Wheat",
+      "value": 1,
+      "startYear": 1909,
+      "endYear": 1958,
+      "image": "roosevelt_dime.jpg",
+      "coins": []
+    },
+    "indian": {
+      "name": "Indian Head",
+      "nickname": "Indian Head",
+      "value": 1,
+      "startYear": 1859,
+      "endYear": 1909,
+      "image": "roosevelt_dime.jpg",
+      "coins": []
+    },
+    "eagle": {
+      "name": "Flying Eagle",
+      "nickname": "Flying Eagle",
+      "value": 1,
+      "startYear": 1856,
+      "endYear": 1858,
+      "image": "roosevelt_dime.jpg",
+      "coins": []
+    },
+    "braided": {
+      "name": "Braided Hair",
+      "nickname": "Braided Hair",
+      "value": 1,
+      "startYear": 1839,
+      "endYear": 1858,
+      "image": "roosevelt_dime.jpg",
+      "coins": []
+    },
+    "coronet": {
+      "name": "Coronet",
+      "nickname": "Coronet",
+      "value": 1,
+      "startYear": 1816,
+      "endYear": 1839,
+      "image": "roosevelt_dime.jpg",
+      "coins": []
+    },
+    "classic": {
+      "name": "Classic Head",
+      "nickname": "Classic Head",
+      "value": 1,
+      "startYear": 1808,
+      "endYear": 1814,
+      "image": "roosevelt_dime.jpg",
+      "coins": []
+    },
+    "draped": {
+      "name": "Draped Bust",
+      "nickname": "Draped Bust",
+      "value": 1,
+      "startYear": 1796,
+      "endYear": 1807,
+      "image": "roosevelt_dime.jpg",
+      "coins": []
+    },
+    "liberty": {
+      "name": "Liberty Cap",
+      "nickname": "Liberty Cap",
+      "value": 1,
+      "startYear": 1793,
+      "endYear": 1796,
+      "image": "roosevelt_dime.jpg",
+      "coins": []
+    },
+    "wreath": {
+      "name": "Flowing Hair Wreath",
+      "nickname": "Flowing Hair Wreath",
+      "value": 1,
+      "startYear": 1793,
+      "endYear": 1793,
+      "image": "roosevelt_dime.jpg",
+      "coins": []
+    },
+    "chain": {
+      "name": "Flowing Hair Chain",
+      "nickname": "Flowing Hair Chain",
+      "value": 1,
+      "startYear": 1793,
+      "endYear": 1793,
+      "image": "roosevelt_dime.jpg",
+      "coins": []
+    }
+  },
+  "nickels": {
+    "jefferson": {
+      "name": "Jefferson",
+      "nickname": "Jefferson",
+      "value": 5,
+      "startYear": 1938,
+      "endYear": 2018,
+      "image": "roosevelt_dime.jpg",
+      "coins": []
+    },
+    "buffalo": {
+      "name": "Buffalo",
+      "nickname": "Indian",
+      "value": 5,
+      "startYear": 1913,
+      "endYear": 1938,
+      "image": "roosevelt_dime.jpg",
+      "coins": []
+    },
+    "liberty": {
+      "name": "Liberty Head",
+      "nickname": "V",
+      "value": 5,
+      "startYear": 1883,
+      "endYear": 1913,
+      "image": "roosevelt_dime.jpg",
+      "coins": []
+    },
+    "shield": {
+      "name": "Shield",
+      "nickname": "Shield",
+      "value": 5,
+      "startYear": 1866,
+      "endYear": 1883,
+      "image": "roosevelt_dime.jpg",
+      "coins": []
+    }
+  },
+  "halfDimes": {
+    "liberty": {
+      "name": "Seated Liberty",
+      "nickname": "Seated Liberty",
+      "value": 7,
+      "startYear": 1837,
+      "endYear": 1873,
+      "image": "roosevelt_dime.jpg",
+      "coins": []
+    },
+    "capped": {
+      "name": "Capped Bust",
+      "nickname": "Capped Bust",
+      "value": 7,
+      "startYear": 1829,
+      "endYear": 1837,
+      "image": "roosevelt_dime.jpg",
+      "coins": []
+    },
+    "drapedH": {
+      "name": "Draped Bust (Heraldic Eagle Reverse)",
+      "nickname": "Draped Bust (Heraldic Eagle Reverse)",
+      "value": 7,
+      "startYear": 1800,
+      "endYear": 1805,
+      "image": "roosevelt_dime.jpg",
+      "coins": []
+    },
+    "drapedS": {
+      "name": "Draped Bust (Small Eagle Reverse)",
+      "nickname": "Draped Bust (Small Eagle Reverse)",
+      "value": 7,
+      "startYear": 1796,
+      "endYear": 1797,
+      "image": "roosevelt_dime.jpg",
+      "coins": []
+    },
+    "flowing": {
+      "name": "Flowing Hair",
+      "nickname": "Flowing Hair",
+      "value": 7,
+      "startYear": 1794,
+      "endYear": 1795,
+      "image": "roosevelt_dime.jpg",
+      "coins": []
+    }
+  },
   "dimes": {
     "roosevelt": {
       "name": "Roosevelt",
-      "nickname": "",
+      "nickname": "Roosevelt",
       "value": 10,
       "startYear": 1946,
       "endYear": 2018,
+      "image": "roosevelt_dime.jpg",
       "coins": [
         {
           "year": 1946,
@@ -770,6 +975,7 @@
       "value": 10,
       "startYear": 1916,
       "endYear": 1945,
+      "image": "mercury_dime.jpg",
       "coins": [
         {
           "year": 1916,
@@ -1160,10 +1366,11 @@
     },
     "barber": {
       "name": "Barber",
-      "nickname": "",
+      "nickname": "Barber",
       "value": 10,
       "startYear": 1892,
       "endYear": 1915,
+      "image": "barber_dime.jpg",
       "coins": [
         {
           "year": 1892,
@@ -1534,10 +1741,11 @@
     },
     "seatedLiberty": {
       "name": "Seated Liberty",
-      "nickname": "",
+      "nickname": "Seated Liberty",
       "value": 10,
       "startYear": 1837,
       "endYear": 1891,
+      "image": "seatedLiberty_dime.jpg",
       "coins": [
         {
           "year": 1837,
@@ -2227,10 +2435,11 @@
     },
     "cappedBust": {
       "name": "Capped Bust",
-      "nickname": "",
+      "nickname": "Capped Bust",
       "value": 10,
       "startYear": 1809,
       "endYear": 1837,
+      "image": "cappedBust_dime.jpg",
       "coins": [
         {
           "year": 1809,
@@ -2336,10 +2545,11 @@
     },
     "drapedBust": {
       "name": "Draped Bust",
-      "nickname": "",
+      "nickname": "Draped Bust",
       "value": 10,
       "startYear": 1796,
       "endYear": 1806,
+      "image": "drapedBust_dime.jpg",
       "coins": [
         {
           "year": 1796,
@@ -2392,6 +2602,237 @@
           "quantity": 165000
         }
       ]
+    }
+  },
+  "quarters": {
+    "beautiful": {
+      "name": "Washington America the Beautiful",
+      "nickname": "Washington America the Beautiful",
+      "value": 25,
+      "startYear": 2010,
+      "endYear": 2021,
+      "image": "drapedBust_dime.jpg",
+      "coins": []
+    },
+    "territories": {
+      "name": "Washington D.C. and U.S. Territories",
+      "nickname": "Washington D.C. and U.S. Territories",
+      "value": 25,
+      "startYear": 2009,
+      "endYear": 2009,
+      "image": "drapedBust_dime.jpg",
+      "coins": []
+    },
+    "state": {
+      "name": "Washington States",
+      "nickname": "Washington States",
+      "value": 25,
+      "startYear": 1999,
+      "endYear": 2008,
+      "image": "drapedBust_dime.jpg",
+      "coins": []
+    },
+    "bicentennial": {
+      "name": "Washington Bicentennial",
+      "nickname": "Washington Bicentennial",
+      "value": 25,
+      "startYear": 1975,
+      "endYear": 1976,
+      "image": "drapedBust_dime.jpg",
+      "coins": []
+    },
+    "washington": {
+      "name": "Washington",
+      "nickname": "Washington",
+      "value": 25,
+      "startYear": 1932,
+      "endYear": 1998,
+      "image": "drapedBust_dime.jpg",
+      "coins": []
+    },
+    "standing": {
+      "name": "Standing Liberty",
+      "nickname": "Standing Liberty",
+      "value": 25,
+      "startYear": 1916,
+      "endYear": 1930,
+      "image": "drapedBust_dime.jpg",
+      "coins": []
+    },
+    "barber": {
+      "name": "Barber",
+      "nickname": "Barber",
+      "value": 25,
+      "startYear": 1892,
+      "endYear": 1916,
+      "image": "drapedBust_dime.jpg",
+      "coins": []
+    },
+    "seated": {
+      "name": "Seated Liberty",
+      "nickname": "Seated Liberty",
+      "value": 25,
+      "startYear": 1838,
+      "endYear": 1891,
+      "image": "drapedBust_dime.jpg",
+      "coins": []
+    },
+    "capped": {
+      "name": "Capped Bust",
+      "nickname": "Capped Bust",
+      "value": 25,
+      "startYear": 1815,
+      "endYear": 1838,
+      "image": "drapedBust_dime.jpg",
+      "coins": []
+    },
+    "draped": {
+      "name": "Draped Bust",
+      "nickname": "Draped Bust",
+      "value": 25,
+      "startYear": 1796,
+      "endYear": 1807,
+      "image": "drapedBust_dime.jpg",
+      "coins": []
+    }
+  },
+  "halfDollars": {
+    "kennedy": {
+      "name": "Kennedy",
+      "nickname": "Kennedy",
+      "value": 50,
+      "startYear": 1964,
+      "endYear": 2018,
+      "image": "drapedBust_dime.jpg",
+      "coins": []
+    },
+    "franklin": {
+      "name": "Franklin",
+      "nickname": "Franklin",
+      "value": 50,
+      "startYear": 1948,
+      "endYear": 1963,
+      "image": "drapedBust_dime.jpg",
+      "coins": []
+    },
+    "barber": {
+      "name": "Barber",
+      "nickname": "Barber",
+      "value": 50,
+      "startYear": 1892,
+      "endYear": 1915,
+      "image": "drapedBust_dime.jpg",
+      "coins": []
+    },
+    "seated": {
+      "name": "Seated Liberty",
+      "nickname": "Seated Liberty",
+      "value": 50,
+      "startYear": 1839,
+      "endYear": 1891,
+      "image": "drapedBust_dime.jpg",
+      "coins": []
+    },
+    "capped": {
+      "name": "Capped Bust",
+      "nickname": "Capped Bust",
+      "value": 50,
+      "startYear": 1807,
+      "endYear": 1839,
+      "image": "drapedBust_dime.jpg",
+      "coins": []
+    },
+    "draped": {
+      "name": "Draped Bust",
+      "nickname": "Draped Bust",
+      "value": 50,
+      "startYear": 1796,
+      "endYear": 1807,
+      "image": "drapedBust_dime.jpg",
+      "coins": []
+    },
+    "flowing": {
+      "name": "Flowing Hair",
+      "nickname": "Flowing Hair",
+      "value": 50,
+      "startYear": 1794,
+      "endYear": 1795,
+      "image": "drapedBust_dime.jpg",
+      "coins": []
+    }
+  },
+  "dollars": {
+    "eagle": {
+      "name": "American Silver Eagle",
+      "nickname": "American Silver Eagle",
+      "value": 100,
+      "startYear": 1986,
+      "endYear": 2018,
+      "image": "drapedBust_dime.jpg",
+      "coins": []
+    },
+    "peace": {
+      "name": "Peace",
+      "nickname": "Peace",
+      "value": 100,
+      "startYear": 1921,
+      "endYear": 1935,
+      "image": "drapedBust_dime.jpg",
+      "coins": []
+    },
+    "morgan": {
+      "name": "Morgan",
+      "nickname": "Morgan",
+      "value": 100,
+      "startYear": 1878,
+      "endYear": 1921,
+      "image": "drapedBust_dime.jpg",
+      "coins": []
+    },
+    "trade": {
+      "name": "Trade",
+      "nickname": "Trade",
+      "value": 100,
+      "startYear": 1873,
+      "endYear": 1885,
+      "image": "drapedBust_dime.jpg",
+      "coins": []
+    },
+    "seated": {
+      "name": "Seated Liberty",
+      "nickname": "Seated Liberty",
+      "value": 100,
+      "startYear": 1840,
+      "endYear": 1873,
+      "image": "drapedBust_dime.jpg",
+      "coins": []
+    },
+    "gobrecht": {
+      "name": "Gobrecht",
+      "nickname": "Gobrecht",
+      "value": 100,
+      "startYear": 1836,
+      "endYear": 1839,
+      "image": "drapedBust_dime.jpg",
+      "coins": []
+    },
+    "draped": {
+      "name": "Draped Bust",
+      "nickname": "Draped Bust",
+      "value": 100,
+      "startYear": 1795,
+      "endYear": 1803,
+      "image": "drapedBust_dime.jpg",
+      "coins": []
+    },
+    "flowing": {
+      "name": "Flowing Hair",
+      "nickname": "Flowing Hair",
+      "value": 100,
+      "startYear": 1794,
+      "endYear": 1795,
+      "image": "drapedBust_dime.jpg",
+      "coins": []
     }
   }
 }

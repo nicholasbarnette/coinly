@@ -21,40 +21,54 @@ class Collections extends React.Component {
 
         this.state = {
             level: 0,
-            tileContent: [{value: 1,name: "Pennies"},{value: 5,name: "Nickles"},{value: 10,name: "Dimes"},{value: 25,name: "Quarters"},{value: 50,name: "Half Dollars"},{value: 100,name: "Dollars"}]
+            tileContent: []
         };
     }
 
     componentDidMount() {
 
+        var params = {
+            level: this.state.level
+        };
+        params = JSON.stringify(params);
+
         if (this.state.level == 0) {
             $.ajax({
                 url: "/collections",
-                method: 'POST'
+                method: 'POST',
+                contentType: 'application/json',
+                data: params
             })
             .done(data => {
+                data = JSON.parse(data);
                 this.setState({
-                    tileContent: data["values"]
+                    tileContent: data.values
                 });
             });
         } else if (this.state.level == 1) {
             $.ajax({
                 url: "/collections/10",
-                method: 'POST'
+                method: 'POST',
+                contentType: 'application/json',
+                data: params
             })
             .done(data => {
+                data = JSON.parse(data);
                 this.setState({
-                    tileContent: data["values"]
+                    tileContent: data.values
                 });
             });
         } else if (this.state.level == 2) {
             $.ajax({
                 url: "/collections/10/roosevelt",
-                method: 'POST'
+                method: 'POST',
+                contentType: 'application/json',
+                data: params
             })
             .done(data => {
+                data = JSON.parse(data);
                 this.setState({
-                    tileContent: data["values"]
+                    tileContent: data.values
                 });
             });
         }
@@ -63,45 +77,73 @@ class Collections extends React.Component {
 
 
 	render() {
-        var tempArray = [];
-        this.state.tileContent.map ((k) => {
-            var temp = [];
-            Object.keys(k).forEach(function(key) {
-                temp.push(k[key]);
-            });;
-            tempArray.push(temp);
-        });
+
+	    if (this.state.tileContent.length > 0) {
+
+            var tempArray = [];
+            this.state.tileContent.map ((k) => {
+                var temp = [];
+                Object.keys(k).forEach(function(key) {
+                    temp.push(k[key]);
+                });;
+                tempArray.push(temp);
+            });
 
 
-		return	<div className="pageContainer">
-					<PageNav>
-					{
-						<div className="collectionsContent">
-						    <div className="pageHeader">
-						        <h1>Collections</h1>
-						    </div>
-						    <div className="collectionsMainContent">
-						        <div className="groupHeader">
-						            <h1>Value</h1>
-						        </div>
-						        <div className="tileContainer">
-						            {tempArray.map ((n) => {
-                                        return <Tile image={"download.jpg"}>
-                                        {
-                                            <div className="tileContent">
-                                                {n.map ((m) => {
-                                                    return <p>{m}</p>
-                                                })}
-                                            </div>
-                                        }
-                                        </Tile>
-                                    })}
+            return	<div className="pageContainer">
+                        <PageNav>
+                        {
+                            <div className="collectionsContent">
+                                <div className="pageHeader">
+                                    <h1>Collections</h1>
                                 </div>
-						    </div>
-					    </div>
-					}
-					</PageNav>
-				</div>;
+                                <div className="collectionsMainContent">
+                                    <div className="groupHeader">
+                                        <h1>Value</h1>
+                                    </div>
+                                    <div className="tileContainer">
+                                        {tempArray.map ((n) => {
+                                            return <Tile image={n[n.length-1]}>
+                                            {
+                                                <div className="tileContent">
+                                                    {n.map ((m) => {
+                                                        if (m.includes('.jpg') || m.includes('.jpeg') || m.includes('.png')) {
+                                                            return;
+                                                        } else {
+                                                            return <p>{m}</p>;
+                                                        }
+                                                    })}
+                                                </div>
+                                            }
+                                            </Tile>
+                                        })}
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        </PageNav>
+                    </div>;
+		} else {
+		    return	<div className="pageContainer">
+                        <PageNav>
+                        {
+                            <div className="collectionsContent">
+                                <div className="pageHeader">
+                                    <h1>Collections</h1>
+                                </div>
+                                <div className="collectionsMainContent">
+                                    <div className="groupHeader">
+                                        <h1>Value</h1>
+                                    </div>
+                                    <div className="tileContainer">
+                                        <p>EMPTY</p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        </PageNav>
+                    </div>;
+		}
 	}
 }
 
