@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import $ from 'jquery';
 
 //CSS
 import '../../css/collections.less';
@@ -11,7 +12,67 @@ import Tile from '../components/tile.js';
 
 class Collections extends React.Component {
 
+    //Level 0 - Value List
+    //Level 1 - Type List
+    //Level 2 - Coin List
+
+    constructor() {
+        super();
+
+        this.state = {
+            level: 0,
+            tileContent: [{value: 1,name: "Pennies"},{value: 5,name: "Nickles"},{value: 10,name: "Dimes"},{value: 25,name: "Quarters"},{value: 50,name: "Half Dollars"},{value: 100,name: "Dollars"}]
+        };
+    }
+
+    componentDidMount() {
+
+        if (this.state.level == 0) {
+            $.ajax({
+                url: "/collections",
+                method: 'POST'
+            })
+            .done(data => {
+                this.setState({
+                    tileContent: data["values"]
+                });
+            });
+        } else if (this.state.level == 1) {
+            $.ajax({
+                url: "/collections/10",
+                method: 'POST'
+            })
+            .done(data => {
+                this.setState({
+                    tileContent: data["values"]
+                });
+            });
+        } else if (this.state.level == 2) {
+            $.ajax({
+                url: "/collections/10/roosevelt",
+                method: 'POST'
+            })
+            .done(data => {
+                this.setState({
+                    tileContent: data["values"]
+                });
+            });
+        }
+
+    }
+
+
 	render() {
+        var tempArray = [];
+        this.state.tileContent.map ((k) => {
+            var temp = [];
+            Object.keys(k).forEach(function(key) {
+                temp.push(k[key]);
+            });;
+            tempArray.push(temp);
+        });
+
+
 		return	<div className="pageContainer">
 					<PageNav>
 					{
@@ -24,112 +85,17 @@ class Collections extends React.Component {
 						            <h1>Value</h1>
 						        </div>
 						        <div className="tileContainer">
-                                    <Tile image={"download.jpg"}>
+						            {tempArray.map ((n) => {
+                                        return <Tile image={"download.jpg"}>
                                         {
                                             <div className="tileContent">
-                                                <h1>Roosevelt Dimes</h1>
-                                                <p>1946-Present</p>
-                                                <p>Collected: 80/142</p>
+                                                {n.map ((m) => {
+                                                    return <p>{m}</p>
+                                                })}
                                             </div>
                                         }
-                                    </Tile><Tile image={"download.jpg"}>
-                                        {
-                                            <div className="tileContent">
-                                                <h1>Roosevelt Dimes</h1>
-                                                <p>1946-Present</p>
-                                                <p>Collected: 80/142</p>
-                                            </div>
-                                        }
-                                    </Tile><Tile image={"download.jpg"}>
-                                        {
-                                            <div className="tileContent">
-                                                <h1>Roosevelt Dimes</h1>
-                                                <p>1946-Present</p>
-                                                <p>Collected: 80/142</p>
-                                            </div>
-                                        }
-                                    </Tile><Tile image={"download.jpg"}>
-                                        {
-                                            <div className="tileContent">
-                                                <h1>Roosevelt Dimes</h1>
-                                                <p>1946-Present</p>
-                                                <p>Collected: 80/142</p>
-                                            </div>
-                                        }
-                                    </Tile><Tile image={"download.jpg"}>
-                                        {
-                                            <div className="tileContent">
-                                                <h1>Roosevelt Dimes</h1>
-                                                <p>1946-Present</p>
-                                                <p>Collected: 80/142</p>
-                                            </div>
-                                        }
-                                    </Tile><Tile image={"download.jpg"}>
-                                        {
-                                            <div className="tileContent">
-                                                <h1>Roosevelt Dimes</h1>
-                                                <p>1946-Present</p>
-                                                <p>Collected: 80/142</p>
-                                            </div>
-                                        }
-                                    </Tile><Tile image={"download.jpg"}>
-                                        {
-                                            <div className="tileContent">
-                                                <h1>Roosevelt Dimes</h1>
-                                                <p>1946-Present</p>
-                                                <p>Collected: 80/142</p>
-                                            </div>
-                                        }
-                                    </Tile><Tile image={"download.jpg"}>
-                                        {
-                                            <div className="tileContent">
-                                                <h1>Roosevelt Dimes</h1>
-                                                <p>1946-Present</p>
-                                                <p>Collected: 80/142</p>
-                                            </div>
-                                        }
-                                    </Tile><Tile image={"download.jpg"}>
-                                        {
-                                            <div className="tileContent">
-                                                <h1>Roosevelt Dimes</h1>
-                                                <p>1946-Present</p>
-                                                <p>Collected: 80/142</p>
-                                            </div>
-                                        }
-                                    </Tile><Tile image={"download.jpg"}>
-                                        {
-                                            <div className="tileContent">
-                                                <h1>Roosevelt Dimes</h1>
-                                                <p>1946-Present</p>
-                                                <p>Collected: 80/142</p>
-                                            </div>
-                                        }
-                                    </Tile><Tile image={"download.jpg"}>
-                                        {
-                                            <div className="tileContent">
-                                                <h1>Roosevelt Dimes</h1>
-                                                <p>1946-Present</p>
-                                                <p>Collected: 80/142</p>
-                                            </div>
-                                        }
-                                    </Tile><Tile image={"download.jpg"}>
-                                        {
-                                            <div className="tileContent">
-                                                <h1>Roosevelt Dimes</h1>
-                                                <p>1946-Present</p>
-                                                <p>Collected: 80/142</p>
-                                            </div>
-                                        }
-                                    </Tile>
-                                    <Tile image={"download.jpg"}>
-                                        {
-                                            <div className="tileContent">
-                                                <h1>Mercury Dimes</h1>
-                                                <p>1916-1943</p>
-                                                <p>Collected: 10/64</p>
-                                            </div>
-                                        }
-                                    </Tile>
+                                        </Tile>
+                                    })}
                                 </div>
 						    </div>
 					    </div>

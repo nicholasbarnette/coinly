@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, Response
+from flask import Flask, render_template, request, Response, jsonify
 import bcrypt, sqlite3
 import json, sys
 import time, datetime
@@ -83,9 +83,41 @@ print(c.execute('''SELECT COUNT(*) FROM Coins''').fetchall())
 
 
 @app.route('/')
-@app.route('/collections')
 def index():
     return render_template('index.html')
+
+@app.route('/collections', methods = ['POST', 'GET'])
+def collections():
+    if request.method == 'GET':
+        return render_template('index.html')
+    else:
+        return jsonify('''
+            {values: [
+                {name: "Pennies", value: 1},
+                {name: "Nickles", value: 5},
+                {name: "Dimes", value: 10},
+                {name: "Quarters", value: 25},
+                {name: "Half Dollars", value: 50},
+                {name: "Dollars", value: 100}
+            ]}
+            '''), 202
+
+
+@app.route('/collections/<value>', methods=['POST'])
+def getValue(value):
+    global c
+    try:
+        query = 'SELECT * FROM Coins C WHERE C.value=' + str(value) + ' GROUP BY C.name'
+        print(query, file=sys.stderr)
+        data = c.execute(query)
+        print(data, file=sys.stderr)
+        return jsonify(query), 202
+    except Exception as e:
+        printErr(e)
+        return jsonify('{message: ' + str(e) + '}'), 404
+
+
+
 
 
 if __name__ == '__main__':

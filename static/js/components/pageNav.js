@@ -22,7 +22,7 @@ export default class PageNav extends React.Component {
 	}
 
 	render() {
-		return	<div className="homepageContainer">
+		return	<div className="navContainer">
 					<TopNav openLeftNav={this.openLeftNav} />
 					<LeftNav width={this.state.width}>{
 						<div className="bodyContainer">
