@@ -1,9 +1,8 @@
 from flask import Flask, render_template, request, Response, jsonify
-import bcrypt, sqlite3
+import sqlite3
 import json, sys
 import time, datetime
 import webbrowser
-from profile import *
 from initFunctions import *
 
 
@@ -32,7 +31,8 @@ try:
             name TEXT,
             nickname TEXT,
             value INTEGER,
-            quantity INTEGER
+            quantity INTEGER,
+            note TEXT
         )
     ''')
 
@@ -48,14 +48,6 @@ try:
             image TEXT
         )
     ''')
-
-
-    print("Inserting data...")
-    query, query2 = initCoinDB()
-    c.execute(query)
-    c.execute(query2)
-    conn.commit()
-    print("Data inserted successfully.")
 
 
     # Transactions Table
@@ -87,6 +79,24 @@ except sqlite3.Error as e:
     printErr(e)
 
 
+
+# Clears the database tables
+print("Clearing tables...")
+c.execute("DELETE FROM Coins WHERE 1")
+c.execute("DELETE FROM CoinTypes WHERE 1")
+print("Tables cleared...")
+
+
+# Inserts the coin data
+print("Inserting data...")
+query, query2 = initCoinDB()
+c.execute(query)
+c.execute(query2)
+conn.commit()
+print("Data inserted successfully.")
+
+
+# Prints the count of rows in each table
 print(c.execute('''SELECT COUNT(*) FROM Coins''').fetchall())
 print(c.execute('''SELECT COUNT(*) FROM CoinTypes''').fetchall())
 
@@ -117,8 +127,18 @@ def collections():
         # Level 1 - Type List
         # Level 2 - Coin List
         level = request.json["level"]
-        if level == 0:
+        value = request.json["value"]
+        nickname = request.json["nickname"]
 
+        print("", file=sys.stderr)
+        print("", file=sys.stderr)
+        print("Level: " + str(level), file=sys.stderr)
+        print("Value: " + str(value), file=sys.stderr)
+        print("Nickname: " + str(nickname), file=sys.stderr)
+        print("", file=sys.stderr)
+        print("", file=sys.stderr)
+
+        if level == 0:
             # Gets data
             c.execute('''
                 SELECT value, MIN(startYear), MAX(endYear), image FROM CoinTypes
@@ -130,32 +150,45 @@ def collections():
             # Turns data into a json string
             jsonString = '{"values": ['
             for data in info:
-                jsonString += '{"value": "' + valueLookup(data[0]) + '", "years": "' + str(data[1]) + '-' + str(data[2]) + '", "image": "' + str(data[3]) + '"},'
+                jsonString += '{"name": "", "value": "' + valueLookupInt(data[0]) + '", "years": "' + str(data[1]) + ' - ' + str(data[2]) + '", "image": "' + str(data[3]) + '"},'
             jsonString = jsonString[:-1] + ']}'
 
-            print(jsonString, file=sys.stderr)
             return jsonify(jsonString), 202
 
         elif level == 1:
-            pass
+            # Gets data
+            query = 'SELECT C.nickname, C.value, MIN(C.year) AS year, MAX(C.year), T.image FROM Coins AS C, CoinTypes AS T ' \
+                        'WHERE C.value=' + str(valueLookupStr(value)) + ' AND T.coinTypeID=C.coinTypeID ' \
+                        'GROUP BY C.name ' \
+                        'ORDER BY year DESC'
+            c.execute(query)
+            info = c.fetchall()
+
+            # Turns data into a json string
+            jsonString = '{"values": ['
+            for data in info:
+                jsonString += '{"name": "' + data[0] + '", "value": "' + valueLookupInt(data[1]) + '", "years": "' + str(data[2]) + ' - ' + str(data[3]) + '", "image": "' + str(data[4]) + '"},'
+            jsonString = jsonString[:-1] + ']}'
+
+            return jsonify(jsonString), 202
         elif level == 2:
-            pass
+            # Gets data
+            query = 'SELECT C.nickname, C.value, C.year, C.mint, T.image FROM Coins AS C, CoinTypes AS T ' \
+                        'WHERE C.value=' + str(valueLookupStr(value)) + ' AND T.coinTypeID=C.coinTypeID AND C.nickname="' + str(nickname) + '" ' \
+                        'ORDER BY year DESC'
+            print(query, file=sys.stderr)
+            c.execute(query)
+            info = c.fetchall()
 
+            # Turns data into a json string
+            jsonString = '{"values": ['
+            for data in info:
+                jsonString += '{"name": "' + data[0] + '", "value": "' + valueLookupInt(data[1]) + '", "years": "' + str(data[2]) + ' ' + str(data[3]) + '", "image": "' + str(data[4]) + '"},'
+            jsonString = jsonString[:-1] + ']}'
 
-@app.route('/collections/<value>', methods=['POST'])
-def getValue(value):
-    global c
-    try:
-        query = 'SELECT * FROM Coins C WHERE C.value=' + str(value) + ' GROUP BY C.name'
-        print(query, file=sys.stderr)
-        data = c.execute(query)
-        print(data, file=sys.stderr)
-        return jsonify(query), 202
-    except Exception as e:
-        printErr(e)
-        return jsonify('{message: ' + str(e) + '}'), 404
-
-
+            return jsonify(jsonString), 202
+        else:
+            return jsonify('{"message": "Invalid level."}'), 404
 
 
 

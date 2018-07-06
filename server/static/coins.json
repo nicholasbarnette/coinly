@@ -1,210 +1,2500 @@
 {
   "pennies": {
     "shield": {
+      "id": 0,
       "name": "Union Shield",
       "nickname": "Union Shield",
       "value": 1,
       "startYear": 2010,
       "endYear": 2018,
-      "image": "roosevelt_dime.jpg",
-      "coins": []
+      "image": "unionShield_penny.jpg",
+      "coins": [
+        {
+          "year": 2010,
+          "mint": "P",
+          "quantity": 1963630000
+        },
+        {
+          "year": 2010,
+          "mint": "D",
+          "quantity": 2407200000
+        },
+        {
+          "year": 2010,
+          "mint": "S",
+          "quantity": 1689216
+        },
+        {
+          "year": 2011,
+          "mint": "P",
+          "quantity": 2402400000
+        },
+        {
+          "year": 2011,
+          "mint": "D",
+          "quantity": 2536140000
+        },
+        {
+          "year": 2011,
+          "mint": "S",
+          "quantity": 1673010
+        },
+        {
+          "year": 2012,
+          "mint": "P",
+          "quantity": 3132000000
+        },
+        {
+          "year": 2012,
+          "mint": "D",
+          "quantity": 2883200000
+        },
+        {
+          "year": 2012,
+          "mint": "S",
+          "quantity": 1237415
+        },
+        {
+          "year": 2013,
+          "mint": "P",
+          "quantity": 3750400000
+        },
+        {
+          "year": 2013,
+          "mint": "D",
+          "quantity": 3319600000
+        },
+        {
+          "year": 2013,
+          "mint": "S",
+          "quantity": 1237926
+        },
+        {
+          "year": 2014,
+          "mint": "P",
+          "quantity": 3990800000
+        },
+        {
+          "year": 2014,
+          "mint": "D",
+          "quantity": 4155600000
+        },
+        {
+          "year": 2014,
+          "mint": "S",
+          "quantity": 0
+        },
+        {
+          "year": 2015,
+          "mint": "P",
+          "quantity": 4464100000
+        },
+        {
+          "year": 2015,
+          "mint": "D",
+          "quantity": 4424800000
+        },
+        {
+          "year": 2015,
+          "mint": "S",
+          "quantity": 0
+        },
+        {
+          "year": 2016,
+          "mint": "P",
+          "quantity": 4420400000
+        },
+        {
+          "year": 2016,
+          "mint": "D",
+          "quantity": 4698000000
+        },
+        {
+          "year": 2016,
+          "mint": "S",
+          "quantity": 0
+        },
+        {
+          "year": 2017,
+          "mint": "P",
+          "quantity": 4361220000
+        },
+        {
+          "year": 2017,
+          "mint": "D",
+          "quantity": 4272800000
+        }
+      ]
     },
     "bicentennial": {
+      "id": 1,
       "name": "Lincoln Bicentennial",
       "nickname": "Lincoln Bicentennial",
       "value": 1,
       "startYear": 2009,
       "endYear": 2009,
-      "image": "roosevelt_dime.jpg",
-      "coins": []
+      "image": "bicentennial_penny.jpg",
+      "coins": [
+        {
+          "year": 2009,
+          "mint": "P Type 1",
+          "quantity": 284800000
+        },
+        {
+          "year": 2009,
+          "mint": "D Type 1",
+          "quantity": 350000000
+        },
+        {
+          "year": 2009,
+          "mint": "S Type 1",
+          "quantity": 2995615
+        },
+        {
+          "year": 2009,
+          "mint": "P Type 2",
+          "quantity": 376000000
+        },
+        {
+          "year": 2009,
+          "mint": "D Type 2",
+          "quantity": 363600000
+        },
+        {
+          "year": 2009,
+          "mint": "P Type 3",
+          "quantity": 316000000
+        },
+        {
+          "year": 2009,
+          "mint": "D Type 3",
+          "quantity": 336000000
+        },
+        {
+          "year": 2009,
+          "mint": "P Type 4",
+          "quantity": 129600000
+        },
+        {
+          "year": 2009,
+          "mint": "P Type 4",
+          "quantity": 198000000
+        }
+      ]
     },
     "memorial": {
+      "id": 2,
       "name": "Lincoln Memorial",
       "nickname": "Lincoln Memorial",
       "value": 1,
       "startYear": 1959,
       "endYear": 2008,
-      "image": "roosevelt_dime.jpg",
-      "coins": []
+      "image": "memorial_penny.jpg",
+      "coins": [
+        {
+          "year": 1959,
+          "mint": "P",
+          "quantity": 609715000
+        },
+        {
+          "year": 1959,
+          "mint": "D",
+          "quantity": 1279760000
+        },
+        {
+          "year": 1960,
+          "mint": "P",
+          "quantity": 586405000
+        },
+        {
+          "year": 1960,
+          "mint": "D",
+          "quantity": 1580884000
+        },
+        {
+          "year": 1961,
+          "mint": "P",
+          "quantity": 753345000
+        },
+        {
+          "year": 1961,
+          "mint": "D",
+          "quantity": 1753266700
+        },
+        {
+          "year": 1962,
+          "mint": "P",
+          "quantity": 606045000
+        },
+        {
+          "year": 1962,
+          "mint": "D",
+          "quantity": 1793148400
+        },
+        {
+          "year": 1963,
+          "mint": "P",
+          "quantity": 754110000
+        },
+        {
+          "year": 1963,
+          "mint": "D",
+          "quantity": 1774020400
+        },
+        {
+          "year": 1964,
+          "mint": "P",
+          "quantity": 2451945000
+        },
+        {
+          "year": 1964,
+          "mint": "D",
+          "quantity": 3799071500
+        },
+        {
+          "year": 1964,
+          "mint": "S",
+          "quantity": 196630000
+        },
+        {
+          "year": 1965,
+          "mint": "P",
+          "quantity": 301470000
+        },
+        {
+          "year": 1965,
+          "mint": "D",
+          "quantity": 973364900
+        },
+        {
+          "year": 1965,
+          "mint": "S",
+          "quantity": 220030000
+        },
+        {
+          "year": 1966,
+          "mint": "P",
+          "quantity": 811100000
+        },
+        {
+          "year": 1966,
+          "mint": "D",
+          "quantity": 991431200
+        },
+        {
+          "year": 1966,
+          "mint": "S",
+          "quantity": 383355000
+        },
+        {
+          "year": 1967,
+          "mint": "P",
+          "quantity": 907575000
+        },
+        {
+          "year": 1967,
+          "mint": "D",
+          "quantity": 1327377100
+        },
+        {
+          "year": 1967,
+          "mint": "S",
+          "quantity": 813715000
+        },
+        {
+          "year": 1968,
+          "mint": "P",
+          "quantity": 1707880970
+        },
+        {
+          "year": 1968,
+          "mint": "D",
+          "quantity": 2886269600
+        },
+        {
+          "year": 1968,
+          "mint": "S",
+          "quantity": 258270001
+        },
+        {
+          "year": 1969,
+          "mint": "P",
+          "quantity": 1136910000
+        },
+        {
+          "year": 1969,
+          "mint": "D",
+          "quantity": 4002832200
+        },
+        {
+          "year": 1969,
+          "mint": "S",
+          "quantity": 544375000
+        },
+        {
+          "year": 1970,
+          "mint": "P",
+          "quantity": 1898315000
+        },
+        {
+          "year": 1970,
+          "mint": "D",
+          "quantity": 2891438900
+        },
+        {
+          "year": 1970,
+          "mint": "S",
+          "quantity": 690560004
+        },
+        {
+          "year": 1971,
+          "mint": "P",
+          "quantity": 1919490000
+        },
+        {
+          "year": 1971,
+          "mint": "D",
+          "quantity": 2911045600
+        },
+        {
+          "year": 1971,
+          "mint": "S",
+          "quantity": 525133459
+        },
+        {
+          "year": 1972,
+          "mint": "P",
+          "quantity": 2933255000
+        },
+        {
+          "year": 1972,
+          "mint": "D",
+          "quantity": 2665071400
+        },
+        {
+          "year": 1972,
+          "mint": "S",
+          "quantity": 376939108
+        },
+        {
+          "year": 1973,
+          "mint": "P",
+          "quantity": 3728245000
+        },
+        {
+          "year": 1973,
+          "mint": "D",
+          "quantity": 3549576588
+        },
+        {
+          "year": 1973,
+          "mint": "S",
+          "quantity": 317177295
+        },
+        {
+          "year": 1974,
+          "mint": "P",
+          "quantity": 4103183000
+        },
+        {
+          "year": 1974,
+          "mint": "W",
+          "quantity": 128957523
+        },
+        {
+          "year": 1974,
+          "mint": "D",
+          "quantity": 4235098000
+        },
+        {
+          "year": 1974,
+          "mint": "S",
+          "quantity": 409426660
+        },
+        {
+          "year": 1975,
+          "mint": "P",
+          "quantity": 3874182000
+        },
+        {
+          "year": 1975,
+          "mint": "W",
+          "quantity": 1577294142
+        },
+        {
+          "year": 1975,
+          "mint": "D",
+          "quantity": 4505275300
+        },
+        {
+          "year": 1975,
+          "mint": "S",
+          "quantity": 2845450
+        },
+        {
+          "year": 1976,
+          "mint": "P",
+          "quantity": 3133580000
+        },
+        {
+          "year": 1976,
+          "mint": "W",
+          "quantity": 1540695000
+        },
+        {
+          "year": 1976,
+          "mint": "D",
+          "quantity": 4221592455
+        },
+        {
+          "year": 1976,
+          "mint": "S",
+          "quantity": 4149730
+        },
+        {
+          "year": 1977,
+          "mint": "P",
+          "quantity": 3074575000
+        },
+        {
+          "year": 1977,
+          "mint": "W",
+          "quantity": 1395355000
+        },
+        {
+          "year": 1977,
+          "mint": "D",
+          "quantity": 4194062300
+        },
+        {
+          "year": 1977,
+          "mint": "S",
+          "quantity": 3251152
+        },
+        {
+          "year": 1978,
+          "mint": "P",
+          "quantity": 3735655000
+        },
+        {
+          "year": 1978,
+          "mint": "W",
+          "quantity": 1531250000
+        },
+        {
+          "year": 1978,
+          "mint": "D",
+          "quantity": 4280233400
+        },
+        {
+          "year": 1978,
+          "mint": "S",
+          "quantity": 291700000
+        },
+        {
+          "year": 1979,
+          "mint": "P",
+          "quantity": 3560940000
+        },
+        {
+          "year": 1979,
+          "mint": "W",
+          "quantity": 1705850000
+        },
+        {
+          "year": 1979,
+          "mint": "D",
+          "quantity": 4139357254
+        },
+        {
+          "year": 1979,
+          "mint": "S",
+          "quantity": 751725000
+        },
+        {
+          "year": 1980,
+          "mint": "P",
+          "quantity": 4653915000
+        },
+        {
+          "year": 1980,
+          "mint": "W",
+          "quantity": 1576200000
+        },
+        {
+          "year": 1980,
+          "mint": "D",
+          "quantity": 5140098660
+        },
+        {
+          "year": 1980,
+          "mint": "S",
+          "quantity": 1184590000
+        },
+        {
+          "year": 1981,
+          "mint": "P",
+          "quantity": 7491750000
+        },
+        {
+          "year": 1981,
+          "mint": "D",
+          "quantity": 5373235677
+        },
+        {
+          "year": 1981,
+          "mint": "S",
+          "quantity": 4063083
+        },
+        {
+          "year": 1982,
+          "mint": "P",
+          "quantity": 10712525000
+        },
+        {
+          "year": 1982,
+          "mint": "D",
+          "quantity": 6012979368
+        },
+        {
+          "year": 1982,
+          "mint": "S",
+          "quantity": 3857479
+        },
+        {
+          "year": 1983,
+          "mint": "P",
+          "quantity": 7752355000
+        },
+        {
+          "year": 1983,
+          "mint": "D",
+          "quantity": 6467199428
+        },
+        {
+          "year": 1983,
+          "mint": "S",
+          "quantity": 3279126
+        },
+        {
+          "year": 1984,
+          "mint": "P",
+          "quantity": 8151079000
+        },
+        {
+          "year": 1984,
+          "mint": "D",
+          "quantity": 5569238906
+        },
+        {
+          "year": 1984,
+          "mint": "S",
+          "quantity": 3065110
+        },
+        {
+          "year": 1985,
+          "mint": "P",
+          "quantity": 5648489887
+        },
+        {
+          "year": 1985,
+          "mint": "D",
+          "quantity": 5287399926
+        },
+        {
+          "year": 1985,
+          "mint": "S",
+          "quantity": 3362821
+        },
+        {
+          "year": 1986,
+          "mint": "P",
+          "quantity": 4491395493
+        },
+        {
+          "year": 1986,
+          "mint": "D",
+          "quantity": 4442866698
+        },
+        {
+          "year": 1986,
+          "mint": "S",
+          "quantity": 3010497
+        },
+        {
+          "year": 1987,
+          "mint": "P",
+          "quantity": 4682466931
+        },
+        {
+          "year": 1987,
+          "mint": "D",
+          "quantity": 4879389514
+        },
+        {
+          "year": 1987,
+          "mint": "S",
+          "quantity": 4227728
+        },
+        {
+          "year": 1988,
+          "mint": "P",
+          "quantity": 6092810000
+        },
+        {
+          "year": 1988,
+          "mint": "D",
+          "quantity": 5253740443
+        },
+        {
+          "year": 1988,
+          "mint": "S",
+          "quantity": 3262948
+        },
+        {
+          "year": 1989,
+          "mint": "P",
+          "quantity": 7261535000
+        },
+        {
+          "year": 1989,
+          "mint": "D",
+          "quantity": 5345467111
+        },
+        {
+          "year": 1989,
+          "mint": "S",
+          "quantity": 3220194
+        },
+        {
+          "year": 1990,
+          "mint": "P",
+          "quantity": 6851765000
+        },
+        {
+          "year": 1990,
+          "mint": "D",
+          "quantity": 4922894533
+        },
+        {
+          "year": 1990,
+          "mint": "S",
+          "quantity": 3296504
+        },
+        {
+          "year": 1991,
+          "mint": "P",
+          "quantity": 5165940000
+        },
+        {
+          "year": 1991,
+          "mint": "D",
+          "quantity": 4158442076
+        },
+        {
+          "year": 1991,
+          "mint": "S",
+          "quantity": 2867787
+        },
+        {
+          "year": 1992,
+          "mint": "P",
+          "quantity": 4648905000
+        },
+        {
+          "year": 1992,
+          "mint": "D",
+          "quantity": 4448673300
+        },
+        {
+          "year": 1992,
+          "mint": "S",
+          "quantity": 4176560
+        },
+        {
+          "year": 1993,
+          "mint": "P",
+          "quantity": 5684705000
+        },
+        {
+          "year": 1993,
+          "mint": "D",
+          "quantity": 6426650571
+        },
+        {
+          "year": 1993,
+          "mint": "S",
+          "quantity": 3394792
+        },
+        {
+          "year": 1994,
+          "mint": "P",
+          "quantity": 6500850000
+        },
+        {
+          "year": 1994,
+          "mint": "D",
+          "quantity": 7131765000
+        },
+        {
+          "year": 1994,
+          "mint": "S",
+          "quantity": 3269923
+        },
+        {
+          "year": 1995,
+          "mint": "P",
+          "quantity": 6411440000
+        },
+        {
+          "year": 1995,
+          "mint": "D",
+          "quantity": 7128560000
+        },
+        {
+          "year": 1995,
+          "mint": "S",
+          "quantity": 2797481
+        },
+        {
+          "year": 1996,
+          "mint": "P",
+          "quantity": 6612465000
+        },
+        {
+          "year": 1996,
+          "mint": "D",
+          "quantity": 6510795000
+        },
+        {
+          "year": 1996,
+          "mint": "S",
+          "quantity": 2525265
+        },
+        {
+          "year": 1997,
+          "mint": "P",
+          "quantity": 4622800000
+        },
+        {
+          "year": 1997,
+          "mint": "D",
+          "quantity": 4576555000
+        },
+        {
+          "year": 1997,
+          "mint": "S",
+          "quantity": 2796678
+        },
+        {
+          "year": 1998,
+          "mint": "P",
+          "quantity": 5032200000
+        },
+        {
+          "year": 1998,
+          "mint": "D",
+          "quantity": 5225200000
+        },
+        {
+          "year": 1998,
+          "mint": "S",
+          "quantity": 2086507
+        },
+        {
+          "year": 1999,
+          "mint": "P",
+          "quantity": 5237600000
+        },
+        {
+          "year": 1999,
+          "mint": "D",
+          "quantity": 6360065000
+        },
+        {
+          "year": 1999,
+          "mint": "S",
+          "quantity": 3347966
+        },
+        {
+          "year": 2000,
+          "mint": "P",
+          "quantity": 5503200000
+        },
+        {
+          "year": 2000,
+          "mint": "D",
+          "quantity": 8774220000
+        },
+        {
+          "year": 2000,
+          "mint": "S",
+          "quantity": 4047993
+        },
+        {
+          "year": 2001,
+          "mint": "P",
+          "quantity": 4959600000
+        },
+        {
+          "year": 2001,
+          "mint": "D",
+          "quantity": 5374990000
+        },
+        {
+          "year": 2001,
+          "mint": "S",
+          "quantity": 3184606
+        },
+        {
+          "year": 2002,
+          "mint": "P",
+          "quantity": 3260800000
+        },
+        {
+          "year": 2002,
+          "mint": "D",
+          "quantity": 4028055000
+        },
+        {
+          "year": 2002,
+          "mint": "S",
+          "quantity": 3211995
+        },
+        {
+          "year": 2003,
+          "mint": "P",
+          "quantity": 3300000000
+        },
+        {
+          "year": 2003,
+          "mint": "D",
+          "quantity": 3548000000
+        },
+        {
+          "year": 2003,
+          "mint": "S",
+          "quantity": 3298439
+        },
+        {
+          "year": 2004,
+          "mint": "P",
+          "quantity": 3456400000
+        },
+        {
+          "year": 2004,
+          "mint": "D",
+          "quantity": 3379600000
+        },
+        {
+          "year": 2004,
+          "mint": "S",
+          "quantity": 2965422
+        },
+        {
+          "year": 2005,
+          "mint": "P",
+          "quantity": 3935600000
+        },
+        {
+          "year": 2005,
+          "mint": "D",
+          "quantity": 3764450500
+        },
+        {
+          "year": 2005,
+          "mint": "S",
+          "quantity": 3344679
+        },
+        {
+          "year": 2006,
+          "mint": "P",
+          "quantity": 4290000000
+        },
+        {
+          "year": 2006,
+          "mint": "D",
+          "quantity": 3944000000
+        },
+        {
+          "year": 2006,
+          "mint": "S",
+          "quantity": 3054436
+        },
+        {
+          "year": 2007,
+          "mint": "P",
+          "quantity": 3762400000
+        },
+        {
+          "year": 2007,
+          "mint": "D",
+          "quantity": 3638800000
+        },
+        {
+          "year": 2007,
+          "mint": "S",
+          "quantity": 2577166
+        },
+        {
+          "year": 2008,
+          "mint": "P",
+          "quantity": 2569600000
+        },
+        {
+          "year": 2008,
+          "mint": "D",
+          "quantity": 2849600000
+        },
+        {
+          "year": 2008,
+          "mint": "S",
+          "quantity": 2169561
+        }
+      ]
     },
     "wheat": {
+      "id": 3,
       "name": "Lincoln Wheat",
       "nickname": "Wheat",
       "value": 1,
       "startYear": 1909,
       "endYear": 1958,
-      "image": "roosevelt_dime.jpg",
-      "coins": []
+      "image": "wheat_penny.jpg",
+      "coins": [
+        {
+          "year": 1909,
+          "mint": "P",
+          "quantity": 27995000,
+          "note": "VDB"
+        },
+        {
+          "year": 1909,
+          "mint": "D",
+          "quantity": 484000,
+          "note": "VDB"
+        },
+        {
+          "year": 1909,
+          "mint": "P",
+          "quantity": 72702618
+        },
+        {
+          "year": 1909,
+          "mint": "S",
+          "quantity": 1825000
+        },
+        {
+          "year": 1910,
+          "mint": "P",
+          "quantity": 146801218
+        },
+        {
+          "year": 1910,
+          "mint": "S",
+          "quantity": 6045000
+        },
+        {
+          "year": 1911,
+          "mint": "P",
+          "quantity": 101177787
+        },
+        {
+          "year": 1911,
+          "mint": "D",
+          "quantity": 12672000
+        },
+        {
+          "year": 1911,
+          "mint": "S",
+          "quantity": 4026000
+        },
+        {
+          "year": 1912,
+          "mint": "P",
+          "quantity": 68153060
+        },
+        {
+          "year": 1912,
+          "mint": "D",
+          "quantity": 10411000
+        },
+        {
+          "year": 1912,
+          "mint": "S",
+          "quantity": 4431000
+        },
+        {
+          "year": 1913,
+          "mint": "P",
+          "quantity": 76532352
+        },
+        {
+          "year": 1913,
+          "mint": "D",
+          "quantity": 15804000
+        },
+        {
+          "year": 1913,
+          "mint": "S",
+          "quantity": 6101000
+        },
+        {
+          "year": 1914,
+          "mint": "P",
+          "quantity": 75238432
+        },
+        {
+          "year": 1914,
+          "mint": "D",
+          "quantity": 1193000
+        },
+        {
+          "year": 1914,
+          "mint": "S",
+          "quantity": 4137000
+        },
+        {
+          "year": 1915,
+          "mint": "P",
+          "quantity": 29092120
+        },
+        {
+          "year": 1915,
+          "mint": "D",
+          "quantity": 22050000
+        },
+        {
+          "year": 1915,
+          "mint": "S",
+          "quantity": 4833000
+        },
+        {
+          "year": 1916,
+          "mint": "P",
+          "quantity": 131832627
+        },
+        {
+          "year": 1916,
+          "mint": "D",
+          "quantity": 35956000
+        },
+        {
+          "year": 1916,
+          "mint": "S",
+          "quantity": 22510000
+        },
+        {
+          "year": 1917,
+          "mint": "P",
+          "quantity": 196429785
+        },
+        {
+          "year": 1917,
+          "mint": "D",
+          "quantity": 55120000
+        },
+        {
+          "year": 1917,
+          "mint": "S",
+          "quantity": 32620000
+        },
+        {
+          "year": 1918,
+          "mint": "P",
+          "quantity": 288104634
+        },
+        {
+          "year": 1918,
+          "mint": "D",
+          "quantity": 47830000
+        },
+        {
+          "year": 1918,
+          "mint": "S",
+          "quantity": 34680000
+        },
+        {
+          "year": 1919,
+          "mint": "P",
+          "quantity": 392021000
+        },
+        {
+          "year": 1919,
+          "mint": "D",
+          "quantity": 57154000
+        },
+        {
+          "year": 1919,
+          "mint": "S",
+          "quantity": 139760000
+        },
+        {
+          "year": 1920,
+          "mint": "P",
+          "quantity": 310165000
+        },
+        {
+          "year": 1920,
+          "mint": "D",
+          "quantity": 49280000
+        },
+        {
+          "year": 1920,
+          "mint": "S",
+          "quantity": 46220000
+        },
+        {
+          "year": 1921,
+          "mint": "P",
+          "quantity": 39157000
+        },
+        {
+          "year": 1921,
+          "mint": "S",
+          "quantity": 15274000
+        },
+        {
+          "year": 1922,
+          "mint": "D",
+          "quantity": 7160000
+        },
+        {
+          "year": 1923,
+          "mint": "P",
+          "quantity": 74723000
+        },
+        {
+          "year": 1923,
+          "mint": "S",
+          "quantity": 8700000
+        },
+        {
+          "year": 1924,
+          "mint": "P",
+          "quantity": 75178000
+        },
+        {
+          "year": 1924,
+          "mint": "D",
+          "quantity": 2520000
+        },
+        {
+          "year": 1924,
+          "mint": "S",
+          "quantity": 11696000
+        },
+        {
+          "year": 1925,
+          "mint": "P",
+          "quantity": 139949000
+        },
+        {
+          "year": 1925,
+          "mint": "D",
+          "quantity": 22580000
+        },
+        {
+          "year": 1925,
+          "mint": "S",
+          "quantity": 26380000
+        },
+        {
+          "year": 1926,
+          "mint": "P",
+          "quantity": 157088000
+        },
+        {
+          "year": 1926,
+          "mint": "D",
+          "quantity": 28020000
+        },
+        {
+          "year": 1926,
+          "mint": "S",
+          "quantity": 4550000
+        },
+        {
+          "year": 1927,
+          "mint": "P",
+          "quantity": 144440000
+        },
+        {
+          "year": 1927,
+          "mint": "D",
+          "quantity": 27170000
+        },
+        {
+          "year": 1927,
+          "mint": "S",
+          "quantity": 14276000
+        },
+        {
+          "year": 1928,
+          "mint": "P",
+          "quantity": 134116000
+        },
+        {
+          "year": 1928,
+          "mint": "D",
+          "quantity": 31170000
+        },
+        {
+          "year": 1928,
+          "mint": "S",
+          "quantity": 17266000
+        },
+        {
+          "year": 1929,
+          "mint": "P",
+          "quantity": 185262000
+        },
+        {
+          "year": 1929,
+          "mint": "D",
+          "quantity": 41730000
+        },
+        {
+          "year": 1929,
+          "mint": "S",
+          "quantity": 50148000
+        },
+        {
+          "year": 1930,
+          "mint": "P",
+          "quantity": 157415000
+        },
+        {
+          "year": 1930,
+          "mint": "D",
+          "quantity": 40100000
+        },
+        {
+          "year": 1930,
+          "mint": "S",
+          "quantity": 24286000
+        },
+        {
+          "year": 1931,
+          "mint": "P",
+          "quantity": 19396000
+        },
+        {
+          "year": 1931,
+          "mint": "D",
+          "quantity": 4480000
+        },
+        {
+          "year": 1931,
+          "mint": "S",
+          "quantity": 866000
+        },
+        {
+          "year": 1932,
+          "mint": "P",
+          "quantity": 9062000
+        },
+        {
+          "year": 1932,
+          "mint": "D",
+          "quantity": 10500000
+        },
+        {
+          "year": 1933,
+          "mint": "P",
+          "quantity": 14360000
+        },
+        {
+          "year": 1933,
+          "mint": "D",
+          "quantity": 6200000
+        },
+        {
+          "year": 1934,
+          "mint": "P",
+          "quantity": 219080000
+        },
+        {
+          "year": 1934,
+          "mint": "D",
+          "quantity": 28446000
+        },
+        {
+          "year": 1935,
+          "mint": "P",
+          "quantity": 245388000
+        },
+        {
+          "year": 1935,
+          "mint": "D",
+          "quantity": 47000000
+        },
+        {
+          "year": 1935,
+          "mint": "S",
+          "quantity": 38702000
+        },
+        {
+          "year": 1936,
+          "mint": "P",
+          "quantity": 309632000
+        },
+        {
+          "year": 1936,
+          "mint": "D",
+          "quantity": 40620000
+        },
+        {
+          "year": 1936,
+          "mint": "S",
+          "quantity": 29130000
+        },
+        {
+          "year": 1937,
+          "mint": "P",
+          "quantity": 309170000
+        },
+        {
+          "year": 1937,
+          "mint": "D",
+          "quantity": 50430000
+        },
+        {
+          "year": 1937,
+          "mint": "S",
+          "quantity": 34500000
+        },
+        {
+          "year": 1938,
+          "mint": "P",
+          "quantity": 156682000
+        },
+        {
+          "year": 1938,
+          "mint": "D",
+          "quantity": 20010000
+        },
+        {
+          "year": 1938,
+          "mint": "S",
+          "quantity": 15180000
+        },
+        {
+          "year": 1939,
+          "mint": "P",
+          "quantity": 316466000
+        },
+        {
+          "year": 1939,
+          "mint": "D",
+          "quantity": 15160000
+        },
+        {
+          "year": 1939,
+          "mint": "S",
+          "quantity": 52070000
+        },
+        {
+          "year": 1940,
+          "mint": "P",
+          "quantity": 586810000
+        },
+        {
+          "year": 1940,
+          "mint": "D",
+          "quantity": 81390000
+        },
+        {
+          "year": 1940,
+          "mint": "S",
+          "quantity": 112940000
+        },
+        {
+          "year": 1941,
+          "mint": "P",
+          "quantity": 887018000
+        },
+        {
+          "year": 1941,
+          "mint": "D",
+          "quantity": 128700000
+        },
+        {
+          "year": 1941,
+          "mint": "S",
+          "quantity": 92360000
+        },
+        {
+          "year": 1942,
+          "mint": "P",
+          "quantity": 657796000
+        },
+        {
+          "year": 1942,
+          "mint": "D",
+          "quantity": 206698000
+        },
+        {
+          "year": 1942,
+          "mint": "S",
+          "quantity": 85590000
+        },
+        {
+          "year": 1943,
+          "mint": "P",
+          "quantity": 684628670
+        },
+        {
+          "year": 1943,
+          "mint": "D",
+          "quantity": 217660000
+        },
+        {
+          "year": 1943,
+          "mint": "S",
+          "quantity": 191550000
+        },
+        {
+          "year": 1944,
+          "mint": "P",
+          "quantity": 1435000000
+        },
+        {
+          "year": 1944,
+          "mint": "D",
+          "quantity": 430578000
+        },
+        {
+          "year": 1944,
+          "mint": "S",
+          "quantity": 282760000
+        },
+        {
+          "year": 1945,
+          "mint": "P",
+          "quantity": 1040515000
+        },
+        {
+          "year": 1945,
+          "mint": "D",
+          "quantity": 266268000
+        },
+        {
+          "year": 1945,
+          "mint": "S",
+          "quantity": 181770000
+        },
+        {
+          "year": 1946,
+          "mint": "P",
+          "quantity": 991655000
+        },
+        {
+          "year": 1946,
+          "mint": "D",
+          "quantity": 315690000
+        },
+        {
+          "year": 1946,
+          "mint": "S",
+          "quantity": 198100000
+        },
+        {
+          "year": 1947,
+          "mint": "P",
+          "quantity": 190555000
+        },
+        {
+          "year": 1947,
+          "mint": "D",
+          "quantity": 194750000
+        },
+        {
+          "year": 1947,
+          "mint": "S",
+          "quantity": 99000000
+        },
+        {
+          "year": 1948,
+          "mint": "P",
+          "quantity": 317570000
+        },
+        {
+          "year": 1948,
+          "mint": "D",
+          "quantity": 172637500
+        },
+        {
+          "year": 1948,
+          "mint": "S",
+          "quantity": 81735000
+        },
+        {
+          "year": 1949,
+          "mint": "P",
+          "quantity": 217775000
+        },
+        {
+          "year": 1949,
+          "mint": "D",
+          "quantity": 153132500
+        },
+        {
+          "year": 1949,
+          "mint": "S",
+          "quantity": 64290000
+        },
+        {
+          "year": 1950,
+          "mint": "P",
+          "quantity": 272635000
+        },
+        {
+          "year": 1950,
+          "mint": "D",
+          "quantity": 334950000
+        },
+        {
+          "year": 1950,
+          "mint": "S",
+          "quantity": 118505000
+        },
+        {
+          "year": 1951,
+          "mint": "P",
+          "quantity": 284576000
+        },
+        {
+          "year": 1951,
+          "mint": "D",
+          "quantity": 625355000
+        },
+        {
+          "year": 1951,
+          "mint": "S",
+          "quantity": 136010000
+        },
+        {
+          "year": 1952,
+          "mint": "P",
+          "quantity": 186775000
+        },
+        {
+          "year": 1952,
+          "mint": "D",
+          "quantity": 746130000
+        },
+        {
+          "year": 1952,
+          "mint": "S",
+          "quantity": 137800004
+        },
+        {
+          "year": 1953,
+          "mint": "P",
+          "quantity": 256755000
+        },
+        {
+          "year": 1953,
+          "mint": "D",
+          "quantity": 700515000
+        },
+        {
+          "year": 1953,
+          "mint": "S",
+          "quantity": 181835000
+        },
+        {
+          "year": 1954,
+          "mint": "P",
+          "quantity": 71640050
+        },
+        {
+          "year": 1954,
+          "mint": "D",
+          "quantity": 251552500
+        },
+        {
+          "year": 1954,
+          "mint": "S",
+          "quantity": 96190000
+        },
+        {
+          "year": 1955,
+          "mint": "P",
+          "quantity": 330580000
+        },
+        {
+          "year": 1955,
+          "mint": "D",
+          "quantity": 563257500
+        },
+        {
+          "year": 1955,
+          "mint": "S",
+          "quantity": 44610000
+        },
+        {
+          "year": 1956,
+          "mint": "P",
+          "quantity": 420745000
+        },
+        {
+          "year": 1956,
+          "mint": "D",
+          "quantity": 1098201100
+        },
+        {
+          "year": 1957,
+          "mint": "P",
+          "quantity": 282540000
+        },
+        {
+          "year": 1957,
+          "mint": "D",
+          "quantity": 1051342000
+        },
+        {
+          "year": 1958,
+          "mint": "P",
+          "quantity": 252525000
+        },
+        {
+          "year": 1958,
+          "mint": "D",
+          "quantity": 800953300
+        }
+      ]
     },
     "indian": {
+      "id": 4,
       "name": "Indian Head",
       "nickname": "Indian Head",
       "value": 1,
       "startYear": 1859,
       "endYear": 1909,
-      "image": "roosevelt_dime.jpg",
-      "coins": []
+      "image": "indianHead_penny.jpg",
+      "coins": [
+        {
+          "year": 1859,
+          "mint": "",
+          "quantity": 36400000
+        },
+        {
+          "year": 1860,
+          "mint": "",
+          "quantity": 20566000
+        },
+        {
+          "year": 1861,
+          "mint": "",
+          "quantity": 10100000
+        },
+        {
+          "year": 1862,
+          "mint": "",
+          "quantity": 28075000
+        },
+        {
+          "year": 1863,
+          "mint": "",
+          "quantity": 49840000
+        },
+        {
+          "year": 1864,
+          "mint": "",
+          "quantity": 13740000,
+          "note": "Copper"
+        },
+        {
+          "year": 1864,
+          "mint": "",
+          "quantity": 39233714,
+          "note": "Bronze"
+        },
+        {
+          "year": 1865,
+          "mint": "",
+          "quantity": 35429286
+        },
+        {
+          "year": 1866,
+          "mint": "",
+          "quantity": 9826500
+        },
+        {
+          "year": 1867,
+          "mint": "",
+          "quantity": 9821000
+        },
+        {
+          "year": 1868,
+          "mint": "",
+          "quantity": 10266500
+        },
+        {
+          "year": 1869,
+          "mint": "",
+          "quantity": 6420000
+        },
+        {
+          "year": 1870,
+          "mint": "",
+          "quantity": 5275000
+        },
+        {
+          "year": 1871,
+          "mint": "",
+          "quantity": 3929500
+        },
+        {
+          "year": 1872,
+          "mint": "",
+          "quantity": 4042000
+        },
+        {
+          "year": 1873,
+          "mint": "",
+          "quantity": 11676500
+        },
+        {
+          "year": 1874,
+          "mint": "",
+          "quantity": 14187500
+        },
+        {
+          "year": 1875,
+          "mint": "",
+          "quantity": 13528000
+        },
+        {
+          "year": 1876,
+          "mint": "",
+          "quantity": 7944000
+        },
+        {
+          "year": 1877,
+          "mint": "",
+          "quantity": 852500
+        },
+        {
+          "year": 1878,
+          "mint": "",
+          "quantity": 5799850
+        },
+        {
+          "year": 1879,
+          "mint": "",
+          "quantity": 16231200
+        },
+        {
+          "year": 1880,
+          "mint": "",
+          "quantity": 38964955
+        },
+        {
+          "year": 1881,
+          "mint": "",
+          "quantity": 39211575
+        },
+        {
+          "year": 1882,
+          "mint": "",
+          "quantity": 38581100
+        },
+        {
+          "year": 1883,
+          "mint": "",
+          "quantity": 45589109
+        },
+        {
+          "year": 1884,
+          "mint": "",
+          "quantity": 23261742
+        },
+        {
+          "year": 1885,
+          "mint": "",
+          "quantity": 11765384
+        },
+        {
+          "year": 1886,
+          "mint": "",
+          "quantity": 17654290
+        },
+        {
+          "year": 1887,
+          "mint": "",
+          "quantity": 45226483
+        },
+        {
+          "year": 1888,
+          "mint": "",
+          "quantity": 37494414
+        },
+        {
+          "year": 1889,
+          "mint": "",
+          "quantity": 48869361
+        },
+        {
+          "year": 1890,
+          "mint": "",
+          "quantity": 57182854
+        },
+        {
+          "year": 1891,
+          "mint": "",
+          "quantity": 47072350
+        },
+        {
+          "year": 1892,
+          "mint": "",
+          "quantity": 37649832
+        },
+        {
+          "year": 1893,
+          "mint": "",
+          "quantity": 46642195
+        },
+        {
+          "year": 1894,
+          "mint": "",
+          "quantity": 16752132
+        },
+        {
+          "year": 1895,
+          "mint": "",
+          "quantity": 38343636
+        },
+        {
+          "year": 1896,
+          "mint": "",
+          "quantity": 39057293
+        },
+        {
+          "year": 1897,
+          "mint": "",
+          "quantity": 50466330
+        },
+        {
+          "year": 1898,
+          "mint": "",
+          "quantity": 49823079
+        },
+        {
+          "year": 1899,
+          "mint": "",
+          "quantity": 53600031
+        },
+        {
+          "year": 1900,
+          "mint": "",
+          "quantity": 66833794
+        },
+        {
+          "year": 1901,
+          "mint": "",
+          "quantity": 79611143
+        },
+        {
+          "year": 1902,
+          "mint": "",
+          "quantity": 87376722
+        },
+        {
+          "year": 1903,
+          "mint": "",
+          "quantity": 85094493
+        },
+        {
+          "year": 1904,
+          "mint": "",
+          "quantity": 61328015
+        },
+        {
+          "year": 1905,
+          "mint": "",
+          "quantity": 80719163
+        },
+        {
+          "year": 1906,
+          "mint": "",
+          "quantity": 96022255
+        },
+        {
+          "year": 1907,
+          "mint": "",
+          "quantity": 108138618
+        },
+        {
+          "year": 1908,
+          "mint": "",
+          "quantity": 32327987
+        },
+        {
+          "year": 1908,
+          "mint": "S",
+          "quantity": 1115000
+        },
+        {
+          "year": 1909,
+          "mint": "",
+          "quantity": 14370645
+        },
+        {
+          "year": 1909,
+          "mint": "S",
+          "quantity": 309000
+        }
+      ]
     },
     "eagle": {
+      "id": 5,
       "name": "Flying Eagle",
       "nickname": "Flying Eagle",
       "value": 1,
       "startYear": 1856,
       "endYear": 1858,
-      "image": "roosevelt_dime.jpg",
-      "coins": []
+      "image": "flyingEagle_penny.jpg",
+      "coins": [
+        {
+          "year": 1856,
+          "mint": "",
+          "quantity": 750
+        },
+        {
+          "year": 1857,
+          "mint": "",
+          "quantity": 17450000
+        },
+        {
+          "year": 1858,
+          "mint": "",
+          "quantity": 24600000
+        }
+      ]
     },
     "braided": {
+      "id": 6,
       "name": "Braided Hair",
       "nickname": "Braided Hair",
       "value": 1,
       "startYear": 1839,
       "endYear": 1858,
-      "image": "roosevelt_dime.jpg",
-      "coins": []
+      "image": "braidedHair_penny.jpg",
+      "coins": [
+        {
+          "year": 1839,
+          "mint": "",
+          "quantity": 3128661
+        },
+        {
+          "year": 1840,
+          "mint": "",
+          "quantity": 2462700
+        },
+        {
+          "year": 1841,
+          "mint": "",
+          "quantity": 1597367
+        },
+        {
+          "year": 1842,
+          "mint": "",
+          "quantity": 2383390
+        },
+        {
+          "year": 1843,
+          "mint": "",
+          "quantity": 2425342
+        },
+        {
+          "year": 1844,
+          "mint": "",
+          "quantity": 2398752
+        },
+        {
+          "year": 1845,
+          "mint": "",
+          "quantity": 3894804
+        },
+        {
+          "year": 1846,
+          "mint": "",
+          "quantity": 4120800
+        },
+        {
+          "year": 1847,
+          "mint": "",
+          "quantity": 6183669
+        },
+        {
+          "year": 1848,
+          "mint": "",
+          "quantity": 6415799
+        },
+        {
+          "year": 1849,
+          "mint": "",
+          "quantity": 4178500
+        },
+        {
+          "year": 1850,
+          "mint": "",
+          "quantity": 4426844
+        },
+        {
+          "year": 1851,
+          "mint": "",
+          "quantity": 9889707
+        },
+        {
+          "year": 1852,
+          "mint": "",
+          "quantity": 5063094
+        },
+        {
+          "year": 1853,
+          "mint": "",
+          "quantity": 6641131
+        },
+        {
+          "year": 1854,
+          "mint": "",
+          "quantity": 4236156
+        },
+        {
+          "year": 1855,
+          "mint": "",
+          "quantity": 1574829
+        },
+        {
+          "year": 1856,
+          "mint": "",
+          "quantity": 2690463
+        },
+        {
+          "year": 1857,
+          "mint": "",
+          "quantity": 333456
+        }
+      ]
     },
     "coronet": {
-      "name": "Coronet",
-      "nickname": "Coronet",
+      "id": 7,
+      "name": "Matron Head",
+      "nickname": "Coronet Head",
       "value": 1,
       "startYear": 1816,
       "endYear": 1839,
-      "image": "roosevelt_dime.jpg",
-      "coins": []
+      "image": "coronet_penny.jpg",
+      "coins": [
+        {
+          "year": 1816,
+          "mint": "",
+          "quantity": 2820982
+        },
+        {
+          "year": 1817,
+          "mint": "",
+          "quantity": 3948400
+        },
+        {
+          "year": 1818,
+          "mint": "",
+          "quantity": 3167000
+        },
+        {
+          "year": 1819,
+          "mint": "",
+          "quantity": 2671000
+        },
+        {
+          "year": 1820,
+          "mint": "",
+          "quantity": 4407550
+        },
+        {
+          "year": 1821,
+          "mint": "",
+          "quantity": 389000
+        },
+        {
+          "year": 1822,
+          "mint": "",
+          "quantity": 2072339
+        },
+        {
+          "year": 1823,
+          "mint": "",
+          "quantity": 0
+        },
+        {
+          "year": 1824,
+          "mint": "",
+          "quantity": 1262000
+        },
+        {
+          "year": 1825,
+          "mint": "",
+          "quantity": 1461100
+        },
+        {
+          "year": 1826,
+          "mint": "",
+          "quantity": 1517425
+        },
+        {
+          "year": 1827,
+          "mint": "",
+          "quantity": 2357732
+        },
+        {
+          "year": 1828,
+          "mint": "",
+          "quantity": 2260624
+        },
+        {
+          "year": 1829,
+          "mint": "",
+          "quantity": 1414500
+        },
+        {
+          "year": 1830,
+          "mint": "",
+          "quantity": 1711500
+        },
+        {
+          "year": 1831,
+          "mint": "",
+          "quantity": 3359260
+        },
+        {
+          "year": 1832,
+          "mint": "",
+          "quantity": 2362000
+        },
+        {
+          "year": 1833,
+          "mint": "",
+          "quantity": 2739000
+        },
+        {
+          "year": 1834,
+          "mint": "",
+          "quantity": 1855100
+        },
+        {
+          "year": 1835,
+          "mint": "",
+          "quantity": 3878400
+        },
+        {
+          "year": 1836,
+          "mint": "",
+          "quantity": 2111000
+        },
+        {
+          "year": 1837,
+          "mint": "",
+          "quantity": 5558300
+        },
+        {
+          "year": 1838,
+          "mint": "",
+          "quantity": 6370200
+        },
+        {
+          "year": 1839,
+          "mint": "",
+          "quantity": 3128661
+        }
+      ]
     },
     "classic": {
+      "id": 8,
       "name": "Classic Head",
       "nickname": "Classic Head",
       "value": 1,
       "startYear": 1808,
       "endYear": 1814,
-      "image": "roosevelt_dime.jpg",
-      "coins": []
+      "image": "classicHead_penny.jpg",
+      "coins": [
+        {
+          "year": 1808,
+          "mint": "",
+          "quantity": 1007000
+        },
+        {
+          "year": 1809,
+          "mint": "",
+          "quantity": 222867
+        },
+        {
+          "year": 1810,
+          "mint": "",
+          "quantity": 1458500
+        },
+        {
+          "year": 1811,
+          "mint": "",
+          "quantity": 218025
+        },
+        {
+          "year": 1812,
+          "mint": "",
+          "quantity": 1075500
+        },
+        {
+          "year": 1813,
+          "mint": "",
+          "quantity": 418000
+        },
+        {
+          "year": 1814,
+          "mint": "",
+          "quantity": 357830
+        }
+      ]
     },
     "draped": {
+      "id": 9,
       "name": "Draped Bust",
       "nickname": "Draped Bust",
       "value": 1,
       "startYear": 1796,
       "endYear": 1807,
-      "image": "roosevelt_dime.jpg",
-      "coins": []
+      "image": "drapedBust_penny.jpg",
+      "coins": [
+        {
+          "year": 1796,
+          "mint": "",
+          "quantity": 363375
+        },
+        {
+          "year": 1797,
+          "mint": "",
+          "quantity": 897510
+        },
+        {
+          "year": 1798,
+          "mint": "",
+          "quantity": 1841745
+        },
+        {
+          "year": 1799,
+          "mint": "",
+          "quantity": 42540
+        },
+        {
+          "year": 1800,
+          "mint": "",
+          "quantity": 2822175
+        },
+        {
+          "year": 1801,
+          "mint": "",
+          "quantity": 1362837
+        },
+        {
+          "year": 1802,
+          "mint": "",
+          "quantity": 3435100
+        },
+        {
+          "year": 1803,
+          "mint": "",
+          "quantity": 3131691
+        },
+        {
+          "year": 1804,
+          "mint": "",
+          "quantity": 96500
+        },
+        {
+          "year": 1805,
+          "mint": "",
+          "quantity": 941116
+        },
+        {
+          "year": 1806,
+          "mint": "",
+          "quantity": 348000
+        },
+        {
+          "year": 1807,
+          "mint": "",
+          "quantity": 829221
+        }
+      ]
     },
     "liberty": {
+      "id": 10,
       "name": "Liberty Cap",
       "nickname": "Liberty Cap",
       "value": 1,
       "startYear": 1793,
       "endYear": 1796,
-      "image": "roosevelt_dime.jpg",
-      "coins": []
+      "image": "libertyCap_penny.jpg",
+      "coins": [
+        {
+          "year": 1793,
+          "mint": "",
+          "quantity": 35334
+        },
+        {
+          "year": 1794,
+          "mint": "",
+          "quantity": 81600
+        },
+        {
+          "year": 1795,
+          "mint": "",
+          "quantity": 139690
+        },
+        {
+          "year": 1796,
+          "mint": "",
+          "quantity": 1390
+        },
+        {
+          "year": 1797,
+          "mint": "",
+          "quantity": 127840
+        }
+      ]
     },
     "wreath": {
+      "id": 11,
       "name": "Flowing Hair Wreath",
       "nickname": "Flowing Hair Wreath",
       "value": 1,
       "startYear": 1793,
       "endYear": 1793,
-      "image": "roosevelt_dime.jpg",
-      "coins": []
+      "image": "flowingHairWreath_penny.jpg",
+      "coins": [
+        {
+          "year": 1793,
+          "mint": "",
+          "quantity": 63353
+        }
+      ]
     },
     "chain": {
+      "id": 12,
       "name": "Flowing Hair Chain",
       "nickname": "Flowing Hair Chain",
       "value": 1,
       "startYear": 1793,
       "endYear": 1793,
-      "image": "roosevelt_dime.jpg",
-      "coins": []
+      "image": "flowingHairChain_penny.jpg",
+      "coins": [
+        {
+          "year": 1793,
+          "mint": "",
+          "quantity": 36103
+        }
+      ]
     }
   },
   "nickels": {
     "jefferson": {
+      "id": 13,
       "name": "Jefferson",
       "nickname": "Jefferson",
       "value": 5,
       "startYear": 1938,
       "endYear": 2018,
-      "image": "roosevelt_dime.jpg",
+      "image": "jefferson_nickel.jpg",
       "coins": []
     },
     "buffalo": {
+      "id": 14,
       "name": "Buffalo",
       "nickname": "Indian",
       "value": 5,
       "startYear": 1913,
       "endYear": 1938,
-      "image": "roosevelt_dime.jpg",
+      "image": "buffalo_nickel.jpg",
       "coins": []
     },
     "liberty": {
+      "id": 15,
       "name": "Liberty Head",
       "nickname": "V",
       "value": 5,
       "startYear": 1883,
       "endYear": 1913,
-      "image": "roosevelt_dime.jpg",
+      "image": "libertyHead_nickel.jpg",
       "coins": []
     },
     "shield": {
+      "id": 16,
       "name": "Shield",
       "nickname": "Shield",
       "value": 5,
       "startYear": 1866,
       "endYear": 1883,
-      "image": "roosevelt_dime.jpg",
+      "image": "shield_nickel.jpg",
       "coins": []
     }
   },
   "halfDimes": {
     "liberty": {
+      "id": 17,
       "name": "Seated Liberty",
       "nickname": "Seated Liberty",
       "value": 7,
       "startYear": 1837,
       "endYear": 1873,
-      "image": "roosevelt_dime.jpg",
+      "image": "seatedLiberty_halfDime.jpg",
       "coins": []
     },
     "capped": {
+      "id": 18,
       "name": "Capped Bust",
       "nickname": "Capped Bust",
       "value": 7,
       "startYear": 1829,
       "endYear": 1837,
-      "image": "roosevelt_dime.jpg",
+      "image": "cappedBust_halfDime.jpg",
       "coins": []
     },
     "drapedH": {
+      "id": 19,
       "name": "Draped Bust (Heraldic Eagle Reverse)",
       "nickname": "Draped Bust (Heraldic Eagle Reverse)",
       "value": 7,
       "startYear": 1800,
       "endYear": 1805,
-      "image": "roosevelt_dime.jpg",
+      "image": "drapedBust_halfDime1.jpg",
       "coins": []
     },
     "drapedS": {
+      "id": 20,
       "name": "Draped Bust (Small Eagle Reverse)",
       "nickname": "Draped Bust (Small Eagle Reverse)",
       "value": 7,
       "startYear": 1796,
       "endYear": 1797,
-      "image": "roosevelt_dime.jpg",
+      "image": "drapedBust_halfDime2.jpg",
       "coins": []
     },
     "flowing": {
+      "id": 21,
       "name": "Flowing Hair",
       "nickname": "Flowing Hair",
       "value": 7,
       "startYear": 1794,
       "endYear": 1795,
-      "image": "roosevelt_dime.jpg",
+      "image": "flowingHair_halfDime.jpg",
       "coins": []
     }
   },
   "dimes": {
     "roosevelt": {
+      "id": 22,
       "name": "Roosevelt",
       "nickname": "Roosevelt",
       "value": 10,
@@ -970,6 +3260,7 @@
       ]
     },
     "mercury": {
+      "id": 23,
       "name": "Winged Liberty Head",
       "nickname": "Mercury",
       "value": 10,
@@ -1365,6 +3656,7 @@
       ]
     },
     "barber": {
+      "id": 24,
       "name": "Barber",
       "nickname": "Barber",
       "value": 10,
@@ -1740,6 +4032,7 @@
       ]
     },
     "seatedLiberty": {
+      "id": 25,
       "name": "Seated Liberty",
       "nickname": "Seated Liberty",
       "value": 10,
@@ -2434,6 +4727,7 @@
       ]
     },
     "cappedBust": {
+      "id": 26,
       "name": "Capped Bust",
       "nickname": "Capped Bust",
       "value": 10,
@@ -2544,6 +4838,7 @@
       ]
     },
     "drapedBust": {
+      "id": 27,
       "name": "Draped Bust",
       "nickname": "Draped Bust",
       "value": 10,
@@ -2606,232 +4901,257 @@
   },
   "quarters": {
     "beautiful": {
+      "id": 28,
       "name": "Washington America the Beautiful",
       "nickname": "Washington America the Beautiful",
       "value": 25,
       "startYear": 2010,
       "endYear": 2021,
-      "image": "drapedBust_dime.jpg",
+      "image": "washingtonBeautiful_quarter.jpg",
       "coins": []
     },
     "territories": {
+      "id": 29,
       "name": "Washington D.C. and U.S. Territories",
       "nickname": "Washington D.C. and U.S. Territories",
       "value": 25,
       "startYear": 2009,
       "endYear": 2009,
-      "image": "drapedBust_dime.jpg",
+      "image": "washingtonTerritories_quarter.jpg",
       "coins": []
     },
     "state": {
+      "id": 30,
       "name": "Washington States",
       "nickname": "Washington States",
       "value": 25,
       "startYear": 1999,
       "endYear": 2008,
-      "image": "drapedBust_dime.jpg",
+      "image": "washingtonStates_quarter.jpg",
       "coins": []
     },
     "bicentennial": {
+      "id": 31,
       "name": "Washington Bicentennial",
       "nickname": "Washington Bicentennial",
       "value": 25,
       "startYear": 1975,
       "endYear": 1976,
-      "image": "drapedBust_dime.jpg",
+      "image": "washingtonBicentennial_quarter.jpg",
       "coins": []
     },
     "washington": {
+      "id": 32,
       "name": "Washington",
       "nickname": "Washington",
       "value": 25,
       "startYear": 1932,
       "endYear": 1998,
-      "image": "drapedBust_dime.jpg",
+      "image": "washington_quarter.jpg",
       "coins": []
     },
     "standing": {
+      "id": 33,
       "name": "Standing Liberty",
       "nickname": "Standing Liberty",
       "value": 25,
       "startYear": 1916,
       "endYear": 1930,
-      "image": "drapedBust_dime.jpg",
+      "image": "standingLiberty_quarter.jpg",
       "coins": []
     },
     "barber": {
+      "id": 34,
       "name": "Barber",
       "nickname": "Barber",
       "value": 25,
       "startYear": 1892,
       "endYear": 1916,
-      "image": "drapedBust_dime.jpg",
+      "image": "barber_quarter.jpg",
       "coins": []
     },
     "seated": {
+      "id": 35,
       "name": "Seated Liberty",
       "nickname": "Seated Liberty",
       "value": 25,
       "startYear": 1838,
       "endYear": 1891,
-      "image": "drapedBust_dime.jpg",
+      "image": "seatedLiberty_quarter.jpg",
       "coins": []
     },
     "capped": {
+      "id": 36,
       "name": "Capped Bust",
       "nickname": "Capped Bust",
       "value": 25,
       "startYear": 1815,
       "endYear": 1838,
-      "image": "drapedBust_dime.jpg",
+      "image": "cappedBust_quarter.jpg",
       "coins": []
     },
     "draped": {
+      "id": 37,
       "name": "Draped Bust",
       "nickname": "Draped Bust",
       "value": 25,
       "startYear": 1796,
       "endYear": 1807,
-      "image": "drapedBust_dime.jpg",
+      "image": "drapedBust_quarter.jpg",
       "coins": []
     }
   },
   "halfDollars": {
     "kennedy": {
+      "id": 38,
       "name": "Kennedy",
       "nickname": "Kennedy",
       "value": 50,
       "startYear": 1964,
       "endYear": 2018,
-      "image": "drapedBust_dime.jpg",
+      "image": "kennedy_halfDollar.jpg",
       "coins": []
     },
     "franklin": {
+      "id": 39,
       "name": "Franklin",
       "nickname": "Franklin",
       "value": 50,
       "startYear": 1948,
       "endYear": 1963,
-      "image": "drapedBust_dime.jpg",
+      "image": "franklin_halfDollar.jpg",
       "coins": []
     },
     "barber": {
+      "id": 40,
       "name": "Barber",
       "nickname": "Barber",
       "value": 50,
       "startYear": 1892,
       "endYear": 1915,
-      "image": "drapedBust_dime.jpg",
+      "image": "barber_halfDollar.jpg",
       "coins": []
     },
     "seated": {
+      "id": 41,
       "name": "Seated Liberty",
       "nickname": "Seated Liberty",
       "value": 50,
       "startYear": 1839,
       "endYear": 1891,
-      "image": "drapedBust_dime.jpg",
+      "image": "seatedLiberty_halfDollar.jpg",
       "coins": []
     },
     "capped": {
+      "id": 42,
       "name": "Capped Bust",
       "nickname": "Capped Bust",
       "value": 50,
       "startYear": 1807,
       "endYear": 1839,
-      "image": "drapedBust_dime.jpg",
+      "image": "cappedBust_halfDollar.jpg",
       "coins": []
     },
     "draped": {
+      "id": 43,
       "name": "Draped Bust",
       "nickname": "Draped Bust",
       "value": 50,
       "startYear": 1796,
       "endYear": 1807,
-      "image": "drapedBust_dime.jpg",
+      "image": "drapedBust_halfDollar.jpg",
       "coins": []
     },
     "flowing": {
+      "id": 44,
       "name": "Flowing Hair",
       "nickname": "Flowing Hair",
       "value": 50,
       "startYear": 1794,
       "endYear": 1795,
-      "image": "drapedBust_dime.jpg",
+      "image": "flowingHair_halfDollar.jpg",
       "coins": []
     }
   },
   "dollars": {
     "eagle": {
+      "id": 45,
       "name": "American Silver Eagle",
       "nickname": "American Silver Eagle",
       "value": 100,
       "startYear": 1986,
       "endYear": 2018,
-      "image": "drapedBust_dime.jpg",
+      "image": "silverEagle_dollar.jpg",
       "coins": []
     },
     "peace": {
+      "id": 46,
       "name": "Peace",
       "nickname": "Peace",
       "value": 100,
       "startYear": 1921,
       "endYear": 1935,
-      "image": "drapedBust_dime.jpg",
+      "image": "peace_dollar.jpg",
       "coins": []
     },
     "morgan": {
+      "id": 47,
       "name": "Morgan",
       "nickname": "Morgan",
       "value": 100,
       "startYear": 1878,
       "endYear": 1921,
-      "image": "drapedBust_dime.jpg",
+      "image": "morgan_dollar.jpg",
       "coins": []
     },
     "trade": {
+      "id": 48,
       "name": "Trade",
       "nickname": "Trade",
       "value": 100,
       "startYear": 1873,
       "endYear": 1885,
-      "image": "drapedBust_dime.jpg",
+      "image": "trade_dollar.jpg",
       "coins": []
     },
     "seated": {
+      "id": 49,
       "name": "Seated Liberty",
       "nickname": "Seated Liberty",
       "value": 100,
       "startYear": 1840,
       "endYear": 1873,
-      "image": "drapedBust_dime.jpg",
+      "image": "seatedLiberty_dollar.jpg",
       "coins": []
     },
     "gobrecht": {
+      "id": 50,
       "name": "Gobrecht",
       "nickname": "Gobrecht",
       "value": 100,
       "startYear": 1836,
       "endYear": 1839,
-      "image": "drapedBust_dime.jpg",
+      "image": "gobrecht_dollar.jpg",
       "coins": []
     },
     "draped": {
+      "id": 51,
       "name": "Draped Bust",
       "nickname": "Draped Bust",
       "value": 100,
       "startYear": 1795,
       "endYear": 1803,
-      "image": "drapedBust_dime.jpg",
+      "image": "drapedBust_dollar.jpg",
       "coins": []
     },
     "flowing": {
+      "id": 52,
       "name": "Flowing Hair",
       "nickname": "Flowing Hair",
       "value": 100,
       "startYear": 1794,
       "endYear": 1795,
-      "image": "drapedBust_dime.jpg",
+      "image": "flowingHair_dollar.jpg",
       "coins": []
     }
   }

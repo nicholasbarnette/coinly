@@ -5,8 +5,8 @@ import time, datetime
 def initCoinDB():
     filename = './static/coins.json'
 
-    query = "INSERT INTO Coins(year, mint, name, nickname, value, quantity) VALUES "
-    query2 = "INSERT INTO CoinTypes(name, nickname, value, startYear, endYear, image) VALUES "
+    query = "INSERT INTO Coins(coinTypeID, year, mint, name, nickname, value, quantity, note) VALUES "
+    query2 = "INSERT INTO CoinTypes(coinTypeID, name, nickname, value, startYear, endYear, image) VALUES "
 
     try:
         if filename:
@@ -22,6 +22,7 @@ def initCoinDB():
                 for type in data[val]:
 
                     # Sets coins information
+                    id = data[val][type]["id"]
                     name = data[val][type]["name"]
                     nickname = data[val][type]["nickname"]
                     value = data[val][type]["value"]
@@ -30,11 +31,14 @@ def initCoinDB():
                     endYear = data[val][type]["endYear"]
                     img = data[val][type]["image"]
 
-                    query2 += "('" + name + "','" + nickname + "'," + str(value) + ","+ str(startYear) + ","+ str(endYear) + ",'" + img + "'), "
+                    query2 += "(" + str(id) + ",'" + name + "','" + nickname + "'," + str(value) + ","+ str(startYear) + ","+ str(endYear) + ",'" + img + "'), "
 
                     # Adds each coin to the query
                     for coin in coins:
-                        query += "(" + str(coin["year"]) + ",'" + coin["mint"] + "','" + name + "','" + nickname + "'," + str(value) + "," + str(coin["quantity"]) + "), "
+                        note = ''
+                        if "note" in coin:
+                            note = coin["note"]
+                        query += "(" + str(id) + ", " + str(coin["year"]) + ",'" + coin["mint"] + "','" + name + "','" + nickname + "'," + str(value) + "," + str(coin["quantity"]) + ", '" + note + "'), "
 
             print("Insert query ready...")
             return query[:-2], query2[:-2]
@@ -54,7 +58,7 @@ def printErr(e):
 
 
 # Takes an integer value and converts it to text
-def valueLookup(val):
+def valueLookupInt(val):
     if val == 1:
         return "Pennies"
     elif val == 5:
@@ -69,3 +73,21 @@ def valueLookup(val):
         return "Half Dollars"
     elif val == 100:
         return "Dollars"
+
+# Takes a string and converts it to an integer
+def valueLookupStr(val):
+    val = str.lower(val)
+    if val == "pennies":
+        return 1
+    elif val == "nickels":
+        return 5
+    elif val == "half dimes":
+        return 7
+    elif val == "dimes":
+        return 10
+    elif val == "quarters":
+        return 25
+    elif val == "half dollars":
+        return 50
+    elif val == "dollars":
+        return 100
