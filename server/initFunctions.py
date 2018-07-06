@@ -38,7 +38,7 @@ def initCoinDB():
                         note = ''
                         if "note" in coin:
                             note = coin["note"]
-                        query += "(" + str(id) + ", " + str(coin["year"]) + ",'" + coin["mint"] + "','" + name + "','" + nickname + "'," + str(value) + "," + str(coin["quantity"]) + ", '" + note + "'), "
+                        query += '(' + str(id) + ', ' + str(coin["year"]) + ',"' + coin["mint"] + '","' + name + '","' + nickname + '",' + str(value) + ',' + str(coin["quantity"]) + ', "' + note + '"), '
 
             print("Insert query ready...")
             return query[:-2], query2[:-2]

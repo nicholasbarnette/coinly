@@ -79,26 +79,28 @@ except sqlite3.Error as e:
     printErr(e)
 
 
-
-# Clears the database tables
-print("Clearing tables...")
-c.execute("DELETE FROM Coins WHERE 1")
-c.execute("DELETE FROM CoinTypes WHERE 1")
-print("Tables cleared...")
-
-
-# Inserts the coin data
-print("Inserting data...")
-query, query2 = initCoinDB()
-c.execute(query)
-c.execute(query2)
-conn.commit()
-print("Data inserted successfully.")
+try:
+    # Clears the database tables
+    print("Clearing tables...")
+    c.execute("DELETE FROM Coins WHERE 1")
+    c.execute("DELETE FROM CoinTypes WHERE 1")
+    print("Tables cleared...")
 
 
-# Prints the count of rows in each table
-print(c.execute('''SELECT COUNT(*) FROM Coins''').fetchall())
-print(c.execute('''SELECT COUNT(*) FROM CoinTypes''').fetchall())
+    # Inserts the coin data
+    print("Inserting data...")
+    query, query2 = initCoinDB()
+    c.execute(query)
+    c.execute(query2)
+    conn.commit()
+    print("Data inserted successfully.")
+
+
+    # Prints the count of rows in each table
+    print(c.execute('''SELECT COUNT(*) FROM Coins''').fetchall())
+    print(c.execute('''SELECT COUNT(*) FROM CoinTypes''').fetchall())
+except Exception as e:
+    printErr(e)
 
 
 # Specify browser path to open URL
@@ -129,14 +131,6 @@ def collections():
         level = request.json["level"]
         value = request.json["value"]
         nickname = request.json["nickname"]
-
-        print("", file=sys.stderr)
-        print("", file=sys.stderr)
-        print("Level: " + str(level), file=sys.stderr)
-        print("Value: " + str(value), file=sys.stderr)
-        print("Nickname: " + str(nickname), file=sys.stderr)
-        print("", file=sys.stderr)
-        print("", file=sys.stderr)
 
         if level == 0:
             # Gets data
@@ -173,17 +167,16 @@ def collections():
             return jsonify(jsonString), 202
         elif level == 2:
             # Gets data
-            query = 'SELECT C.nickname, C.value, C.year, C.mint, T.image FROM Coins AS C, CoinTypes AS T ' \
+            query = 'SELECT C.nickname, C.value, C.year, C.mint, C.note, T.image FROM Coins AS C, CoinTypes AS T ' \
                         'WHERE C.value=' + str(valueLookupStr(value)) + ' AND T.coinTypeID=C.coinTypeID AND C.nickname="' + str(nickname) + '" ' \
                         'ORDER BY year DESC'
-            print(query, file=sys.stderr)
             c.execute(query)
             info = c.fetchall()
 
             # Turns data into a json string
             jsonString = '{"values": ['
             for data in info:
-                jsonString += '{"name": "' + data[0] + '", "value": "' + valueLookupInt(data[1]) + '", "years": "' + str(data[2]) + ' ' + str(data[3]) + '", "image": "' + str(data[4]) + '"},'
+                jsonString += '{"name": "' + data[0] + '", "value": "' + valueLookupInt(data[1]) + '", "years": "' + str(data[2]) + ' ' + str(data[3]) + '", "note": "Notes: ' + str(data[4]) + '", "image": "' + str(data[5]) + '"},'
             jsonString = jsonString[:-1] + ']}'
 
             return jsonify(jsonString), 202
