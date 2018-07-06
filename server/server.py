@@ -132,6 +132,12 @@ def collections():
         value = request.json["value"]
         nickname = request.json["nickname"]
 
+        print('', file=sys.stderr)
+        print(level, file=sys.stderr)
+        print(value, file=sys.stderr)
+        print(nickname, file=sys.stderr)
+        print('', file=sys.stderr)
+
         if level == 0:
             # Gets data
             c.execute('''
@@ -145,7 +151,10 @@ def collections():
             jsonString = '{"values": ['
             for data in info:
                 jsonString += '{"name": "", "value": "' + valueLookupInt(data[0]) + '", "years": "' + str(data[1]) + ' - ' + str(data[2]) + '", "image": "' + str(data[3]) + '"},'
-            jsonString = jsonString[:-1] + ']}'
+            jsonString = jsonString[:-1] + ']'
+
+            jsonString += ',"header": "Value"'
+            jsonString += '}'
 
             return jsonify(jsonString), 202
 
@@ -162,7 +171,10 @@ def collections():
             jsonString = '{"values": ['
             for data in info:
                 jsonString += '{"name": "' + data[0] + '", "value": "' + valueLookupInt(data[1]) + '", "years": "' + str(data[2]) + ' - ' + str(data[3]) + '", "image": "' + str(data[4]) + '"},'
-            jsonString = jsonString[:-1] + ']}'
+            jsonString = jsonString[:-1] + ']'
+
+            jsonString += ',"header": "' + valueLookupInt(info[0][1]) + '"'
+            jsonString += '}'
 
             return jsonify(jsonString), 202
         elif level == 2:
@@ -177,7 +189,10 @@ def collections():
             jsonString = '{"values": ['
             for data in info:
                 jsonString += '{"name": "' + data[0] + '", "value": "' + valueLookupInt(data[1]) + '", "years": "' + str(data[2]) + ' ' + str(data[3]) + '", "note": "Notes: ' + str(data[4]) + '", "image": "' + str(data[5]) + '"},'
-            jsonString = jsonString[:-1] + ']}'
+            jsonString = jsonString[:-1] + ']'
+
+            jsonString += ',"header": "' + info[0][0] + '"'
+            jsonString += '}'
 
             return jsonify(jsonString), 202
         else:

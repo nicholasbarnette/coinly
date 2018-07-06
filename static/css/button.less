@@ -1,0 +1,51 @@
+//*******************************************************
+//*******************************************************
+//*						  TILE
+//*******************************************************
+//*******************************************************
+@import 'globals.less';
+
+@buttonHeight: 2rem;
+@iconButtonHeight: 2rem;
+@iconButtonWidth: 2rem;
+
+.button {
+    height: 2rem;
+    min-width: 5rem;
+    max-width: 25rem;
+    border: none;
+    padding: 0.25rem 2rem;
+    margin: 0 1rem 0 0;
+    background: transparent;
+
+    .inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+
+        > * {
+            font-size: 1rem;
+            transition: color 0.1s linear;
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+
+        .inner > * {
+            color: red;
+        }
+    }
+}
+
+.button.iconButton {
+    min-width: @iconButtonWidth;
+    max-width: @iconButtonWidth;
+    width: @iconButtonWidth;
+    min-height: @iconButtonHeight;
+    max-height: @iconButtonHeight;
+    height: @iconButtonHeight;
+    padding: 0.25rem;
+}

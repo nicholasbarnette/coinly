@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import $ from 'jquery';
+import { Glyphicon } from 'react-bootstrap';
 
 //CSS
 import '../../css/collections.less';
@@ -8,6 +9,7 @@ import '../../css/collections.less';
 //JS
 import PageNav from '../components/pageNav.js';
 import Tile from '../components/tile.js';
+import Button from '../components/button.js';
 
 
 class Collections extends React.Component {
@@ -28,10 +30,11 @@ class Collections extends React.Component {
         };
 
         this.selectTile = this.selectTile.bind(this);
+        this.backButtonClick = this.backButtonClick.bind(this);
     }
 
     selectTile(n, v) {
-        var l = 0;
+        var l = this.state.level;
         if (this.state.level < 2) {
             l = this.state.level + 1;
         }
@@ -64,7 +67,7 @@ class Collections extends React.Component {
                         {
                             <div className="tileContent">
                                 {n.map ((m) => {
-                                    if (m.includes('.jpg') || m.includes('.jpeg') || m.includes('.png') || m == '') {
+                                    if (m.includes('.jpg') || m.includes('.jpeg') || m.includes('.png') || m == '' || m == 'Notes: ') {
                                         return;
                                     } else {
                                         return <p>{m}</p>;
@@ -77,6 +80,16 @@ class Collections extends React.Component {
 		} else {
 		    return	<p>RESULTS NOT FOUND...</p>;
 		}
+    }
+
+
+    backButtonClick() {
+        console.log();
+        var n = this.state.nickname;
+        var v = this.state.value;
+        var l = this.state.level - 1;
+        var h = this.state.header;
+        this.loadData(n,v,l,h);
     }
 
 
@@ -105,7 +118,8 @@ class Collections extends React.Component {
             data = JSON.parse(data);
             console.log(data);
             this.setState({
-                tileContent: data.values
+                tileContent: data.values,
+                header: data.header
             });
         });
     }
@@ -126,6 +140,7 @@ class Collections extends React.Component {
                                 </div>
                                 <div className="collectionsMainContent">
                                     <div className="groupHeader">
+                                        {this.state.level > 0 ? <Button click={this.backButtonClick} type="iconButton"><Glyphicon glyph="chevron-left" /></Button> : ''}
                                         <h1>{this.state.header}</h1>
                                     </div>
                                     <div className="tileContainer" id="tileContainer">
