@@ -10546,7 +10546,412 @@
       "startYear": 1964,
       "endYear": 2018,
       "image": "kennedy_halfDollar.jpg",
-      "coins": []
+      "coins": [
+        {
+          "year": 1964,
+          "mint": "",
+          "quantity": 273,304,004,
+          "note": "90% Silver"
+        },
+        {
+          "year": 1964,
+          "mint": "D",
+          "quantity": 156,205,446,
+          "note": "90% Silver"
+        },
+        {
+          "year": 1965,
+          "mint": "",
+          "quantity": 65,879,366,
+          "note": "40% Silver"
+        },
+        {
+          "year": 1966,
+          "mint": "",
+          "quantity": 108,984,932,
+          "note": "40% Silver"
+        },
+        {
+          "year": 1967,
+          "mint": "",
+          "quantity": 295,046,978,
+          "note": "40% Silver"
+        },
+        {
+          "year": 1968,
+          "mint": "D",
+          "quantity": 246,951,930,
+          "note": "40% Silver"
+        },
+        {
+          "year": 1968,
+          "mint": "S",
+          "quantity": 3,041,506,
+          "note": "40% Silver"
+        },
+        {
+          "year": 1969,
+          "mint": "D",
+          "quantity": 129,881,800,
+          "note": "40% Silver"
+        },
+        {
+          "year": 1969,
+          "mint": "S",
+          "quantity": 2,934,731,
+          "note": "40% Silver"
+        },
+        {
+          "year": 1970,
+          "mint": "D",
+          "quantity": 2,150,000,
+          "note": "40% Silver"
+        },
+        {
+          "year": 1970,
+          "mint": "S",
+          "quantity": 2,632,810,
+          "note": "40% Silver"
+        },
+        {
+          "year": 1971,
+          "mint": "",
+          "quantity": 155,164,000
+        },
+        {
+          "year": 1971,
+          "mint": "D",
+          "quantity": 302,097,424
+        },
+        {
+          "year": 1971,
+          "mint": "S",
+          "quantity": 3,220,733
+        },
+        {
+          "year": 1972,
+          "mint": "",
+          "quantity": 153,180,000
+        },
+        {
+          "year": 1972,
+          "mint": "D",
+          "quantity": 141,890,000
+        },
+        {
+          "year": 1972,
+          "mint": "S",
+          "quantity": 3,260,996
+        },
+        {
+          "year": 1973,
+          "mint": "",
+          "quantity": 64,964,000
+        },
+        {
+          "year": 1973,
+          "mint": "D",
+          "quantity": 83,171,400
+        },
+        {
+          "year": 1973,
+          "mint": "S",
+          "quantity": 2,760,339
+        },
+        {
+          "year": 1974,
+          "mint": "",
+          "quantity": 201,596,000
+        },
+        {
+          "year": 1974,
+          "mint": "D",
+          "quantity": 79,066,300
+        },
+        {
+          "year": 1974,
+          "mint": "S",
+          "quantity": 2,612,568
+        },
+        {
+          "year": 1976,
+          "mint": "",
+          "quantity": 234,308,000
+        },
+        {
+          "year": 1976,
+          "mint": "D",
+          "quantity": 287,565,248
+        },
+        {
+          "year": 1976,
+          "mint": "S",
+          "quantity": 7,059,099
+        },
+        {
+          "year": 1976,
+          "mint": "S",
+          "quantity": 11,000,000,
+          "note": "40% Silver"
+        },
+        {
+          "year": 1976,
+          "mint": "S",
+          "quantity": 4,000,000,
+          "note": "40% Silver Proofs"
+        },
+        {
+          "year": 1977,
+          "mint": "",
+          "quantity": 43,598,000
+        },
+        {
+          "year": 1977,
+          "mint": "D",
+          "quantity": 31,449,106
+        },
+        {
+          "year": 1977,
+          "mint": "S",
+          "quantity": 3,251,152
+        },
+        {
+          "year": 1978,
+          "mint": "",
+          "quantity": 14,350,000
+        },
+        {
+          "year": 1978,
+          "mint": "D",
+          "quantity": 13,765,799
+        },
+        {
+          "year": 1978,
+          "mint": "S",
+          "quantity": 3,127,781
+        },
+        {
+          "year": 1979,
+          "mint": "",
+          "quantity": 68,312,000
+        },
+        {
+          "year": 1979,
+          "mint": "D",
+          "quantity": 15,815,422
+        },
+        {
+          "year": 1979,
+          "mint": "S",
+          "quantity": 3,677,175
+        },
+        {
+          "year": 1980,
+          "mint": "P",
+          "quantity": 44,134,000
+        },
+        {
+          "year": 1980,
+          "mint": "D",
+          "quantity": 33,456,449
+        },
+        {
+          "year": 1980,
+          "mint": "S",
+          "quantity": 3,554,806
+        },
+        {
+          "year": 1981,
+          "mint": "P",
+          "quantity": 29,544,000
+        },
+        {
+          "year": 1981,
+          "mint": "D",
+          "quantity": 27,839,533
+        },
+        {
+          "year": 1981,
+          "mint": "S",
+          "quantity": 4,063,083
+        },
+        {
+          "year": 1982,
+          "mint": "P",
+          "quantity": 10,819,000
+        },
+        {
+          "year": 1982,
+          "mint": "D",
+          "quantity": 13,140,102
+        },
+        {
+          "year": 1982,
+          "mint": "S",
+          "quantity": 3,857,479
+        },
+        {
+          "year": 1983,
+          "mint": "P",
+          "quantity": 34,139,000
+        },
+        {
+          "year": 1983,
+          "mint": "D",
+          "quantity": 32,472,244
+        },
+        {
+          "year": 1983,
+          "mint": "S",
+          "quantity": 3,279,126
+        },
+        {
+          "year": 1984,
+          "mint": "P",
+          "quantity": 26,029,000
+        },
+        {
+          "year": 1984,
+          "mint": "D",
+          "quantity": 26,262,158
+        },
+        {
+          "year": 1984,
+          "mint": "S",
+          "quantity": 3,065,110
+        },
+        {
+          "year": 1985,
+          "mint": "P",
+          "quantity": 18,706,962
+        },
+        {
+          "year": 1985,
+          "mint": "D",
+          "quantity": 19,814,034
+        },
+        {
+          "year": 1985,
+          "mint": "S",
+          "quantity": 3,362,821
+        },
+        {
+          "year": 1986,
+          "mint": "P",
+          "quantity": 13,107,633
+        },
+        {
+          "year": 1986,
+          "mint": "D",
+          "quantity": 15,336,145
+        },
+        {
+          "year": 1986,
+          "mint": "S",
+          "quantity": 3,010,497
+        },
+        {
+          "year": 1987,
+          "mint": "P",
+          "quantity": 2,890,758
+        },
+        {
+          "year": 1987,
+          "mint": "D",
+          "quantity": 2,890,758
+        },
+        {
+          "year": 1987,
+          "mint": "S",
+          "quantity": 4,227,728
+        },
+        {
+          "year": 1988,
+          "mint": "P",
+          "quantity": 13,626,000
+        },
+        {
+          "year": 1988,
+          "mint": "D",
+          "quantity": 12,000,096
+        },
+        {
+          "year": 1988,
+          "mint": "S",
+          "quantity": 3,262,948
+        },
+        {
+          "year": 1989,
+          "mint": "P",
+          "quantity": 24,542,000
+        },
+        {
+          "year": 1989,
+          "mint": "D",
+          "quantity": 23,000,216
+        },
+        {
+          "year": 1989,
+          "mint": "S",
+          "quantity": 3,220,194
+        },
+        {
+          "year": 1990,
+          "mint": "P",
+          "quantity": 22,278,000
+        },
+        {
+          "year": 1990,
+          "mint": "D",
+          "quantity": 20,096,242
+        },
+        {
+          "year": 1990,
+          "mint": "S",
+          "quantity": 3,299,559
+        },
+        {
+          "year": 1991,
+          "mint": "P",
+          "quantity": 14,874,000
+        },
+        {
+          "year": 1991,
+          "mint": "D",
+          "quantity": 15,054,678
+        },
+        {
+          "year": 1991,
+          "mint": "S",
+          "quantity": 2,867,787
+        },
+        {
+          "year": 1992,
+          "mint": "P",
+          "quantity": 17,628,000
+        },
+        {
+          "year": 1992,
+          "mint": "D",
+          "quantity": 17,000,106
+        },
+        {
+          "year": 1992,
+          "mint": "S",
+          "quantity": 2,858,981
+        },
+        {
+          "year": 1992,
+          "mint": "S",
+          "quantity": 2632810,
+          "note": "90% Silver"
+        },
+        {
+          "year": 1992,
+          "mint": "P",
+          "quantity": 2632810
+        },
+      ]
     },
     "franklin": {
       "id": 39,

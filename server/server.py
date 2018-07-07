@@ -132,11 +132,11 @@ def collections():
         value = request.json["value"]
         nickname = request.json["nickname"]
 
-        print('', file=sys.stderr)
-        print(level, file=sys.stderr)
-        print(value, file=sys.stderr)
-        print(nickname, file=sys.stderr)
-        print('', file=sys.stderr)
+        # print('', file=sys.stderr)
+        # print(level, file=sys.stderr)
+        # print(value, file=sys.stderr)
+        # print(nickname, file=sys.stderr)
+        # print('', file=sys.stderr)
 
         if level == 0:
             # Gets data
