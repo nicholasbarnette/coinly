@@ -6842,7 +6842,7 @@
   "quarters": {
     "beautiful": {
       "id": 28,
-      "name": "America the Beautiful",
+      "name": "Washington America the Beautiful",
       "nickname": "America the Beautiful",
       "value": 25,
       "startYear": 2010,
@@ -7526,7 +7526,7 @@
     "territories": {
       "id": 29,
       "name": "Washington D.C. and U.S. Territories",
-      "nickname": "Washington D.C. and U.S. Territories",
+      "nickname": "Territories",
       "value": 25,
       "startYear": 2009,
       "endYear": 2009,
@@ -7608,8 +7608,8 @@
     },
     "state": {
       "id": 30,
-      "name": "Washington States",
-      "nickname": "Washington States",
+      "name": "Washington",
+      "nickname": "Statehood",
       "value": 25,
       "startYear": 1999,
       "endYear": 2008,
@@ -11668,6 +11668,346 @@
           "year": 1963,
           "mint": "D",
           "quantity": 67069292
+        }
+      ]
+    },
+    "walking": {
+      "id": 56,
+      "name": "Walking Liberty",
+      "nickname": "Walking Liberty",
+      "value": 50,
+      "startYear": 1916,
+      "endYear": 1947,
+      "image": "walkingLiberty_halfDollar.jpg",
+      "coins": [
+        {
+          "year": 1916,
+          "mint": "",
+          "quantity": 608000
+        },
+        {
+          "year": 1916,
+          "mint": "D",
+          "quantity": 1014400
+        },
+        {
+          "year": 1916,
+          "mint": "S",
+          "quantity": 508000
+        },
+        {
+          "year": 1917,
+          "mint": "",
+          "quantity": 12292000
+        },
+        {
+          "year": 1917,
+          "mint": "D",
+          "quantity": 765400,
+          "note": "Obverse Mintmark"
+        },
+        {
+          "year": 1917,
+          "mint": "S",
+          "quantity": 1940000,
+          "note": "Obverse Mintmark"
+        },
+        {
+          "year": 1917,
+          "mint": "D",
+          "quantity": 952000,
+          "note": "Reverse Mintmark"
+        },
+        {
+          "year": 1917,
+          "mint": "S",
+          "quantity": 5554000,
+          "note": "Reverse Mintmark"
+        },
+        {
+          "year": 1918,
+          "mint": "",
+          "quantity": 6634000
+        },
+        {
+          "year": 1918,
+          "mint": "D",
+          "quantity": 3853040
+        },
+        {
+          "year": 1918,
+          "mint": "S",
+          "quantity": 10282000
+        },
+        {
+          "year": 1919,
+          "mint": "",
+          "quantity": 962000
+        },
+        {
+          "year": 1919,
+          "mint": "D",
+          "quantity": 1165000
+        },
+        {
+          "year": 1919,
+          "mint": "S",
+          "quantity": 1552000
+        },
+        {
+          "year": 1920,
+          "mint": "",
+          "quantity": 6372000
+        },
+        {
+          "year": 1920,
+          "mint": "D",
+          "quantity": 1551000
+        },
+        {
+          "year": 1920,
+          "mint": "S",
+          "quantity": 4624000
+        },
+        {
+          "year": 1921,
+          "mint": "",
+          "quantity": 246000
+        },
+        {
+          "year": 1921,
+          "mint": "D",
+          "quantity": 208000
+        },
+        {
+          "year": 1921,
+          "mint": "S",
+          "quantity": 548000
+        },
+        {
+          "year": 1923,
+          "mint": "S",
+          "quantity": 2178000
+        },
+        {
+          "year": 1927,
+          "mint": "S",
+          "quantity": 2392000
+        },
+        {
+          "year": 1928,
+          "mint": "S",
+          "quantity": 1940000
+        },
+        {
+          "year": 1929,
+          "mint": "D",
+          "quantity": 1001200
+        },
+        {
+          "year": 1929,
+          "mint": "S",
+          "quantity": 1902000
+        },
+        {
+          "year": 1933,
+          "mint": "S",
+          "quantity": 1786000
+        },
+        {
+          "year": 1934,
+          "mint": "",
+          "quantity": 6964000
+        },
+        {
+          "year": 1934,
+          "mint": "D",
+          "quantity": 2361400
+        },
+        {
+          "year": 1935,
+          "mint": "S",
+          "quantity": 3652000
+        },
+        {
+          "year": 1934,
+          "mint": "",
+          "quantity": 9162000
+        },
+        {
+          "year": 1935,
+          "mint": "D",
+          "quantity": 3003800
+        },
+        {
+          "year": 1935,
+          "mint": "S",
+          "quantity": 3854000
+        },
+        {
+          "year": 1936,
+          "mint": "",
+          "quantity": 12614000
+        },
+        {
+          "year": 1936,
+          "mint": "D",
+          "quantity": 4252400
+        },
+        {
+          "year": 1936,
+          "mint": "S",
+          "quantity": 3884000
+        },
+        {
+          "year": 1937,
+          "mint": "",
+          "quantity": 9522000
+        },
+        {
+          "year": 1937,
+          "mint": "D",
+          "quantity": 1676000
+        },
+        {
+          "year": 1937,
+          "mint": "S",
+          "quantity": 2090000
+        },
+        {
+          "year": 1938,
+          "mint": "",
+          "quantity": 4110000
+        },
+        {
+          "year": 1938,
+          "mint": "D",
+          "quantity": 491600
+        },
+        {
+          "year": 1939,
+          "mint": "",
+          "quantity": 6812000
+        },
+        {
+          "year": 1939,
+          "mint": "D",
+          "quantity": 4267800
+        },
+        {
+          "year": 1939,
+          "mint": "S",
+          "quantity": 2552000
+        },
+        {
+          "year": 1940,
+          "mint": "",
+          "quantity": 9156000
+        },
+        {
+          "year": 1940,
+          "mint": "S",
+          "quantity": 4550000
+        },
+        {
+          "year": 1941,
+          "mint": "",
+          "quantity": 24192000
+        },
+        {
+          "year": 1941,
+          "mint": "D",
+          "quantity": 11248400
+        },
+        {
+          "year": 1941,
+          "mint": "S",
+          "quantity": 8098000
+        },
+        {
+          "year": 1942,
+          "mint": "",
+          "quantity": 47818000
+        },
+        {
+          "year": 1942,
+          "mint": "D",
+          "quantity": 10973800
+        },
+        {
+          "year": 1942,
+          "mint": "S",
+          "quantity": 12708000
+        },
+        {
+          "year": 1943,
+          "mint": "",
+          "quantity": 53190000
+        },
+        {
+          "year": 1943,
+          "mint": "D",
+          "quantity": 0
+        },
+        {
+          "year": 1943,
+          "mint": "S",
+          "quantity": 13450000
+        },
+        {
+          "year": 1944,
+          "mint": "",
+          "quantity": 28206000
+        },
+        {
+          "year": 1944,
+          "mint": "D",
+          "quantity": 9769000
+        },
+        {
+          "year": 1944,
+          "mint": "S",
+          "quantity": 19187000
+        },
+        {
+          "year": 1945,
+          "mint": "",
+          "quantity": 31502000
+        },
+        {
+          "year": 1945,
+          "mint": "D",
+          "quantity": 9966800
+        },
+        {
+          "year": 1945,
+          "mint": "S",
+          "quantity": 10156000
+        },
+        {
+          "year": 1946,
+          "mint": "",
+          "quantity": 0
+        },
+        {
+          "year": 1946,
+          "mint": "D",
+          "quantity": 2151000
+        },
+        {
+          "year": 1946,
+          "mint": "S",
+          "quantity": 3724000
+        },
+        {
+          "year": 1947,
+          "mint": "",
+          "quantity": 4094000
+        },
+        {
+          "year": 1947,
+          "mint": "D",
+          "quantity": 3900600
         }
       ]
     },
