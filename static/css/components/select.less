@@ -1,0 +1,47 @@
+//*******************************************************
+//*******************************************************
+//*						  Select
+//*******************************************************
+//*******************************************************
+@import '../colorPalette.less';
+
+
+.selectContainer {
+    display: flex;
+    flex-direction: row;
+    margin: 0.5rem 0;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .label {
+        margin-right: 0.75rem;
+        font-size: 0.85rem;
+        font-weight: normal;
+        padding: 0;
+    }
+}
+
+.select {
+    background-color: fade(@textColorDefault, 5%);
+    border: 1px solid darken(#fff, 60%);
+    border-radius: 1px;
+    outline: none;
+    transition: border-color 0.1s linear;
+    color: @textColorDefault;
+    padding: 0 0.25rem;
+    min-width: 15rem;
+    max-width: 25rem;
+    flex: 1 1 auto;
+
+    option {
+        background-color: @containerBackgroundColor;
+    }
+
+    &:hover {
+        border-color: darken(#fff, 40%);
+    }
+    &:focus {
+        border-color: #fff;
+    }
+}

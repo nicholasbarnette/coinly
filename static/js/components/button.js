@@ -2,7 +2,7 @@ import React from 'react';
 import Glyphicon from 'react-bootstrap';
 
 //CSS
-import '../../css/button.less';
+import '../../css/components/button.less';
 
 export default class Button extends React.Component {
 

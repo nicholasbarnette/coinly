@@ -5,7 +5,7 @@ import time, datetime
 def initCoinDB():
     filename = './static/coins.json'
 
-    query = "INSERT INTO Coins(coinTypeID, year, mint, name, nickname, value, quantity, note) VALUES "
+    query = "INSERT INTO Mintage(coinTypeID, year, mint, name, nickname, value, quantity, note) VALUES "
     query2 = "INSERT INTO CoinTypes(coinTypeID, name, nickname, value, startYear, endYear, image) VALUES "
 
     try:
@@ -91,3 +91,140 @@ def valueLookupStr(val):
         return 50
     elif val == "dollars":
         return 100
+
+
+
+# Takes an integer and converts it to a string
+def gradeLookupInt(g):
+    if g == 0:
+        return 'Not Graded'
+    elif g == 1:
+        return 'Ungradeable'
+    elif g == 2:
+        return 'PO-1'
+    elif g == 3:
+        return 'FR-2'
+    elif g == 4:
+        return 'AG-3'
+    elif g == 5:
+        return 'G-4'
+    elif g == 6:
+        return 'G-6'
+    elif g == 7:
+        return 'VG-8'
+    elif g == 8:
+        return 'VG-10'
+    elif g == 9:
+        return 'F-12'
+    elif g == 10:
+        return 'F-15'
+    elif g == 11:
+        return 'VF-20'
+    elif g == 12:
+        return 'VF-25'
+    elif g == 13:
+        return 'VF-30'
+    elif g == 14:
+        return 'VF-35'
+    elif g == 15:
+        return 'XF-40'
+    elif g == 16:
+        return 'XF-45'
+    elif g == 17:
+        return 'AU-50'
+    elif g == 18:
+        return 'AU-53'
+    elif g == 19:
+        return 'AU-55'
+    elif g == 20:
+        return 'AU-58'
+    elif g == 21:
+        return 'MS/PR-60'
+    elif g == 22:
+        return 'MS/PR-61'
+    elif g == 23:
+        return 'MS/PR-62'
+    elif g == 24:
+        return 'MS/PR-63'
+    elif g == 25:
+        return 'MS/PR-64'
+    elif g == 26:
+        return 'MS/PR-65'
+    elif g == 27:
+        return 'MS/PR-66'
+    elif g == 28:
+        return 'MS/PR-67'
+    elif g == 29:
+        return 'MS/PR-68'
+    elif g == 30:
+        return 'MS/PR-69'
+    elif g == 31:
+        return 'MS/PR-70'
+
+# Takes a string and converts it to an integer
+def gradeLookupStr(g):
+    g = str.lower(g)
+    if g == 'Not Graded':
+        return 0
+    elif g == 'Ungradeable':
+        return 1
+    elif g == 'PO-1':
+        return 2
+    elif g == 'FR-2':
+        return 3
+    elif g == 'AG-3':
+        return 4
+    elif g == 'G-4':
+        return 5
+    elif g == 'G-6':
+        return 6
+    elif g == 'VG-8':
+        return 7
+    elif g == 'VG-10':
+        return 8
+    elif g == 'F-12':
+        return 9
+    elif g == 'F-15':
+        return 10
+    elif g == 'VF-20':
+        return 11
+    elif g == 'VF-25':
+        return 12
+    elif g == 'VF-30':
+        return 13
+    elif g == 'VF-35':
+        return 14
+    elif g == 'XF-40':
+        return 15
+    elif g == 'XF-45':
+        return 16
+    elif g == 'AU-50':
+        return 17
+    elif g == 'AU-53':
+        return 18
+    elif g == 'AU-55':
+        return 19
+    elif g == 'AU-58':
+        return 20
+    elif g == 'MS/PR-60':
+        return 21
+    elif g == 'MS/PR-61':
+        return 22
+    elif g == 'MS/PR-62':
+        return 23
+    elif g == 'MS/PR-63':
+        return 24
+    elif g == 'MS/PR-64':
+        return 25
+    elif g == 'MS/PR-65':
+        return 26
+    elif g == 'MS/PR-66':
+        return 27
+    elif g == 'MS/PR-67':
+        return 28
+    elif g == 'MS/PR-68':
+        return 29
+    elif g == 'MS/PR-69':
+        return 30
+    elif g == 'MS/PR-70':
+        return 32

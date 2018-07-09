@@ -21,10 +21,10 @@ app = Flask(__name__, static_folder='../static/dist', template_folder='../static
 
 # Attempts to set up the necessary tables
 try:
-    # Coins Table
+    # Mintage Table
     c.execute('''
-	    CREATE TABLE Coins(
-            coinID INTEGER PRIMARY KEY,
+	    CREATE TABLE Mintage(
+            mintageID INTEGER PRIMARY KEY,
             coinTypeID INTEGER,
             year TEXT,
             mint TEXT,
@@ -36,7 +36,7 @@ try:
         )
     ''')
 
-    # Coin Types
+    # Coin Types Table
     c.execute('''
         CREATE TABLE CoinTypes(
             coinTypeID INTEGER PRIMARY KEY,
@@ -50,15 +50,16 @@ try:
     ''')
 
 
-    # Transactions Table
+    # Coins Table
     c.execute('''
-	    CREATE TABLE Transactions(
-	        transactionID INTEGER PRIMARY KEY,
-            coinID INTEGER,
+	    CREATE TABLE Coins(
+	        coinID INTEGER PRIMARY KEY,
+	        mintageID INTEGER,
             buyDate TEXT,
             sellDate TEXT,
             buyPrice REAL,
-            sellPrice REAL
+            sellPrice REAL,
+            grade INTEGER
         )
     ''')
 
@@ -82,7 +83,7 @@ except sqlite3.Error as e:
 try:
     # Clears the database tables
     print("Clearing tables...")
-    c.execute("DELETE FROM Coins WHERE 1")
+    c.execute("DELETE FROM Mintage WHERE 1")
     c.execute("DELETE FROM CoinTypes WHERE 1")
     print("Tables cleared...")
 
@@ -97,8 +98,9 @@ try:
 
 
     # Prints the count of rows in each table
-    print(c.execute('''SELECT COUNT(*) FROM Coins''').fetchall())
+    print(c.execute('''SELECT COUNT(*) FROM Mintage''').fetchall())
     print(c.execute('''SELECT COUNT(*) FROM CoinTypes''').fetchall())
+
 except Exception as e:
     printErr(e)
 
@@ -198,6 +200,55 @@ def collections():
         else:
             return jsonify('{"message": "Invalid level."}'), 404
 
+
+# Returns arrays of items to select from the coins in the mintage table
+@app.route('/collections/select', methods = ['POST'])
+def selectData():
+    # Sets up/connects to DB
+    conn = sqlite3.connect('coins.db')
+    c = conn.cursor()
+
+    # Gets the level
+    # Level 0 - Value List
+    # Level 1 - Type List
+    # Level 2 - Coin List
+    level = request.json["level"]
+    value = request.json["value"]
+    nickname = request.json["nickname"]
+
+    print('', file=sys.stderr)
+    print(level, file=sys.stderr)
+    print(value, file=sys.stderr)
+    print(nickname, file=sys.stderr)
+    print('', file=sys.stderr)
+
+    if level == 0:
+        values = c.execute('SELECT value FROM Mintage GROUP BY value').fetchall()
+        valueArray = '{"items": ['
+        for val in values:
+            valueArray += '"' + valueLookupInt(val[0]) + '",'
+
+        valueArray = valueArray[:-1] + ']}'
+        return jsonify(valueArray), 202
+    elif level == 1:
+        values = c.execute('SELECT nickname FROM Mintage WHERE value= ' + str(valueLookupStr(value)) + ' GROUP BY nickname').fetchall()
+        valueArray = '{"items": ['
+        for val in values:
+            valueArray += '"' + val[0] + '",'
+
+        valueArray = valueArray[:-1] + ']}'
+        return jsonify(valueArray), 202
+    elif level == 2:
+        values = c.execute('SELECT year, mint, note FROM Mintage WHERE value= ' + str(valueLookupStr(value)) + ' AND nickname="' + nickname + '"').fetchall()
+        valueArray = '{"items": ['
+        for val in values:
+            if val[2]:
+                valueArray += '"' + val[0] + '-' + val[1] + ' -- ' + val[2] + '",'
+            else:
+                valueArray += '"' + val[0] + '-' + val[1] + '",'
+
+        valueArray = valueArray[:-1] + ']}'
+        return jsonify(valueArray), 202
 
 
 if __name__ == '__main__':

@@ -1,0 +1,82 @@
+//*******************************************************
+//*******************************************************
+//*						  TILE
+//*******************************************************
+//*******************************************************
+@import '../colorPalette.less';
+
+@buttonHeight: 2rem;
+@iconButtonHeight: 2rem;
+@iconButtonWidth: 2rem;
+@closeButtonDimensions: 1rem;
+
+.button {
+    height: 2rem;
+    min-width: 5rem;
+    max-width: 25rem;
+    border: none;
+    padding: 0;
+    margin: 0 1rem 0 0;
+    background: transparent;
+
+    .inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        border: 1px solid #fff;
+        border-radius: 2px;
+        padding: 0 0.5rem;
+        transition: 0.1s linear;
+
+        > * {
+            font-size: 1rem;
+            transition: color 0.1s linear;
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+
+        .inner {
+            border-color: red;
+
+            > * {
+                color: red;
+            }
+        }
+    }
+}
+
+.button.iconButton {
+    min-width: @iconButtonWidth;
+    max-width: @iconButtonWidth;
+    width: @iconButtonWidth;
+    min-height: @iconButtonHeight;
+    max-height: @iconButtonHeight;
+    height: @iconButtonHeight;
+    padding: 0.25rem;
+
+    .inner {
+        border: none;
+    }
+}
+
+
+.button.closeButton {
+    position: relative;
+    top: 0.5rem;
+    min-width: @closeButtonDimensions;
+    max-width: @closeButtonDimensions;
+    width: @closeButtonDimensions;
+    height: @closeButtonDimensions;
+    min-height: @closeButtonDimensions;
+    max-height: @closeButtonDimensions;
+    left: calc(100% - @closeButtonDimensions - 0.5rem);
+    padding: 0;
+
+    .inner {
+        border: none;
+    }
+}
