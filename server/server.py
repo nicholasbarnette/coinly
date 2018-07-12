@@ -59,7 +59,8 @@ try:
             sellDate TEXT,
             buyPrice REAL,
             sellPrice REAL,
-            grade INTEGER
+            grade INTEGER,
+            notes TEXT
         )
     ''')
 
@@ -118,13 +119,101 @@ def index():
 
 @app.route('/collections', methods = ['POST', 'GET'])
 def collections():
-    # Sets up/connects to DB
-    conn = sqlite3.connect('coins.db')
-    c = conn.cursor()
 
-    if request.method == 'GET':
-        return render_template('index.html')
-    else:
+    try:
+        # Sets up/connects to DB
+        conn = sqlite3.connect('coins.db')
+        c = conn.cursor()
+
+        if request.method == 'GET':
+            return render_template('index.html')
+        else:
+
+            # Gets the level
+            # Level 0 - Value List
+            # Level 1 - Type List
+            # Level 2 - Coin List
+            level = request.json["level"]
+            value = request.json["value"]
+            nickname = request.json["nickname"]
+
+            # print('', file=sys.stderr)
+            # print(level, file=sys.stderr)
+            # print(value, file=sys.stderr)
+            # print(nickname, file=sys.stderr)
+            # print('', file=sys.stderr)
+
+            if level == 0:
+                # Gets data
+                c.execute('''
+                    SELECT value, MIN(startYear), MAX(endYear), image FROM CoinTypes
+                        GROUP BY value
+                        ORDER BY value ASC
+                ''')
+                info = c.fetchall()
+
+                # Turns data into a json string
+                jsonString = '{"values": ['
+                for data in info:
+                    jsonString += '{"name": "", "value": "' + valueLookupInt(data[0]) + '", "years": "' + str(data[1]) + ' - ' + str(data[2]) + '", "image": "' + str(data[3]) + '"},'
+                jsonString = jsonString[:-1] + ']'
+
+                jsonString += ',"header": "Value"'
+                jsonString += '}'
+
+                return jsonify(jsonString), 202
+
+            elif level == 1:
+                # Gets data
+                query = 'SELECT C.nickname, C.value, MIN(C.year) AS year, MAX(C.year), T.image FROM Coins AS C, CoinTypes AS T ' \
+                            'WHERE C.value=' + str(valueLookupStr(value)) + ' AND T.coinTypeID=C.coinTypeID ' \
+                            'GROUP BY C.name ' \
+                            'ORDER BY year DESC'
+                c.execute(query)
+                info = c.fetchall()
+
+                # Turns data into a json string
+                jsonString = '{"values": ['
+                for data in info:
+                    jsonString += '{"name": "' + data[0] + '", "value": "' + valueLookupInt(data[1]) + '", "years": "' + str(data[2]) + ' - ' + str(data[3]) + '", "image": "' + str(data[4]) + '"},'
+                jsonString = jsonString[:-1] + ']'
+
+                jsonString += ',"header": "' + valueLookupInt(info[0][1]) + '"'
+                jsonString += '}'
+
+                return jsonify(jsonString), 202
+            elif level == 2:
+                # Gets data
+                query = 'SELECT C.nickname, C.value, C.year, C.mint, C.note, T.image FROM Coins AS C, CoinTypes AS T ' \
+                            'WHERE C.value=' + str(valueLookupStr(value)) + ' AND T.coinTypeID=C.coinTypeID AND C.nickname="' + str(nickname) + '" ' \
+                            'ORDER BY year DESC'
+                c.execute(query)
+                info = c.fetchall()
+
+                # Turns data into a json string
+                jsonString = '{"values": ['
+                for data in info:
+                    jsonString += '{"name": "' + data[0] + '", "value": "' + valueLookupInt(data[1]) + '", "years": "' + str(data[2]) + ' ' + str(data[3]) + '", "note": "Notes: ' + str(data[4]) + '", "image": "' + str(data[5]) + '"},'
+                jsonString = jsonString[:-1] + ']'
+
+                jsonString += ',"header": "' + info[0][0] + '"'
+                jsonString += '}'
+
+                return jsonify(jsonString), 202
+            else:
+                return jsonify('{"message": "Invalid level."}'), 404
+
+    except Exception as e:
+        return jsonify('{"message": "' + str(e) + '"}'), 404
+
+# Returns arrays of items to select from the coins in the mintage table
+@app.route('/collections/select', methods = ['POST'])
+def selectData():
+
+    try:
+        # Sets up/connects to DB
+        conn = sqlite3.connect('coins.db')
+        c = conn.cursor()
 
         # Gets the level
         # Level 0 - Value List
@@ -134,121 +223,83 @@ def collections():
         value = request.json["value"]
         nickname = request.json["nickname"]
 
-        # print('', file=sys.stderr)
-        # print(level, file=sys.stderr)
-        # print(value, file=sys.stderr)
-        # print(nickname, file=sys.stderr)
-        # print('', file=sys.stderr)
-
         if level == 0:
-            # Gets data
-            c.execute('''
-                SELECT value, MIN(startYear), MAX(endYear), image FROM CoinTypes
-                    GROUP BY value
-                    ORDER BY value ASC
-            ''')
-            info = c.fetchall()
+            values = c.execute('SELECT value FROM Mintage GROUP BY value').fetchall()
+            valueArray = '{"items": ['
+            for val in values:
+                valueArray += '"' + valueLookupInt(val[0]) + '",'
 
-            # Turns data into a json string
-            jsonString = '{"values": ['
-            for data in info:
-                jsonString += '{"name": "", "value": "' + valueLookupInt(data[0]) + '", "years": "' + str(data[1]) + ' - ' + str(data[2]) + '", "image": "' + str(data[3]) + '"},'
-            jsonString = jsonString[:-1] + ']'
-
-            jsonString += ',"header": "Value"'
-            jsonString += '}'
-
-            return jsonify(jsonString), 202
-
+            valueArray = valueArray[:-1] + ']}'
+            return jsonify(valueArray), 202
         elif level == 1:
-            # Gets data
-            query = 'SELECT C.nickname, C.value, MIN(C.year) AS year, MAX(C.year), T.image FROM Coins AS C, CoinTypes AS T ' \
-                        'WHERE C.value=' + str(valueLookupStr(value)) + ' AND T.coinTypeID=C.coinTypeID ' \
-                        'GROUP BY C.name ' \
-                        'ORDER BY year DESC'
-            c.execute(query)
-            info = c.fetchall()
+            values = c.execute('SELECT nickname FROM Mintage WHERE value= ' + str(valueLookupStr(value)) + ' GROUP BY nickname').fetchall()
+            valueArray = '{"items": ['
+            for val in values:
+                valueArray += '"' + val[0] + '",'
 
-            # Turns data into a json string
-            jsonString = '{"values": ['
-            for data in info:
-                jsonString += '{"name": "' + data[0] + '", "value": "' + valueLookupInt(data[1]) + '", "years": "' + str(data[2]) + ' - ' + str(data[3]) + '", "image": "' + str(data[4]) + '"},'
-            jsonString = jsonString[:-1] + ']'
-
-            jsonString += ',"header": "' + valueLookupInt(info[0][1]) + '"'
-            jsonString += '}'
-
-            return jsonify(jsonString), 202
+            valueArray = valueArray[:-1] + ']}'
+            return jsonify(valueArray), 202
         elif level == 2:
-            # Gets data
-            query = 'SELECT C.nickname, C.value, C.year, C.mint, C.note, T.image FROM Coins AS C, CoinTypes AS T ' \
-                        'WHERE C.value=' + str(valueLookupStr(value)) + ' AND T.coinTypeID=C.coinTypeID AND C.nickname="' + str(nickname) + '" ' \
-                        'ORDER BY year DESC'
-            c.execute(query)
-            info = c.fetchall()
-
-            # Turns data into a json string
-            jsonString = '{"values": ['
-            for data in info:
-                jsonString += '{"name": "' + data[0] + '", "value": "' + valueLookupInt(data[1]) + '", "years": "' + str(data[2]) + ' ' + str(data[3]) + '", "note": "Notes: ' + str(data[4]) + '", "image": "' + str(data[5]) + '"},'
-            jsonString = jsonString[:-1] + ']'
-
-            jsonString += ',"header": "' + info[0][0] + '"'
-            jsonString += '}'
-
-            return jsonify(jsonString), 202
-        else:
-            return jsonify('{"message": "Invalid level."}'), 404
+            values = c.execute('SELECT year, mint, note FROM Mintage WHERE value= ' + str(valueLookupStr(value)) + ' AND nickname="' + nickname + '"').fetchall()
+            valueArray = '{"items": ['
+            for val in values:
+                if val[2]:
+                    valueArray += '"' + val[0] + '-' + val[1] + ' -- ' + val[2] + '",'
+                else:
+                    if not val[1] == '':
+                        valueArray += '"' + val[0] + '-' + val[1] + '",'
+                    else:
+                        valueArray += '"' + val[0] + '",'
 
 
-# Returns arrays of items to select from the coins in the mintage table
-@app.route('/collections/select', methods = ['POST'])
-def selectData():
-    # Sets up/connects to DB
-    conn = sqlite3.connect('coins.db')
-    c = conn.cursor()
+            valueArray = valueArray[:-1] + ']}'
+            return jsonify(valueArray), 202
 
-    # Gets the level
-    # Level 0 - Value List
-    # Level 1 - Type List
-    # Level 2 - Coin List
-    level = request.json["level"]
-    value = request.json["value"]
-    nickname = request.json["nickname"]
+    except Exception as e:
+        return jsonify('{"message": "' + str(e) + '"}'), 404
 
-    print('', file=sys.stderr)
-    print(level, file=sys.stderr)
-    print(value, file=sys.stderr)
-    print(nickname, file=sys.stderr)
-    print('', file=sys.stderr)
+# Adds a coin to your personal collection
+@app.route('/collections/coin/add', methods = ['POST'])
+def addCoin():
 
-    if level == 0:
-        values = c.execute('SELECT value FROM Mintage GROUP BY value').fetchall()
-        valueArray = '{"items": ['
-        for val in values:
-            valueArray += '"' + valueLookupInt(val[0]) + '",'
+    try:
+        # Sets up/connects to DB
+        conn = sqlite3.connect('coins.db')
+        c = conn.cursor()
 
-        valueArray = valueArray[:-1] + ']}'
-        return jsonify(valueArray), 202
-    elif level == 1:
-        values = c.execute('SELECT nickname FROM Mintage WHERE value= ' + str(valueLookupStr(value)) + ' GROUP BY nickname').fetchall()
-        valueArray = '{"items": ['
-        for val in values:
-            valueArray += '"' + val[0] + '",'
+        value = request.json["value"]
+        nickname = request.json["nickname"]
+        coin = request.json["coin"]
+        grade = request.json["grade"]
+        # YYYY-MM-DD
+        buyDate = request.json["buyDate"]
+        buyPrice = request.json["buyPrice"]
+        notes = request.json["notes"]
 
-        valueArray = valueArray[:-1] + ']}'
-        return jsonify(valueArray), 202
-    elif level == 2:
-        values = c.execute('SELECT year, mint, note FROM Mintage WHERE value= ' + str(valueLookupStr(value)) + ' AND nickname="' + nickname + '"').fetchall()
-        valueArray = '{"items": ['
-        for val in values:
-            if val[2]:
-                valueArray += '"' + val[0] + '-' + val[1] + ' -- ' + val[2] + '",'
-            else:
-                valueArray += '"' + val[0] + '-' + val[1] + '",'
+        coinArray = coin.split(" -- ")
+        note = ''
+        if (len(coinArray) == 2):
+            note = coinArray[1]
+        coinArray = coinArray[0].split("-")
+        year = coinArray[0]
+        mint = ''
+        if (len(coinArray) == 2):
+            mint = coinArray[1]
 
-        valueArray = valueArray[:-1] + ']}'
-        return jsonify(valueArray), 202
+        query = 'INSERT INTO Coins(mintageID, buyDate, buyPrice, grade, notes) VALUES (' \
+                    '(SELECT mintageID FROM Mintage M ' \
+                        'WHERE M.year="' + year + '" AND M.mint="' + mint + '" AND ' \
+                            'M.nickname="' + nickname + '" AND M.value=' + str(valueLookupStr(value)) + ' ' \
+                            'AND M.note="' + note + '")' \
+                    ', "' + buyDate + '", ' + buyPrice + ', + "' + grade + '", "' + notes + '")'
+        c.execute(query)
+        conn.commit()
+
+        return jsonify('{"message": "Successfully added coin to collection."}'), 202
+
+    except Exception as e:
+        return jsonify('{"message": "' + str(e) + '"}'), 404
+
 
 
 if __name__ == '__main__':

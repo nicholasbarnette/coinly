@@ -4,24 +4,25 @@ import React from 'react';
 import '../../css/components/select.less';
 
 
-export default class GradeSelect extends React.Component {
+export default class Select extends React.Component {
 
-    handleChange() {
+    handleChange(e) {
         console.log('The cheated');
-        this.props.change(this.props.params);
+        console.log(e.target.value);
+        if (e.target.value != "unselected") {
+            this.props.change(this.props.params, e.target.value);
+        }
     }
 
 	render() {
 		return (
 		    <div className="inputContainer">
 		        {this.props.hasLabel == "true" ? <p className="label">{this.props.labelText}</p> : ''}
-                <select className="select" id={this.props.name} name={this.props.name} onChange={e => this.handleChange()}>
+                <select className="select" id={this.props.name} name={this.props.name} onChange={e => this.handleChange(e)}>
+                    <option value={"unselected"} disabled selected>Select an option</option>
                     {
                         this.props.items.map ((k, i) => {
-                            if (i == 0) {
-                                return <option value={i} selected>{k}</option>;
-                            }
-                            return <option value={i}>{k}</option>;
+                            return <option value={k}>{k}</option>;
                         })
                     }
                 </select>

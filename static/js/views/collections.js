@@ -34,10 +34,14 @@ class Collections extends React.Component {
             dialogOpen: false,
             levelOption: 0,
             valueOptions: [],
-            valueOption: 0,
+            valueOption: '',
             nicknameOptions: [],
             nicknameOption: '',
-            coinOptions: []
+            coinOptions: [],
+            grade: '',
+            buyDate: '',
+            buyPrice: 0,
+            notes: ''
         };
 
         //Tile and Collection Navigation Functions
@@ -50,7 +54,8 @@ class Collections extends React.Component {
         this.submitAddCoinDialog = this.submitAddCoinDialog.bind(this);
 
         //Select Functions
-        this.onSelectChange = this.onSelectChange.bind(this);
+        this.onCoinSelectChange = this.onCoinSelectChange.bind(this);
+        this.onInputSelectChange = this.onInputSelectChange.bind(this);
     }
 
     selectTile(n, v) {
@@ -104,7 +109,6 @@ class Collections extends React.Component {
 
 
     backButtonClick() {
-        console.log();
         var n = this.state.nickname;
         var v = this.state.value;
         var l = this.state.level - 1;
@@ -136,7 +140,6 @@ class Collections extends React.Component {
         })
         .done(data => {
             data = JSON.parse(data);
-            console.log(data);
             this.setState({
                 tileContent: data.values,
                 header: data.header
@@ -150,41 +153,79 @@ class Collections extends React.Component {
     }
 
     openAddCoinDialog () {
-        console.log('Opening...');
-        this.loadOptions();
+        this.loadOptions(0, '', '');
         this.setState({
             dialogOpen: true
         });
     }
 
     closeAddCoinDialog() {
-        console.log('Closing...');
         this.setState({
-            dialogOpen: false
+            dialogOpen: false,
+            levelOption: 0,
+            valueOptions: [],
+            valueOption: '',
+            nicknameOptions: [],
+            nicknameOption: '',
+            coinOptions: []
         });
     }
 
     submitAddCoinDialog() {
-        console.log('Submitting...');
+        var params = {
+            value: this.state.valueOption,
+            nickname: this.state.nicknameOption,
+            coin: this.state.coinOption,
+            grade: this.state.grade,
+            buyDate: this.state.buyDate,
+            buyPrice: this.state.buyPrice,
+            notes: this.state.notes
+        };
+        params = JSON.stringify(params);
+
+        $.ajax({
+            url: "/collections/coin/add",
+            method: 'POST',
+            contentType: 'application/json',
+            data: params
+        })
+        .done(data => {
+            data = JSON.parse(data);
+
+            if (this.state.levelOption == 0) {
+                this.setState({
+                    valueOptions: data.items
+                });
+            } else if (this.state.levelOption == 1) {
+                this.setState({
+                    nicknameOptions: data.items
+                });
+            } else if (this.state.levelOption == 2) {
+                this.setState({
+                    coinOptions: data.items
+                });
+            }
+
+        });
+
         this.closeAddCoinDialog();
     }
 
-    loadOptions(l,v,n) {
+    loadOptions(l,v,n,c) {
 
         this.setState({
             levelOption: l,
             valueOption: v,
-            nicknameOption: n
+            nicknameOption: n,
+            coinOption: c
         });
 
         var params = {
-            level: this.state.levelOption,
-            value: this.state.valueOption,
-            nickname: this.state.nicknameOption
+            level: l,
+            value: v,
+            nickname: n
         };
         params = JSON.stringify(params);
-
-        console.log(params);
 
         $.ajax({
             url: "/collections/select",
@@ -194,17 +235,15 @@ class Collections extends React.Component {
         })
         .done(data => {
             data = JSON.parse(data);
-            console.log(data);
-
-            if (this.state.level == 0) {
+            if (this.state.levelOption == 0) {
                 this.setState({
                     valueOptions: data.items
                 });
-            } else if (this.state.level == 1) {
+            } else if (this.state.levelOption == 1) {
                 this.setState({
                     nicknameOptions: data.items
                 });
-            } else if (this.state.level == 3) {
+            } else if (this.state.levelOption == 2) {
                 this.setState({
                     coinOptions: data.items
                 });
@@ -213,13 +252,33 @@ class Collections extends React.Component {
         });
     }
 
-    onSelectChange(c) {
+    onCoinSelectChange(c,v) {
         if (c == 0) {
-            this.loadOptions(c,this.state.valueOption,this.state.nicknameOption);
+            this.loadOptions(1, v, this.state.nicknameOption, this.state.coinOption);
         } else if (c == 1) {
-            this.loadOptions(this.state.levelOption,c,this.state.nicknameOption);
+            this.loadOptions(2, this.state.valueOption, v, this.state.coinOption);
         } else {
-            this.loadOptions(this.state.levelOption,this.state.valueOption,c);
+            this.loadOptions(2, this.state.valueOption, this.state.nicknameOption, v);
+        }
+    }
+
+    onInputSelectChange(c,v) {
+        if (c == 0) {
+            this.setState({
+                grade: v
+            });
+        } else if (c == 1) {
+            this.setState({
+                buyDate: v
+            });
+        } else if (c == 2) {
+            this.setState({
+                buyPrice: v
+            });
+        } else {
+            this.setState({
+                notes: v
+            });
         }
     }
 
@@ -257,13 +316,14 @@ class Collections extends React.Component {
 
                                 <Dialog header="Add to Your Collection" closeDialog={this.closeAddCoinDialog} submitDialog={this.submitAddCoinDialog}>
                                     <Form>
-                                        <Select items={this.state.valueOptions} hasLabel="false" name="valueSelect" change={this.onSelectChange} params={1} />
-                                        {this.state.level == 1 ? <Select items={this.state.nicknameOptions} hasLabel="false" name="valueSelect" change={this.onSelectChange} params={2} /> : ''}
-                                        {this.state.level == 2 ? <Select items={this.state.coinOptions} hasLabel="false" name="valueSelect" change={this.onSelectChange} params={2} /> : ''}
-                                        <Select items={grades} hasLabel="true" labelText="Grade:" name="gradeSelect" />
-                                        <Input hasLabel="true" labelText="Buy Date:" name="test44" type="date" placeholderText="Placeholder" />
-                                        <Input hasLabel="true" labelText="Buy Price:" name="test4" type="number" placeholderText="Placeholder" />
-                                        <Input hasLabel="true" labelText="Notes:" name="test5" type="text" placeholderText="Placeholder" />
+                                        <Select items={this.state.valueOptions} hasLabel="true" labelText="Value: " name="valueSelect" change={this.onCoinSelectChange} params={0} />
+                                        {this.state.levelOption >= 1 ? <Select items={this.state.nicknameOptions} hasLabel="true" labelText="Type: " name="typeSelect" change={this.onCoinSelectChange} params={1} /> : ''}
+                                        {this.state.levelOption == 2 ? <Select items={this.state.coinOptions} hasLabel="true" labelText="Year/Mint: "name="yearSelect" change={this.onCoinSelectChange} params={2} /> : ''}
+                                        <div className="horizontalDivider"></div>
+                                        <Select items={grades} hasLabel="true" labelText="Grade:" name="gradeSelect" change={this.onInputSelectChange} params={0} />
+                                        <Input hasLabel="true" labelText="Purchase Date:" name="buyDate" type="date" placeholderText="Purchase Date" change={this.onInputSelectChange} params={1} />
+                                        <Input hasLabel="true" labelText="Purchase Price:" name="buyPrice" type="number" placeholderText="Purchase Price" change={this.onInputSelectChange} params={2} />
+                                        <Input hasLabel="true" labelText="Notes:" name="notes" type="text" placeholderText="Notes" change={this.onInputSelectChange} params={3} />
                                     </Form>
                                 </Dialog>
 
