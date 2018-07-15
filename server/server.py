@@ -169,7 +169,7 @@ def collections():
                 query = 'SELECT M.nickname, M.value, MIN(M.year) AS year, MAX(M.year), T.image FROM Mintage M, CoinTypes T ' \
                             'WHERE M.value=' + str(valueLookupStr(value)) + ' AND T.coinTypeID=M.coinTypeID ' \
                             'GROUP BY M.name ' \
-                            'ORDER BY year DESC'
+                            'ORDER BY year ASC'
                 c.execute(query)
                 info = c.fetchall()
 
@@ -187,7 +187,7 @@ def collections():
                 # Gets data
                 query = 'SELECT M.nickname, M.value, M.year, M.mint, M.quantity, M.note, T.image FROM CoinTypes T, Mintage M ' \
                             'WHERE M.value=' + str(valueLookupStr(value)) + ' AND T.coinTypeID=M.coinTypeID AND M.nickname="' + str(nickname) + '" ' \
-                            'ORDER BY year DESC'
+                            'ORDER BY year ASC'
                 c.execute(query)
                 info = c.fetchall()
 
@@ -304,8 +304,7 @@ def addCoin():
         print(e, file=sys.stderr)
         return jsonify('{"message": "' + str(e) + '"}'), 404
 
-
-
+# Returns
 @app.route('/explore', methods = ['POST', 'GET'])
 def explore():
 
@@ -354,7 +353,7 @@ def explore():
                 query = 'SELECT T.nickname, T.value, T.startYear AS year, T.endYear, T.image FROM CoinTypes T, Coins C, Mintage M ' \
                             'WHERE T.coinTypeID=M.coinTypeID AND T.value=' + str(valueLookupStr(value)) + ' AND C.mintageID=M.mintageID ' \
                             'GROUP BY T.name ' \
-                            'ORDER BY year DESC'
+                            'ORDER BY year ASC'
                 c.execute(query)
                 info = c.fetchall()
 
@@ -373,7 +372,7 @@ def explore():
                 query = 'SELECT M.nickname, M.value, M.year, M.mint, M.note, T.image FROM Coins C, CoinTypes T, Mintage M ' \
                             'WHERE T.value=' + str(valueLookupStr(value)) + ' AND T.coinTypeID=M.coinTypeID AND C.mintageID=M.mintageID ' \
                                 'AND T.nickname="' + str(nickname) + '" ' \
-                            'ORDER BY M.year DESC'
+                            'ORDER BY M.year ASC'
                 c.execute(query)
                 info = c.fetchall()
 

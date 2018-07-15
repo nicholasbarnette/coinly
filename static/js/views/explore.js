@@ -41,7 +41,8 @@ class Explore extends React.Component {
             grade: '',
             buyDate: '',
             buyPrice: 0,
-            notes: ''
+            notes: '',
+            notification: 'TESTING20055444 askljd akfdjlkaskldfjaks df kasdl kfaj sdflkasd a jsdf ljkasdl kfajs dfjalskdf lasd fkaskld aksd fas da sdfas'
         };
 
         //Tile and Collection Navigation Functions
@@ -294,7 +295,7 @@ class Explore extends React.Component {
 	                    'MS/PR-66','MS/PR-67','MS/PR-68','MS/PR-69','MS/PR-70'];
 
 	    return	<div className="pageContainer">
-                        <PageNav>
+                        <PageNav notification={this.state.notification}>
                         {
                             <div className="exploreContent">
                                 <div className="pageHeader">

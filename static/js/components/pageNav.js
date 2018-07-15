@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 //JS
 import LeftNav from '../components/leftNav.js';
 import TopNav from '../components/topNav.js';
+import Notification from '../components/notification.js';
 
 
 export default class PageNav extends React.Component {
@@ -11,7 +12,8 @@ export default class PageNav extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			width: '10rem'
+			width: '10rem',
+			notification: this.props.notification
 		}
 		this.openLeftNav = this.openLeftNav.bind(this);
 	}
@@ -30,6 +32,7 @@ export default class PageNav extends React.Component {
 							{this.props.children}
 					    </div>}
 					</LeftNav>
+					<Notification notification={this.state.notification} />
 				</div>;
 	}
 }

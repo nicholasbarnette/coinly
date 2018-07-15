@@ -1,0 +1,36 @@
+//*******************************************************
+//*******************************************************
+//*						Notification
+//*******************************************************
+//*******************************************************
+@import '../colorPalette.less';
+
+
+
+.notification {
+    position: absolute;
+    top: 5rem;
+    right: 0;
+    background: @navBackgroundColor;
+    z-index: 100;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    padding: 1rem;
+    box-shadow: -2px 0px 23px -6px rgba(0,0,0,0.75);
+    max-width: 20rem;
+    max-height: 7.5rem;
+    overflow: hidden;
+
+    .notificationIcon {
+        margin-right: 0.5rem;
+        font-size: 1rem;
+        > .glyphicon {
+            color: @warningColor;
+        }
+    }
+
+    .notificationText {
+        font-size: 0.889rem;
+        max-width: 10rem;
+    }
+}
