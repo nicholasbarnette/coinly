@@ -17,12 +17,17 @@
     border-bottom-left-radius: 4px;
     padding: 1rem;
     box-shadow: -2px 0px 23px -6px rgba(0,0,0,0.75);
-    max-width: 20rem;
+    width: 20rem;
     max-height: 7.5rem;
     overflow: hidden;
+    cursor: pointer;
+    transition: all 0.2s linear;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
 
     .notificationIcon {
-        margin-right: 0.5rem;
+        margin-right: 1rem;
         font-size: 1rem;
         > .glyphicon {
             color: @warningColor;
@@ -31,6 +36,10 @@
 
     .notificationText {
         font-size: 0.889rem;
-        max-width: 10rem;
+        flex: 1 1 auto;
+    }
+
+    .notificationClose {
+        font-size: 0.75rem;
     }
 }

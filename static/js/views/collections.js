@@ -16,7 +16,7 @@ import Input from '../components/input.js';
 import Select from '../components/select.js';
 
 
-class Collections extends React.Component {
+export default class Collections extends React.Component {
 
     //Level 0 - Value List
     //Level 1 - Type List
@@ -41,7 +41,8 @@ class Collections extends React.Component {
             grade: '',
             buyDate: '',
             buyPrice: 0,
-            notes: ''
+            notes: '',
+            notification: ''
         };
 
         //Tile and Collection Navigation Functions
@@ -108,6 +109,12 @@ class Collections extends React.Component {
     }
 
 
+    closeNotification() {
+	    this.setState({
+	        notification: ''
+	    });
+	}
+
     loadData(n, v, l, h) {
         this.setState({
             nickname: n,
@@ -135,6 +142,11 @@ class Collections extends React.Component {
                 tileContent: data.values,
                 header: data.header
             });
+        })
+        .fail((xhr, status, error) => {
+            this.setState({
+                notification: JSON.parse(xhr.responseJSON).message
+            });
         });
     }
 
@@ -152,7 +164,7 @@ class Collections extends React.Component {
 	                    'MS/PR-66','MS/PR-67','MS/PR-68','MS/PR-69','MS/PR-70'];
 
 	    return	<div className="pageContainer">
-                        <PageNav>
+                        <PageNav notification={this.state.notification} closeNotification={this.closeNotification}>
                         {
                             <div className="collectionsContent">
                                 <div className="pageHeader">
@@ -174,6 +186,3 @@ class Collections extends React.Component {
                     </div>;
 	}
 }
-
-
-export default Collections;

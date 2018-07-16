@@ -13,15 +13,27 @@ export default class PageNav extends React.Component {
 		super(props);
 		this.state = {
 			width: '10rem',
-			notification: this.props.notification
-		}
+			notificationOpen: false
+		};
 		this.openLeftNav = this.openLeftNav.bind(this);
+		this.toggleNotification = this.toggleNotification.bind(this);
+		this.closeNotification = this.closeNotification.bind(this);
 	}
 
 	openLeftNav() {
 		this.setState({
 			width: this.state.width === '10rem' ? '0' : '10rem'
 		});
+	}
+
+	toggleNotification() {
+	    this.setState({
+	        notificationOpen: !this.state.notificationOpen
+	    });
+	}
+
+	closeNotification() {
+	    this.props.closeNotification();
 	}
 
 	render() {
@@ -32,7 +44,7 @@ export default class PageNav extends React.Component {
 							{this.props.children}
 					    </div>}
 					</LeftNav>
-					<Notification notification={this.state.notification} />
+					<Notification notification={this.props.notification} click={this.toggleNotification} close={this.closeNotification} notificationOpen={this.state.notificationOpen} />
 				</div>;
 	}
 }

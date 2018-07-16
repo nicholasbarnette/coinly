@@ -16,7 +16,7 @@ import Input from '../components/input.js';
 import Select from '../components/select.js';
 
 
-class Explore extends React.Component {
+export default class Explore extends React.Component {
 
     //Level 0 - Value List
     //Level 1 - Type List
@@ -42,7 +42,7 @@ class Explore extends React.Component {
             buyDate: '',
             buyPrice: 0,
             notes: '',
-            notification: 'TESTING20055444 askljd akfdjlkaskldfjaks df kasdl kfaj sdflkasd a jsdf ljkasdl kfajs dfjalskdf lasd fkaskld aksd fas da sdfas'
+            notification: ''
         };
 
         //Tile and Collection Navigation Functions
@@ -57,9 +57,16 @@ class Explore extends React.Component {
         //Select Functions
         this.onCoinSelectChange = this.onCoinSelectChange.bind(this);
         this.onInputSelectChange = this.onInputSelectChange.bind(this);
+
+        //Notification
+        this.closeNotification = this.closeNotification.bind(this);
     }
 
     selectTile(n, v) {
+        this.setState({
+            notification: n
+        });
+
         var l = this.state.level;
         if (this.state.level < 2) {
             l = this.state.level + 1;
@@ -133,8 +140,6 @@ class Explore extends React.Component {
         };
         params = JSON.stringify(params);
 
-        console.log(params);
-
         $.ajax({
             url: "/explore",
             method: 'POST',
@@ -143,10 +148,14 @@ class Explore extends React.Component {
         })
         .done(data => {
             data = JSON.parse(data);
-            console.log(data);
             this.setState({
                 tileContent: data.values,
                 header: data.header
+            });
+        })
+        .fail((xhr, status, error) => {
+            this.setState({
+                notification: JSON.parse(xhr.responseJSON).message
             });
         });
     }
@@ -155,6 +164,12 @@ class Explore extends React.Component {
     componentDidMount() {
         this.loadData('',0,0,'Value');
     }
+
+    closeNotification() {
+	    this.setState({
+	        notification: ''
+	    });
+	}
 
     openAddCoinDialog () {
         this.loadOptions(0, '', '');
@@ -210,6 +225,11 @@ class Explore extends React.Component {
                 });
             }
 
+        })
+        .fail((xhr, status, error) => {
+            this.setState({
+                notification: JSON.parse(xhr.responseJSON).message
+            });
         });
         this.loadData(this.state.nickname,this.state.value,this.state.level,this.state.header);
         this.closeAddCoinDialog();
@@ -253,6 +273,11 @@ class Explore extends React.Component {
                 });
             }
 
+        })
+        .fail((xhr, status, error) => {
+            this.setState({
+                notification: JSON.parse(xhr.responseJSON).message
+            });
         });
     }
 
@@ -295,7 +320,7 @@ class Explore extends React.Component {
 	                    'MS/PR-66','MS/PR-67','MS/PR-68','MS/PR-69','MS/PR-70'];
 
 	    return	<div className="pageContainer">
-                        <PageNav notification={this.state.notification}>
+                        <PageNav notification={this.state.notification} closeNotification={this.closeNotification}>
                         {
                             <div className="exploreContent">
                                 <div className="pageHeader">
@@ -337,6 +362,3 @@ class Explore extends React.Component {
                     </div>;
 	}
 }
-
-
-export default Explore;

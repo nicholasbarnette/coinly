@@ -7,10 +7,10 @@ import '../../css/home.less';
 //JS
 import PageNav from '../components/pageNav.js';
 
-class Home extends React.Component {
+export default class Home extends React.Component {
 	render() {
 		return	<div className="pageContainer">
-					<PageNav>
+					<PageNav notification={this.state.notification} closeNotification={this.closeNotification}>
 					{
 					    <div className="bodyContent">
 							<h1>Coin Storage</h1>
@@ -22,9 +22,6 @@ class Home extends React.Component {
 				</div>;
 	}
 }
-
-
-export default Home;
 
 
 
