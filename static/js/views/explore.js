@@ -63,10 +63,6 @@ export default class Explore extends React.Component {
     }
 
     selectTile(n, v) {
-        this.setState({
-            notification: n
-        });
-
         var l = this.state.level;
         if (this.state.level < 2) {
             l = this.state.level + 1;
