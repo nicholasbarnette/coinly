@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, Response, jsonify
+from flask import Flask, render_template, request, Response, jsonify, session
 import sqlite3
 import json, sys
 import time, datetime
@@ -6,12 +6,15 @@ import bcrypt, webbrowser
 from initFunctions import *
 
 
+
+# Redis Session Management
+# http://flask.pocoo.org/snippets/75/
+
+
 # Set the desired host and port
 hostName = '127.0.0.1'
 portNumber = 8000
 
-# Create the salt
-salt = b'$2b$12$M.eu4m8Sw6NCS7FuHnwawO'
 
 
 # Sets up/connects to DB
@@ -20,6 +23,7 @@ c = conn.cursor()
 
 
 app = Flask(__name__, static_folder='../static/dist', template_folder='../static')
+app.secret_key = "19Me19Rc97uR01yD08iME16D"
 
 
 # Attempts to set up the necessary tables
@@ -125,6 +129,14 @@ except Exception as e:
 
 # Opens URL
 # webbrowser.get(chrome_path).open(hostName + ':' + str(portNumber), new=2)
+
+
+@app.before_request
+def session_management():
+    # Sets the session to last indefinitely until reset
+    session.permanent = True
+
+
 
 
 @app.route('/')
@@ -417,16 +429,22 @@ def createAccount():
         c = conn.cursor()
 
         email = request.json["email"]
-        password = request.json["password"]
+        password = request.json["password"].encode()
         firstName = request.json["firstName"]
         lastName = request.json["lastName"]
         birthday = request.json["birthday"]
         joinDate = datetime.date.today().strftime("%y-%m-%d")
 
-       # Hashes the password
-        password = bcrypt.hashpw(str.encode(password), salt)
 
-        query = 'INSERT INTO Users (email, password, firstName, lastName, birthday, joinDate) VALUES ("' + email + '","' + str(password) + '","' + firstName + '","' + lastName + '","' + birthday + '","' + joinDate + '")'
+        # Check if email is in use already
+        if not c.execute('SELECT U.email FROM Users U WHERE U.email="' + email + '"') == 0:
+            return jsonify('{"message": "Email is in use."}'), 404
+
+
+        # Hashes the password
+        password = bcrypt.hashpw(password, bcrypt.gensalt())
+
+        query = 'INSERT INTO Users (email, password, firstName, lastName, birthday, joinDate) VALUES ("' + email + '","' + str(password.decode()) + '","' + firstName + '","' + lastName + '","' + birthday + '","' + joinDate + '")'
         c.execute(query)
         conn.commit()
 
@@ -437,7 +455,7 @@ def createAccount():
         return jsonify('{"message": "' + str(e) + '"}'), 404
 
 
-# Creates an account for a user
+# Logs a user into their account
 @app.route('/profile/login', methods = ['POST'])
 def login():
 
@@ -446,12 +464,41 @@ def login():
         conn = sqlite3.connect('coins.db')
         c = conn.cursor()
 
-        return jsonify('"{message": "Logged In."}'), 202
+        # Gets parameters
+        email = request.json["email"]
+        password = request.json["password"].encode()
+
+        query = 'SELECT U.userID, U.password FROM Users U WHERE U.email="' + email + '"'
+        res = c.execute(query).fetchall()
+        userID = res[0][0]
+        passwordHash = res[0][1].encode()
+
+
+        if bcrypt.checkpw(password, passwordHash):
+
+            # Creates a new session
+            session["userID"] = userID
+            session["email"] = email
+
+            return jsonify('"{message": "User has been logged in."}'), 202
+        else:
+            return jsonify('"{message": "Could not login."}'), 404
 
     except Exception as e:
         print(e, file=sys.stderr)
         return jsonify('{"message": "' + str(e) + '"}'), 404
 
+
+# Logs a user out of their account
+@app.route('/profile/logout', methods = ['POST'])
+def logout():
+    try:
+        # Clears the session
+        session.clear()
+        return jsonify('"{message": "User has been logged out."}'), 202
+    except Exception as e:
+        print(e, file=sys.stderr)
+        return jsonify('{"message": "' + str(e) + '"}'), 404
 
 
 
