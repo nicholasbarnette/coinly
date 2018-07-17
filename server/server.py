@@ -2,13 +2,16 @@ from flask import Flask, render_template, request, Response, jsonify
 import sqlite3
 import json, sys
 import time, datetime
-import webbrowser
+import bcrypt, webbrowser
 from initFunctions import *
 
 
 # Set the desired host and port
 hostName = '127.0.0.1'
 portNumber = 8000
+
+# Create the salt
+salt = b'$2b$12$M.eu4m8Sw6NCS7FuHnwawO'
 
 
 # Sets up/connects to DB
@@ -103,6 +106,16 @@ try:
     print(c.execute('''SELECT quantity FROM Mintage LIMIT 1''').fetchall())
     print(c.execute('''SELECT COUNT(*) FROM CoinTypes''').fetchall())
 
+    # print()
+    # print()
+    # print(c.execute('''SELECT COUNT(*) FROM Users''').fetchall())
+    # password = c.execute('''SELECT password FROM Users LIMIT 1''').fetchall()[0][0]
+    # if bcrypt.checkpw(b'Test', str.encode(password)):
+    #     print("It Matches!")
+    # else:
+    #     print("It Does not Match :(")
+
+
 except Exception as e:
     printErr(e)
 
@@ -118,6 +131,7 @@ except Exception as e:
 def index():
     return render_template('index.html')
 
+# Returns an array of the whole collections data
 @app.route('/collections', methods = ['POST', 'GET'])
 def collections():
 
@@ -304,7 +318,7 @@ def addCoin():
         print(e, file=sys.stderr)
         return jsonify('{"message": "' + str(e) + '"}'), 404
 
-# Returns
+# Returns an array of a users personal collection
 @app.route('/explore', methods = ['POST', 'GET'])
 def explore():
 
@@ -392,6 +406,53 @@ def explore():
     except Exception as e:
         print(e, file=sys.stderr)
         return jsonify('{"message": "' + str(e) + '"}'), 404
+
+# Creates an account for a user
+@app.route('/profile/create', methods = ['POST'])
+def createAccount():
+
+    try:
+        # Sets up/connects to DB
+        conn = sqlite3.connect('coins.db')
+        c = conn.cursor()
+
+        email = request.json["email"]
+        password = request.json["password"]
+        firstName = request.json["firstName"]
+        lastName = request.json["lastName"]
+        birthday = request.json["birthday"]
+        joinDate = datetime.date.today().strftime("%y-%m-%d")
+
+       # Hashes the password
+        password = bcrypt.hashpw(str.encode(password), salt)
+
+        query = 'INSERT INTO Users (email, password, firstName, lastName, birthday, joinDate) VALUES ("' + email + '","' + str(password) + '","' + firstName + '","' + lastName + '","' + birthday + '","' + joinDate + '")'
+        c.execute(query)
+        conn.commit()
+
+        return jsonify('"{message": "Successfully created the account."}'), 202
+
+    except Exception as e:
+        print(e, file=sys.stderr)
+        return jsonify('{"message": "' + str(e) + '"}'), 404
+
+
+# Creates an account for a user
+@app.route('/profile/login', methods = ['POST'])
+def login():
+
+    try:
+        # Sets up/connects to DB
+        conn = sqlite3.connect('coins.db')
+        c = conn.cursor()
+
+        return jsonify('"{message": "Logged In."}'), 202
+
+    except Exception as e:
+        print(e, file=sys.stderr)
+        return jsonify('{"message": "' + str(e) + '"}'), 404
+
+
 
 
 if __name__ == '__main__':
