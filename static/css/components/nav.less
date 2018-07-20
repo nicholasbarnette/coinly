@@ -29,9 +29,18 @@
 
 .navbar .navGroup {
 	height: 100%;
-	flex: 1 1 auto;
 	display: flex;
 	flex-direction: row;
+	align-items: center;
+	width: 33%;
+
+	> div {
+	    display: flex;
+	    flex-direction: row;
+	    align-items: center;
+	    justify-content: flex-end;
+	    height: 100%;
+	}
 	
 	&.left {
 		justify-content: flex-start;

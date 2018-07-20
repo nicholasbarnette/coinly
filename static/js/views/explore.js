@@ -60,6 +60,7 @@ export default class Explore extends React.Component {
 
         //Notification
         this.closeNotification = this.closeNotification.bind(this);
+        this.setNotification = this.setNotification.bind(this);
     }
 
     selectTile(n, v) {
@@ -146,7 +147,8 @@ export default class Explore extends React.Component {
             data = JSON.parse(data);
             this.setState({
                 tileContent: data.values,
-                header: data.header
+                header: data.header,
+                notification: ''
             });
         })
         .fail((xhr, status, error) => {
@@ -164,6 +166,12 @@ export default class Explore extends React.Component {
     closeNotification() {
 	    this.setState({
 	        notification: ''
+	    });
+	}
+
+	setNotification(n) {
+	    this.setState({
+	        notification: n
 	    });
 	}
 
@@ -220,6 +228,9 @@ export default class Explore extends React.Component {
                     coinOptions: data.items
                 });
             }
+            this.setState({
+                notification: ''
+            });
 
         })
         .fail((xhr, status, error) => {
@@ -268,7 +279,9 @@ export default class Explore extends React.Component {
                     coinOptions: data.items
                 });
             }
-
+            this.setState({
+                notification: ''
+            });
         })
         .fail((xhr, status, error) => {
             this.setState({
@@ -316,7 +329,7 @@ export default class Explore extends React.Component {
 	                    'MS/PR-66','MS/PR-67','MS/PR-68','MS/PR-69','MS/PR-70'];
 
 	    return	<div className="pageContainer">
-                        <PageNav notification={this.state.notification} closeNotification={this.closeNotification}>
+                        <PageNav notification={this.state.notification} closeNotification={this.closeNotification} setNotification={this.setNotification}>
                         {
                             <div className="exploreContent">
                                 <div className="pageHeader">
@@ -335,11 +348,10 @@ export default class Explore extends React.Component {
                             </div>
                         }
                         </PageNav>
-                        <div className="dialogContainer" id="dialogContainer">
                         {
                             this.state.dialogOpen ?
 
-                                <Dialog header="Add to Your Collection" closeDialog={this.closeAddCoinDialog} submitDialog={this.submitAddCoinDialog}>
+                                <Dialog dialogName="add" header="Add to Your Collection" closeDialog={this.closeAddCoinDialog} submitDialog={this.submitAddCoinDialog}>
                                     <Form>
                                         <Select items={this.state.valueOptions} hasLabel="true" labelText="Value: " name="valueSelect" change={this.onCoinSelectChange} params={0} />
                                         {this.state.levelOption >= 1 ? <Select items={this.state.nicknameOptions} hasLabel="true" labelText="Type: " name="typeSelect" change={this.onCoinSelectChange} params={1} /> : ''}
@@ -354,7 +366,6 @@ export default class Explore extends React.Component {
 
                             : ''
                         }
-                        </div>
                     </div>;
 	}
 }

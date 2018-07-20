@@ -7,7 +7,7 @@ import '../../css/components/button.less';
 export default class Button extends React.Component {
 
     handleClick() {
-		this.props.click();
+		this.props.click(this.props.params);
 	}
 
 	render() {

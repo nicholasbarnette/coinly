@@ -437,7 +437,7 @@ def createAccount():
 
 
         # Check if email is in use already
-        if not c.execute('SELECT U.email FROM Users U WHERE U.email="' + email + '"') == 0:
+        if not len(c.execute('SELECT U.email FROM Users U WHERE U.email="' + email + '"').fetchall()) == 0:
             return jsonify('{"message": "Email is in use."}'), 404
 
 
@@ -448,7 +448,7 @@ def createAccount():
         c.execute(query)
         conn.commit()
 
-        return jsonify('"{message": "Successfully created the account."}'), 202
+        return jsonify('{"message": "Successfully created the account."}'), 202
 
     except Exception as e:
         print(e, file=sys.stderr)
@@ -470,6 +470,10 @@ def login():
 
         query = 'SELECT U.userID, U.password FROM Users U WHERE U.email="' + email + '"'
         res = c.execute(query).fetchall()
+
+        if len(res) == 0:
+            return jsonify('{"message": "User not found."}'), 404
+
         userID = res[0][0]
         passwordHash = res[0][1].encode()
 
@@ -480,9 +484,9 @@ def login():
             session["userID"] = userID
             session["email"] = email
 
-            return jsonify('"{message": "User has been logged in."}'), 202
+            return jsonify('{"message": "User has been logged in."}'), 202
         else:
-            return jsonify('"{message": "Could not login."}'), 404
+            return jsonify('{"message": "Could not login."}'), 404
 
     except Exception as e:
         print(e, file=sys.stderr)
@@ -495,11 +499,27 @@ def logout():
     try:
         # Clears the session
         session.clear()
+
+        print(session, file=sys.stderr)
+
         return jsonify('"{message": "User has been logged out."}'), 202
     except Exception as e:
         print(e, file=sys.stderr)
         return jsonify('{"message": "' + str(e) + '"}'), 404
 
+
+# Checks if a user is logged in
+@app.route('/profile/login/check', methods = ['POST'])
+def loginCheck():
+    try:
+        print("userID" not in session, file=sys.stderr)
+        if "userID" not in session:
+            return jsonify('{"message": "User is logged in.", "loggedIn": "false"}'), 202
+        else:
+            return jsonify('{"message": "User is not logged in.", "loggedIn": "true"}'), 202
+    except Exception as e:
+        print(e, file=sys.stderr)
+        return jsonify('{"message": "' + str(e) + '"}'), 404
 
 
 if __name__ == '__main__':
