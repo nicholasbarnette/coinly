@@ -14,14 +14,26 @@ export default class Home extends React.Component {
         super();
 
         this.state = {
-            notification: ''
+            notification: '',
+            loggedIn: false
         };
-
-        //Notification
-        this.closeNotification = this.closeNotification.bind(this);
 
         //Buttons
         this.buttonClick = this.buttonClick.bind(this);
+
+        //Notification
+        this.closeNotification = this.closeNotification.bind(this);
+        this.setNotification = this.setNotification.bind(this);
+
+        //Logged In
+        this.setLoggedIn = this.setLoggedIn.bind(this);
+    }
+
+    setLoggedIn(l) {
+        this.setState({
+            loggedIn: l
+        });
+        this.loadData('',0,0,'Value');
     }
 
     closeNotification() {
@@ -34,9 +46,21 @@ export default class Home extends React.Component {
 	    return;
 	}
 
+	closeNotification() {
+	    this.setState({
+	        notification: ''
+	    });
+	}
+
+	setNotification(n) {
+	    this.setState({
+	        notification: n
+	    });
+	}
+
 	render() {
 		return	<div className="pageContainer">
-					<PageNav notification={this.state.notification} closeNotification={this.closeNotification}>
+					<PageNav notification={this.state.notification} closeNotification={this.closeNotification} setNotification={this.setNotification} setLoggedIn={this.setLoggedIn} >
 					{
 					    <div className="bodyContent">
 							<h1>Coin Storage</h1>
