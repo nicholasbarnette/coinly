@@ -53,6 +53,13 @@ export default class TopNav extends React.Component {
        this.onInputChange = this.onInputChange.bind(this);
     }
 
+    setLoggedIn(l) {
+        this.setState({
+            loggedIn: l
+        });
+        this.props.setLoggedIn(l);
+    }
+
     componentDidMount() {
         this.loginCheck()
     }
@@ -70,9 +77,11 @@ export default class TopNav extends React.Component {
                 loggedIn: data.loggedIn
             });
             this.setNotification('');
+            this.setLoggedIn(data.loggedIn);
         })
         .fail((xhr, status, error) => {
             this.setNotification(JSON.parse(xhr.responseJSON).message);
+            this.setLoggedIn(false);
         });
     }
 
@@ -98,6 +107,7 @@ export default class TopNav extends React.Component {
                 loggedIn: false
             });
             this.setNotification('');
+            this.setLoggedIn(false);
         })
         .fail((xhr, status, error) => {
             this.setNotification(JSON.parse(xhr.responseJSON).message);
@@ -147,6 +157,7 @@ export default class TopNav extends React.Component {
         })
         .fail((xhr, status, error) => {
             this.setNotification(JSON.parse(xhr.responseJSON).message);
+            this.setLoggedIn(false);
         });
 	}
 
@@ -171,9 +182,11 @@ export default class TopNav extends React.Component {
             });
             this.toggleDialogOpen(0);
             this.setNotification('');
+            this.setLoggedIn(true);
         })
         .fail((xhr, status, error) => {
             this.setNotification(JSON.parse(xhr.responseJSON).message);
+            this.setLoggedIn(false);
         });
 	}
 
@@ -280,8 +293,6 @@ export default class TopNav extends React.Component {
         let month = parseInt(dArray[1]) - 1;
         let day = parseInt(dArray[2]);
 
-        console.log(new Date().getFullYear() - 100);
-
         if (month < 0 && month > 11 && year > new Date().getFullYear() - 100 && year < new Date().getFullYear()) {
             this.setState({
                 birthdayError: true
@@ -290,14 +301,11 @@ export default class TopNav extends React.Component {
         }
 
         if (isNaN((new Date(year, month, day)).getFullYear())) {
-            console.log('WTF ARE YOU DOING BRO');
             this.setState({
                 birthdayError: true
             });
             return false;
         }
-
-        console.log(new Date(year, month, day));
 
         this.setState({
             birthdayError: false
@@ -324,7 +332,7 @@ export default class TopNav extends React.Component {
 				</div>
 				<div className="navGroup right">
                     {
-                        this.state.loggedIn == true ?
+                        this.state.loggedIn ?
                             <div>
                                 <Button click={this.submitLogout} type=""><span>Logout</span></Button>
                             </div>

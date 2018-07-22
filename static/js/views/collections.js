@@ -52,6 +52,9 @@ export default class Collections extends React.Component {
         //Notification
         this.closeNotification = this.closeNotification.bind(this);
         this.setNotification = this.setNotification.bind(this);
+
+        //Logged In
+        this.setLoggedIn = this.setLoggedIn.bind(this);
     }
 
     selectTile(n, v) {
@@ -66,6 +69,12 @@ export default class Collections extends React.Component {
             h = n;
         }
         this.loadData(n,v,l,h);
+    }
+
+    setLoggedIn(l) {
+        this.setState({
+            loggedIn: l
+        });
     }
 
 

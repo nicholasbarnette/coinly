@@ -61,6 +61,7 @@ try:
     c.execute('''
 	    CREATE TABLE Coins(
 	        coinID INTEGER PRIMARY KEY,
+	        userID INTEGER,
 	        mintageID INTEGER,
             buyDate TEXT,
             sellDate TEXT,
@@ -290,6 +291,9 @@ def selectData():
 @app.route('/explore/coin/add', methods = ['POST'])
 def addCoin():
 
+    if "userID" not in session:
+        return jsonify('{"message": "User is not logged in."}'), 404
+
     try:
         # Sets up/connects to DB
         conn = sqlite3.connect('coins.db')
@@ -314,13 +318,13 @@ def addCoin():
         if (len(coinArray) == 2):
             mint = coinArray[1]
 
-        query = 'INSERT INTO Coins(mintageID, buyDate, buyPrice, grade, notes) VALUES (' \
+        query = 'INSERT INTO Coins(mintageID, userID, buyDate, buyPrice, grade, notes) VALUES (' \
                     '(SELECT mintageID FROM Mintage M ' \
                         'WHERE M.year="' + year + '" AND M.mint="' + mint + '" AND ' \
                             'M.nickname="' + nickname + '" AND M.value=' + str(valueLookupStr(value)) + ' ' \
                             'AND M.note="' + note + '")' \
-                    ', "' + buyDate + '", ' + buyPrice + ', + "' + grade + '", "' + notes + '")'
-
+                    ', "' + str(session["userID"]) + '", "' + buyDate + '", ' + buyPrice + ', + "' + grade + '", "' + notes + '")'
+        print(query, file=sys.stderr)
         c.execute(query)
         conn.commit()
 
@@ -335,6 +339,7 @@ def addCoin():
 def explore():
 
     try:
+
         # Sets up/connects to DB
         conn = sqlite3.connect('coins.db')
         c = conn.cursor()
@@ -342,6 +347,9 @@ def explore():
         if request.method == 'GET':
             return render_template('index.html')
         else:
+
+            if "userID" not in session:
+                return jsonify('{"message": "User is not logged in."}'), 404
 
             # Gets the level
             # Level 0 - Value List
@@ -354,12 +362,11 @@ def explore():
             if level == 0:
 
                 # Gets data
-                c.execute('''
-                    SELECT T.value, MIN(T.startYear), MAX(T.endYear), image FROM CoinTypes T, Coins C, Mintage M
-                        WHERE T.coinTypeID=M.coinTypeID AND M.mintageID=C.mintageID
-                        GROUP BY T.value
-                        ORDER BY T.value ASC
-                ''')
+                query = 'SELECT T.value, MIN(T.startYear), MAX(T.endYear), image FROM CoinTypes T, Coins C, Mintage M ' \
+                        'WHERE T.coinTypeID=M.coinTypeID AND M.mintageID=C.mintageID AND C.userID=' + str(session["userID"]) + ' ' \
+                        'GROUP BY T.value ' \
+                        'ORDER BY T.value ASC'
+                c.execute(query)
                 info = c.fetchall()
 
                 # Turns data into a json string
@@ -378,6 +385,7 @@ def explore():
                 # Gets data
                 query = 'SELECT T.nickname, T.value, T.startYear AS year, T.endYear, T.image FROM CoinTypes T, Coins C, Mintage M ' \
                             'WHERE T.coinTypeID=M.coinTypeID AND T.value=' + str(valueLookupStr(value)) + ' AND C.mintageID=M.mintageID ' \
+                                'AND C.userID=' + str(session["userID"]) + ' ' \
                             'GROUP BY T.name ' \
                             'ORDER BY year ASC'
                 c.execute(query)
@@ -397,7 +405,7 @@ def explore():
                 # Gets data
                 query = 'SELECT M.nickname, M.value, M.year, M.mint, M.note, T.image FROM Coins C, CoinTypes T, Mintage M ' \
                             'WHERE T.value=' + str(valueLookupStr(value)) + ' AND T.coinTypeID=M.coinTypeID AND C.mintageID=M.mintageID ' \
-                                'AND T.nickname="' + str(nickname) + '" ' \
+                                'AND T.nickname="' + str(nickname) + '" AND C.userID=' + str(session["userID"]) + ' ' \
                             'ORDER BY M.year ASC'
                 c.execute(query)
                 info = c.fetchall()
@@ -484,6 +492,9 @@ def login():
             session["userID"] = userID
             session["email"] = email
 
+            print("Logging in...", file=sys.stderr)
+            print(session, file=sys.stderr)
+
             return jsonify('{"message": "User has been logged in."}'), 202
         else:
             return jsonify('{"message": "Could not login."}'), 404
@@ -500,6 +511,7 @@ def logout():
         # Clears the session
         session.clear()
 
+        print("Logging out...", file=sys.stderr)
         print(session, file=sys.stderr)
 
         return jsonify('"{message": "User has been logged out."}'), 202
@@ -512,12 +524,12 @@ def logout():
 @app.route('/profile/login/check', methods = ['POST'])
 def loginCheck():
     try:
-        print("userID" not in session, file=sys.stderr)
-        if "userID" not in session:
-            return jsonify('{"message": "User is logged in.", "loggedIn": "false"}'), 202
+        if "userID" in session:
+            return jsonify('{"message": "User is logged in.", "loggedIn": true}'), 202
         else:
-            return jsonify('{"message": "User is not logged in.", "loggedIn": "true"}'), 202
+            return jsonify('{"message": "User is not logged in.", "loggedIn": false}'), 202
     except Exception as e:
+        print("error", file=sys.stderr)
         print(e, file=sys.stderr)
         return jsonify('{"message": "' + str(e) + '"}'), 404
 
