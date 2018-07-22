@@ -42,7 +42,11 @@ export default class Explore extends React.Component {
             buyDate: '',
             buyPrice: 0,
             notes: '',
-            notification: ''
+            notification: '',
+            loggedIn: false,
+            gradeError: false,
+            dateError: false,
+            priceError: false
         };
 
         //Tile and Collection Navigation Functions
@@ -60,6 +64,17 @@ export default class Explore extends React.Component {
 
         //Notification
         this.closeNotification = this.closeNotification.bind(this);
+        this.setNotification = this.setNotification.bind(this);
+
+        //Logged In
+        this.setLoggedIn = this.setLoggedIn.bind(this);
+    }
+
+    setLoggedIn(l) {
+        this.setState({
+            loggedIn: l
+        });
+        this.loadData('',0,0,'Value');
     }
 
     selectTile(n, v) {
@@ -146,7 +161,8 @@ export default class Explore extends React.Component {
             data = JSON.parse(data);
             this.setState({
                 tileContent: data.values,
-                header: data.header
+                header: data.header,
+                notification: ''
             });
         })
         .fail((xhr, status, error) => {
@@ -164,6 +180,12 @@ export default class Explore extends React.Component {
     closeNotification() {
 	    this.setState({
 	        notification: ''
+	    });
+	}
+
+	setNotification(n) {
+	    this.setState({
+	        notification: n
 	    });
 	}
 
@@ -198,6 +220,17 @@ export default class Explore extends React.Component {
         };
         params = JSON.stringify(params);
 
+        var coin = false;
+        if (this.state.coinOption != '' ) {
+            coin = true;
+        }
+        let grade = this.state.grade.length != '';
+        let date = this.dateValidation(this.state.buyDate);
+        let price = parseInt(this.state.buyPrice) >= 0;
+        if (!coin || !grade || !date || !price) {
+            return;
+        }
+
         $.ajax({
             url: "/explore/coin/add",
             method: 'POST',
@@ -206,26 +239,15 @@ export default class Explore extends React.Component {
         })
         .done(data => {
             data = JSON.parse(data);
-
-            if (this.state.levelOption == 0) {
-                this.setState({
-                    valueOptions: data.items
-                });
-            } else if (this.state.levelOption == 1) {
-                this.setState({
-                    nicknameOptions: data.items
-                });
-            } else if (this.state.levelOption == 2) {
-                this.setState({
-                    coinOptions: data.items
-                });
-            }
-
+            this.setState({
+                notification: ''
+            });
         })
         .fail((xhr, status, error) => {
             this.setState({
                 notification: JSON.parse(xhr.responseJSON).message
             });
+            return;
         });
         this.loadData(this.state.nickname,this.state.value,this.state.level,this.state.header);
         this.closeAddCoinDialog();
@@ -268,7 +290,9 @@ export default class Explore extends React.Component {
                     coinOptions: data.items
                 });
             }
-
+            this.setState({
+                notification: ''
+            });
         })
         .fail((xhr, status, error) => {
             this.setState({
@@ -307,6 +331,47 @@ export default class Explore extends React.Component {
         }
     }
 
+    dateValidation(d) {
+
+        if (d.length == 0) {
+            this.setState({
+                birthdayError: true
+            });
+            return false;
+        }
+
+        let dArray = d.split('-');
+        if (dArray.length != 3) {
+            this.setState({
+                birthdayError: true
+            });
+            return false;
+        }
+
+        let year = parseInt(dArray[0]);
+        let month = parseInt(dArray[1]) - 1;
+        let day = parseInt(dArray[2]);
+
+        if (month < 0 && month > 11 && year > new Date().getFullYear() - 100 && year < new Date().getFullYear()) {
+            this.setState({
+                birthdayError: true
+            });
+            return false;
+        }
+
+        if (isNaN((new Date(year, month, day)).getFullYear())) {
+            this.setState({
+                birthdayError: true
+            });
+            return false;
+        }
+
+        this.setState({
+            birthdayError: false
+        });
+        return true;
+    }
+
 
 	render() {
 
@@ -316,7 +381,7 @@ export default class Explore extends React.Component {
 	                    'MS/PR-66','MS/PR-67','MS/PR-68','MS/PR-69','MS/PR-70'];
 
 	    return	<div className="pageContainer">
-                        <PageNav notification={this.state.notification} closeNotification={this.closeNotification}>
+                        <PageNav notification={this.state.notification} closeNotification={this.closeNotification} setNotification={this.setNotification} setLoggedIn={this.setLoggedIn} >
                         {
                             <div className="exploreContent">
                                 <div className="pageHeader">
@@ -326,35 +391,33 @@ export default class Explore extends React.Component {
                                     <div className="groupHeader">
                                         {this.state.level > 0 ? <Button click={this.backButtonClick} type="iconButton"><Glyphicon glyph="chevron-left" /></Button> : ''}
                                         <h1>{this.state.header}</h1>
-                                        <Button click={this.openAddCoinDialog} type="iconButton addCoinButton"><Glyphicon glyph="plus" /></Button>
+                                        {this.state.loggedIn ? <Button click={this.openAddCoinDialog} type="iconButton addCoinButton"><Glyphicon glyph="plus" /></Button> : ''}
                                     </div>
                                     <div className="tileContainer" id="tileContainer">
-                                        {this.createContent()}
+                                        {this.state.loggedIn ? this.createContent() : <p>RESULTS NOT FOUND...</p>}
                                     </div>
                                 </div>
                             </div>
                         }
                         </PageNav>
-                        <div className="dialogContainer" id="dialogContainer">
                         {
                             this.state.dialogOpen ?
 
-                                <Dialog header="Add to Your Collection" closeDialog={this.closeAddCoinDialog} submitDialog={this.submitAddCoinDialog}>
+                                <Dialog dialogName="add" header="Add to Your Collection" closeDialog={this.closeAddCoinDialog} submitDialog={this.submitAddCoinDialog}>
                                     <Form>
                                         <Select items={this.state.valueOptions} hasLabel="true" labelText="Value: " name="valueSelect" change={this.onCoinSelectChange} params={0} />
                                         {this.state.levelOption >= 1 ? <Select items={this.state.nicknameOptions} hasLabel="true" labelText="Type: " name="typeSelect" change={this.onCoinSelectChange} params={1} /> : ''}
                                         {this.state.levelOption == 2 ? <Select items={this.state.coinOptions} hasLabel="true" labelText="Year/Mint: "name="yearSelect" change={this.onCoinSelectChange} params={2} /> : ''}
                                         <div className="horizontalDivider"></div>
-                                        <Select items={grades} hasLabel="true" labelText="Grade:" name="gradeSelect" change={this.onInputSelectChange} params={0} />
-                                        <Input hasLabel="true" labelText="Purchase Date:" name="buyDate" type="date" placeholderText="Purchase Date" change={this.onInputSelectChange} params={1} />
-                                        <Input hasLabel="true" labelText="Purchase Price:" name="buyPrice" type="number" placeholderText="Purchase Price" change={this.onInputSelectChange} params={2} />
+                                        <Select items={grades} hasLabel="true" labelText="Grade:" name="gradeSelect" change={this.onInputSelectChange} params={0} error={this.state.gradeError} />
+                                        <Input hasLabel="true" labelText="Purchase Date:" name="buyDate" type="date" placeholderText="Purchase Date" change={this.onInputSelectChange} params={1} error={this.state.dateError} />
+                                        <Input hasLabel="true" labelText="Purchase Price:" name="buyPrice" type="number" placeholderText="Purchase Price" change={this.onInputSelectChange} params={2} error={this.state.priceError} />
                                         <Input hasLabel="true" labelText="Notes:" name="notes" type="text" placeholderText="Notes" change={this.onInputSelectChange} params={3} />
                                     </Form>
                                 </Dialog>
 
                             : ''
                         }
-                        </div>
                     </div>;
 	}
 }

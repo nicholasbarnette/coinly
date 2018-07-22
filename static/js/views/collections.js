@@ -48,6 +48,13 @@ export default class Collections extends React.Component {
         //Tile and Collection Navigation Functions
         this.selectTile = this.selectTile.bind(this);
         this.backButtonClick = this.backButtonClick.bind(this);
+
+        //Notification
+        this.closeNotification = this.closeNotification.bind(this);
+        this.setNotification = this.setNotification.bind(this);
+
+        //Logged In
+        this.setLoggedIn = this.setLoggedIn.bind(this);
     }
 
     selectTile(n, v) {
@@ -62,6 +69,12 @@ export default class Collections extends React.Component {
             h = n;
         }
         this.loadData(n,v,l,h);
+    }
+
+    setLoggedIn(l) {
+        this.setState({
+            loggedIn: l
+        });
     }
 
 
@@ -108,13 +121,6 @@ export default class Collections extends React.Component {
         this.loadData(n,v,l,h);
     }
 
-
-    closeNotification() {
-	    this.setState({
-	        notification: ''
-	    });
-	}
-
     loadData(n, v, l, h) {
         this.setState({
             nickname: n,
@@ -140,7 +146,8 @@ export default class Collections extends React.Component {
             data = JSON.parse(data);
             this.setState({
                 tileContent: data.values,
-                header: data.header
+                header: data.header,
+                notification: ''
             });
         })
         .fail((xhr, status, error) => {
@@ -156,6 +163,18 @@ export default class Collections extends React.Component {
     }
 
 
+    closeNotification() {
+	    this.setState({
+	        notification: ''
+	    });
+	}
+
+    setNotification(n) {
+	    this.setState({
+	        notification: n
+	    });
+	}
+
 	render() {
 
 	    var grades = ['Not Graded','Ungradeable','PO-1','FR-2','AG-3','G-4','G-6','VG-8','VG-10','F-12',
@@ -164,7 +183,7 @@ export default class Collections extends React.Component {
 	                    'MS/PR-66','MS/PR-67','MS/PR-68','MS/PR-69','MS/PR-70'];
 
 	    return	<div className="pageContainer">
-                        <PageNav notification={this.state.notification} closeNotification={this.closeNotification}>
+                        <PageNav notification={this.state.notification} closeNotification={this.closeNotification} setNotification={this.setNotification}>
                         {
                             <div className="collectionsContent">
                                 <div className="pageHeader">
@@ -182,7 +201,6 @@ export default class Collections extends React.Component {
                             </div>
                         }
                         </PageNav>
-                        <div className="dialogContainer" id="dialogContainer"></div>
                     </div>;
 	}
 }

@@ -18,6 +18,8 @@ export default class PageNav extends React.Component {
 		this.openLeftNav = this.openLeftNav.bind(this);
 		this.toggleNotification = this.toggleNotification.bind(this);
 		this.closeNotification = this.closeNotification.bind(this);
+		this.setNotification = this.setNotification.bind(this);
+		this.setLoggedIn = this.setLoggedIn.bind(this);
 	}
 
 	openLeftNav() {
@@ -36,9 +38,17 @@ export default class PageNav extends React.Component {
 	    this.props.closeNotification();
 	}
 
+	setNotification(n) {
+	    this.props.setNotification(n);
+	}
+
+	setLoggedIn(l) {
+	    this.props.setLoggedIn(l);
+	}
+
 	render() {
 		return	<div className="navContainer">
-					<TopNav openLeftNav={this.openLeftNav} />
+					<TopNav openLeftNav={this.openLeftNav} setNotification={this.setNotification} setLoggedIn={this.setLoggedIn} />
 					<LeftNav width={this.state.width}>{
 						<div className="bodyContainer">
 							{this.props.children}
