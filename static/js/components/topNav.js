@@ -85,18 +85,18 @@ export default class TopNav extends React.Component {
         });
     }
 
-	handleClick() {
-		this.props.openLeftNav();
-	}
+    handleClick() {
+        this.props.openLeftNav();
+    }
 
     toggleDialogOpen(n) {
         this.setState({
             dialogOpen: !this.state.dialogOpen,
             dialogType: n
         });
-	}
+    }
 
-	submitLogout() {
+    submitLogout() {
         $.ajax({
             url: "/profile/logout",
             method: 'POST',
@@ -112,9 +112,9 @@ export default class TopNav extends React.Component {
         .fail((xhr, status, error) => {
             this.setNotification(JSON.parse(xhr.responseJSON).message);
         });
-	}
+    }
 
-	submitCreateAccount() {
+    submitCreateAccount() {
         var params = {
             email: this.state.email,
             password: this.state.password,
@@ -159,9 +159,9 @@ export default class TopNav extends React.Component {
             this.setNotification(JSON.parse(xhr.responseJSON).message);
             this.setLoggedIn(false);
         });
-	}
+    }
 
-	submitLogin(l,v) {
+    submitLogin(l,v) {
         var params = {
             email: this.state.email,
             password: this.state.password
@@ -188,9 +188,9 @@ export default class TopNav extends React.Component {
             this.setNotification(JSON.parse(xhr.responseJSON).message);
             this.setLoggedIn(false);
         });
-	}
+    }
 
-	onInputChange(c,v) {
+    onInputChange(c,v) {
         if (this.state.dialogType == 1) {
             if (c == 0) {
                 this.setState({
@@ -317,20 +317,20 @@ export default class TopNav extends React.Component {
         this.props.setNotification(n);
     }
 
-	render() {
-		return (
-			<nav className="navbar">
-				<div className="navGroup left">
-					<div className="navItem hamburger" onClick={e => this.handleClick()}>
-						<a><Glyphicon glyph="menu-hamburger" /></a>
-					</div>
-				</div>
-				<div className="navGroup middle">
-					<div className="navItem logo">
-						<a href="/">Coin Storage</a>
-					</div>
-				</div>
-				<div className="navGroup right">
+    render() {
+        return (
+            <nav className="navbar">
+                <div className="navGroup left">
+                    <div className="navItem hamburger" onClick={e => this.handleClick()}>
+                        <a><Glyphicon glyph="menu-hamburger" /></a>
+                    </div>
+                </div>
+                <div className="navGroup middle">
+                    <div className="navItem logo">
+                        <a href="/">Coin Storage</a>
+                    </div>
+                </div>
+                <div className="navGroup right">
                     {
                         this.state.loggedIn ?
                             <div>
@@ -341,11 +341,10 @@ export default class TopNav extends React.Component {
                                 <Button click={this.toggleDialogOpen} params={1} type=""><span>Login</span></Button>
                                 <Button click={this.toggleDialogOpen} params={2} type=""><span>Create Account</span></Button>
                             </div>
-
                     }
-				</div>
-				{
-				    this.state.dialogOpen ?
+                </div>
+                {
+                    this.state.dialogOpen ?
 
                         this.state.dialogType == 1 ?
                             <Dialog header="Login" closeDialog={this.toggleDialogOpen} params={0} submitDialog={this.submitLogin}>
@@ -375,8 +374,8 @@ export default class TopNav extends React.Component {
                             </Dialog>
 
                     : ''
-				}
-			</nav>
-		);
-	}
+                }
+            </nav>
+        );
+    }
 }

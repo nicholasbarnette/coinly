@@ -93,7 +93,7 @@ export default class Collections extends React.Component {
 
 
             return	tempArray.map ((n) => {
-                        return <Tile image={n[n.length-1]} click={this.selectTile} data1={n[0]} data2={n[1]}>
+                        return <Tile image={n[n.length-1]} click={this.selectTile} data1={n[0]} data2={n[1]} type={this.state.level != 2 ? "clickable" : ""}>
                         {
                             <div className="tileContent">
                                 {n.map ((m) => {
@@ -183,7 +183,7 @@ export default class Collections extends React.Component {
 	                    'MS/PR-66','MS/PR-67','MS/PR-68','MS/PR-69','MS/PR-70'];
 
 	    return	<div className="pageContainer">
-                        <PageNav notification={this.state.notification} closeNotification={this.closeNotification} setNotification={this.setNotification}>
+                        <PageNav notification={this.state.notification} closeNotification={this.closeNotification} setNotification={this.setNotification} setLoggedIn={this.setLoggedIn} >
                         {
                             <div className="collectionsContent">
                                 <div className="pageHeader">
@@ -191,7 +191,7 @@ export default class Collections extends React.Component {
                                 </div>
                                 <div className="collectionsMainContent">
                                     <div className="groupHeader">
-                                        {this.state.level > 0 ? <Button click={this.backButtonClick} type="iconButton"><Glyphicon glyph="chevron-left" /></Button> : ''}
+                                        {this.state.level > 0 ? <Button click={this.backButtonClick} type="iconButton dark"><Glyphicon glyph="chevron-left" /></Button> : ''}
                                         <h1>{this.state.header}</h1>
                                     </div>
                                     <div className="tileContainer" id="tileContainer">

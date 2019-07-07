@@ -13,7 +13,7 @@ export default class Tile extends React.Component {
 	render() {
 	    const image = require('../../images/' + this.props.image);
         return (
-			<div className="tile" onClick={e => this.handleClick()}>
+			<div className={"tile " + this.props.type} onClick={e => this.handleClick()}>
 				<div className="tileImage" style={{backgroundImage: `url(${'./dist/' + image})`}}></div>
 				{this.props.children}
 			</div>

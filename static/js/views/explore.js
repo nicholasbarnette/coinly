@@ -107,7 +107,7 @@ export default class Explore extends React.Component {
 
 
             return	tempArray.map ((n) => {
-                        return <Tile image={n[n.length-1]} click={this.selectTile} data1={n[0]} data2={n[1]}>
+                        return <Tile image={n[n.length-1]} click={this.selectTile} data1={n[0]} data2={n[1]} type={this.state.level != 2 ? "clickable" : ""}>
                         {
                             <div className="tileContent">
                                 {n.map ((m) => {
@@ -389,9 +389,9 @@ export default class Explore extends React.Component {
                                 </div>
                                 <div className="exploreMainContent">
                                     <div className="groupHeader">
-                                        {this.state.level > 0 ? <Button click={this.backButtonClick} type="iconButton"><Glyphicon glyph="chevron-left" /></Button> : ''}
+                                        {this.state.level > 0 ? <Button click={this.backButtonClick} type="iconButton dark"><Glyphicon glyph="chevron-left" /></Button> : ''}
                                         <h1>{this.state.header}</h1>
-                                        {this.state.loggedIn ? <Button click={this.openAddCoinDialog} type="iconButton addCoinButton"><Glyphicon glyph="plus" /></Button> : ''}
+                                        {this.state.loggedIn ? <Button click={this.openAddCoinDialog} type="iconButton addCoinButton dark"><Glyphicon glyph="plus" /></Button> : ''}
                                     </div>
                                     <div className="tileContainer" id="tileContainer">
                                         {this.state.loggedIn ? this.createContent() : <p>RESULTS NOT FOUND...</p>}

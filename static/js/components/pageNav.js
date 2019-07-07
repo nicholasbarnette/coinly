@@ -3,17 +3,17 @@ import ReactDOM from "react-dom";
 
 //JS
 import LeftNav from '../components/leftNav.js';
-import TopNav from '../components/topNav.js';
 import Notification from '../components/notification.js';
 
 
 export default class PageNav extends React.Component {
-
 	constructor(props) {
 		super(props);
 		this.state = {
 			width: '10rem',
-			notificationOpen: false
+			notificationOpen: false,
+			loggedIn: false,
+			collapsed: false
 		};
 		this.openLeftNav = this.openLeftNav.bind(this);
 		this.toggleNotification = this.toggleNotification.bind(this);
@@ -22,10 +22,19 @@ export default class PageNav extends React.Component {
 		this.setLoggedIn = this.setLoggedIn.bind(this);
 	}
 
+	componentDidMount() {
+		this.setState({
+			width: localStorage.getItem('leftNavWidth') === "null" ? "10rem" : localStorage.getItem('leftNavWidth'),
+			collapsed: localStorage.getItem('leftNavWidth') === "4rem" ? true : false
+		});
+    }
+
 	openLeftNav() {
 		this.setState({
-			width: this.state.width === '10rem' ? '0' : '10rem'
+			width: this.state.width === '10rem' ? '4rem' : '10rem',
+			collapsed: this.state.width === '10rem' ? true : false
 		});
+		localStorage.setItem('leftNavWidth', this.state.width === '10rem' ? '4rem' : '10rem');
 	}
 
 	toggleNotification() {
@@ -44,15 +53,19 @@ export default class PageNav extends React.Component {
 
 	setLoggedIn(l) {
 	    this.props.setLoggedIn(l);
+	    this.setState({
+			loggedIn: l
+		});
 	}
 
 	render() {
 		return	<div className="navContainer">
-					<TopNav openLeftNav={this.openLeftNav} setNotification={this.setNotification} setLoggedIn={this.setLoggedIn} />
-					<LeftNav width={this.state.width}>{
+					<LeftNav width={this.state.width} openLeftNav={this.openLeftNav} setNotification={this.setNotification} setLoggedIn={this.setLoggedIn} collapsed={this.state.collapsed}>
+					{
 						<div className="bodyContainer">
 							{this.props.children}
-					    </div>}
+					    </div>
+					}
 					</LeftNav>
 					<Notification notification={this.props.notification} click={this.toggleNotification} close={this.closeNotification} notificationOpen={this.state.notificationOpen} />
 				</div>;

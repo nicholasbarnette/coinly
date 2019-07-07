@@ -11,9 +11,22 @@ import '../../css/components/dialog.less';
 
 
 export default class Dialog extends React.Component {
+
+    constructor() {
+        super();
+        //Logged In
+        this.handleKeyPress = this.handleKeyPress.bind(this);
+    }
+
+    handleKeyPress(e) {
+        if (e.key == 'Enter') {
+            this.props.submitDialog();
+        }
+    }
+
 	render() {
 		return (
-            <div className="dialogContainer" id={this.props.dialogName + "DialogContainer"}>
+            <div className="dialogContainer" id={this.props.dialogName + "DialogContainer"} onKeyPress={this.handleKeyPress}>
                 <div className="dialogMask">
                     <div className="dialog">
                         <Button click={this.props.closeDialog} params={this.props.params} type="iconButton closeButton"><Glyphicon glyph="remove" /></Button>

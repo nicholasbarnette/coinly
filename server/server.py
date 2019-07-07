@@ -403,7 +403,7 @@ def explore():
                 return jsonify(jsonString), 202
             elif level == 2:
                 # Gets data
-                query = 'SELECT M.nickname, M.value, M.year, M.mint, M.note, T.image FROM Coins C, CoinTypes T, Mintage M ' \
+                query = 'SELECT M.nickname, M.value, M.year, M.mint, M.note, T.image, C.grade, C.notes FROM Coins C, CoinTypes T, Mintage M ' \
                             'WHERE T.value=' + str(valueLookupStr(value)) + ' AND T.coinTypeID=M.coinTypeID AND C.mintageID=M.mintageID ' \
                                 'AND T.nickname="' + str(nickname) + '" AND C.userID=' + str(session["userID"]) + ' ' \
                             'ORDER BY M.year ASC'
@@ -413,7 +413,7 @@ def explore():
                 # Turns data into a json string
                 jsonString = '{"values": ['
                 for data in info:
-                    jsonString += '{"name": "' + data[0] + '", "value": "' + valueLookupInt(data[1]) + '", "years": "' + str(data[2]) + ' ' + str(data[3]) + '", "note": "Notes: ' + str(data[4]) + '", "image": "' + str(data[5]) + '"},'
+                    jsonString += '{"name": "' + data[0] + '", "value": "' + valueLookupInt(data[1]) + '", "years": "' + str(data[2]) + ' ' + str(data[3]) + '", "image": "' + str(data[5]) + '", "grade": "' + str(data[6]) + '", "note": "Notes: ' + str(data[7]) + '"},'
                 jsonString = jsonString[:-1] + (']', '[]')[jsonString == '{"values": [']
 
                 jsonString += ',"header": "' + info[0][0] + '"'
@@ -532,6 +532,17 @@ def loginCheck():
         print("error", file=sys.stderr)
         print(e, file=sys.stderr)
         return jsonify('{"message": "' + str(e) + '"}'), 404
+
+@app.route('/test', methods = ['POST', 'GET'])
+def test():
+    # Sets up/connects to DB
+    conn = sqlite3.connect('coins.db')
+    c = conn.cursor()
+    print('hello world')
+    query = 'SELECT COUNT(*) FROM Coins'
+    res = c.execute(query).fetchall()
+    print(res)
+
 
 
 if __name__ == '__main__':

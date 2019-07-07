@@ -33,7 +33,6 @@ export default class Home extends React.Component {
         this.setState({
             loggedIn: l
         });
-        this.loadData('',0,0,'Value');
     }
 
     closeNotification() {
@@ -63,9 +62,24 @@ export default class Home extends React.Component {
 					<PageNav notification={this.state.notification} closeNotification={this.closeNotification} setNotification={this.setNotification} setLoggedIn={this.setLoggedIn} >
 					{
 					    <div className="bodyContent">
-							<h1>Coin Storage</h1>
-							<p>This application allows you to track your coin collection.</p>
-							<a href="/collections"><Button click={this.buttonClick} type=""><span>Get Started</span></Button></a>
+					    	<div className="section odd">
+								<h1>Collection Management</h1>
+								<p>Your collection in the palm of your hand.</p>
+								<a href="/collections"><Button click={this.buttonClick} type="dark"><span>Get Started</span></Button></a>
+					    	</div>
+					    	<div className="section even">
+						    	<h3>Create a Collection</h3>
+						    	<p>Create an electronic version of your collection. You can view your collection from anywhere at anytime. No matter the device, you will always have access.</p>
+					    	</div>
+					    	<div className="section odd">
+						    	<h3>Add to the Collection</h3>
+						    	<p>Add a new coin to your collection in a couple clicks. You will no longer be limited to adding a coin to your collection when you get back to your computer. Now, you can do it straight from your mobile device.</p>
+					    	</div>
+					    	<div className="section even">
+						    	<h3>View your Collection</h3>
+						    	<p>Looking for a specific coin? Quickly navigate your collection to find exactly the coin you're looking for.</p>
+								<a href="/collections"><Button click={this.buttonClick} type=""><span>Get Started</span></Button></a>
+					    	</div>
 					    </div>
 					}
 					</PageNav>
