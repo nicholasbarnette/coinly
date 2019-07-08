@@ -185,14 +185,15 @@ export default class Collections extends React.Component {
 	    return	<div className="pageContainer">
                         <PageNav notification={this.state.notification} closeNotification={this.closeNotification} setNotification={this.setNotification} setLoggedIn={this.setLoggedIn} >
                         {
-                            <div className="collectionsContent">
+                            <div className="pageContent">
                                 <div className="pageHeader">
                                     <h1>Collections</h1>
                                 </div>
-                                <div className="collectionsMainContent">
+                                <div className="pageMainContent">
                                     <div className="groupHeader">
-                                        {this.state.level > 0 ? <Button click={this.backButtonClick} type="iconButton dark"><Glyphicon glyph="chevron-left" /></Button> : ''}
-                                        <h1>{this.state.header}</h1>
+                                        <div className="catContainer">
+                                            {this.state.level > 0 ? <Button click={this.backButtonClick} type="iconButton dark"><Glyphicon glyph="chevron-left" /><h1>{this.state.header}</h1></Button> : <h1>Value</h1>}
+                                        </div>
                                     </div>
                                     <div className="tileContainer" id="tileContainer">
                                         {this.createContent()}

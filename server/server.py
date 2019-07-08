@@ -288,7 +288,7 @@ def selectData():
         return jsonify('{"message": "' + str(e) + '"}'), 404
 
 # Adds a coin to your personal collection
-@app.route('/explore/coin/add', methods = ['POST'])
+@app.route('/inventory/coin/add', methods = ['POST'])
 def addCoin():
 
     if "userID" not in session:
@@ -335,7 +335,7 @@ def addCoin():
         return jsonify('{"message": "' + str(e) + '"}'), 404
 
 # Returns an array of a users personal collection
-@app.route('/explore', methods = ['POST', 'GET'])
+@app.route('/inventory', methods = ['POST', 'GET'])
 def explore():
 
     try:

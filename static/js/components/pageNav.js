@@ -10,7 +10,7 @@ export default class PageNav extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			width: '10rem',
+			width: '12rem',
 			notificationOpen: false,
 			loggedIn: false,
 			collapsed: false
@@ -24,17 +24,17 @@ export default class PageNav extends React.Component {
 
 	componentDidMount() {
 		this.setState({
-			width: localStorage.getItem('leftNavWidth') === "null" ? "10rem" : localStorage.getItem('leftNavWidth'),
+			width: localStorage.getItem('leftNavWidth') === "null" ? "12rem" : localStorage.getItem('leftNavWidth'),
 			collapsed: localStorage.getItem('leftNavWidth') === "4rem" ? true : false
 		});
     }
 
 	openLeftNav() {
 		this.setState({
-			width: this.state.width === '10rem' ? '4rem' : '10rem',
-			collapsed: this.state.width === '10rem' ? true : false
+			width: this.state.width === '12rem' ? '4rem' : '12rem',
+			collapsed: this.state.width === '12rem' ? true : false
 		});
-		localStorage.setItem('leftNavWidth', this.state.width === '10rem' ? '4rem' : '10rem');
+		localStorage.setItem('leftNavWidth', this.state.width === '12rem' ? '4rem' : '12rem');
 	}
 
 	toggleNotification() {

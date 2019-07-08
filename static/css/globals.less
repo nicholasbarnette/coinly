@@ -5,10 +5,8 @@
 //*******************************************************
 @import 'colorPalette.less';
 
-
 html {
 	font-size: 16px !important;
-	font-family: 'Oswald', sans-serif;
 }
 
 body {
@@ -27,6 +25,62 @@ body {
 	flex-direction: column;
 	flex-wrap: nowrap;
 	height: 100%;
+}
+
+.pageContent {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding: 2rem;
+
+    .pageHeader {
+        border-bottom: 1px solid #CDCDCD;
+        max-width: 50rem;
+        padding-bottom: 1rem;
+        width: 100%;
+
+        > * {
+            font-size: 2rem;
+            color: @textColorDefault;
+        }
+    }
+
+    .pageMainContent {
+        flex: 1 1 auto;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+
+        .groupHeader {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            min-height: 2rem;
+            max-height: 2rem;
+            height: 2rem;
+            justify-content: space-between;
+
+            .catContainer {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-items: center;
+
+                .button {
+                    margin-right: 0.25rem;
+
+                    .inner > * {
+                        text-transform: capitalize;
+                    }
+                }
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    }
 }
 
 .dialogContainer {
@@ -60,6 +114,10 @@ a:active {
 
 a {
     transition: color 0.15s ease-in-out;
+}
+
+.glyphicon {
+    top: 0;
 }
 
 

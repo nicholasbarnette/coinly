@@ -4,7 +4,7 @@ import $ from 'jquery';
 import { Glyphicon } from 'react-bootstrap';
 
 //CSS
-import '../../css/explore.less';
+import '../../css/inventory.less';
 
 //JS
 import PageNav from '../components/pageNav.js';
@@ -16,7 +16,7 @@ import Input from '../components/input.js';
 import Select from '../components/select.js';
 
 
-export default class Explore extends React.Component {
+export default class Inventory extends React.Component {
 
     //Level 0 - Value List
     //Level 1 - Type List
@@ -152,7 +152,7 @@ export default class Explore extends React.Component {
         params = JSON.stringify(params);
 
         $.ajax({
-            url: "/explore",
+            url: "/inventory",
             method: 'POST',
             contentType: 'application/json',
             data: params
@@ -232,7 +232,7 @@ export default class Explore extends React.Component {
         }
 
         $.ajax({
-            url: "/explore/coin/add",
+            url: "/inventory/coin/add",
             method: 'POST',
             contentType: 'application/json',
             data: params
@@ -383,14 +383,15 @@ export default class Explore extends React.Component {
 	    return	<div className="pageContainer">
                         <PageNav notification={this.state.notification} closeNotification={this.closeNotification} setNotification={this.setNotification} setLoggedIn={this.setLoggedIn} >
                         {
-                            <div className="exploreContent">
+                            <div className="pageContent">
                                 <div className="pageHeader">
-                                    <h1>Explore</h1>
+                                    <h1>Inventory</h1>
                                 </div>
-                                <div className="exploreMainContent">
+                                <div className="pageMainContent">
                                     <div className="groupHeader">
-                                        {this.state.level > 0 ? <Button click={this.backButtonClick} type="iconButton dark"><Glyphicon glyph="chevron-left" /></Button> : ''}
-                                        <h1>{this.state.header}</h1>
+                                        <div className="catContainer">
+                                            {this.state.level > 0 ? <Button click={this.backButtonClick} type="iconButton dark"><Glyphicon glyph="chevron-left" /><h1>{this.state.header}</h1></Button> : <h1>Value</h1>}
+                                        </div>
                                         {this.state.loggedIn ? <Button click={this.openAddCoinDialog} type="iconButton addCoinButton dark"><Glyphicon glyph="plus" /></Button> : ''}
                                     </div>
                                     <div className="tileContainer" id="tileContainer">

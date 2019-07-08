@@ -19,29 +19,26 @@
         font-size: 0.85rem;
         font-weight: normal;
         padding: 0;
+        color: @textColorDefault;
     }
 }
 
 
 .input {
-    background: fade(@textColorDefault, 5%);
-    border: 1px solid darken(#fff, 60%);
+    background: @containerBackgroundColor;
+    border: 1px solid #CDCDCD;
     border-radius: 1px;
     outline: none;
     transition: border-color 0.1s linear;
     color: @textColorDefault;
-    padding: 0 0.25rem;
+    padding: 0.25rem 0.5rem;
     min-width: 15rem;
     max-width: 25rem;
     flex: 1 1 auto;
 
-    &:hover {
-        border-color: darken(#fff, 40%);
-    }
     &:focus {
-        border-color: #fff;
+        border-color: darken(#CDCDCD, 20%);
     }
-
 
     &.error {
         border-color: red;

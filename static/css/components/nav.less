@@ -62,12 +62,12 @@
 .navbar .navGroup .navItem {
 	height: 100%;
 	min-width: 3rem;
-	max-width: 10rem;
+	max-width: 12rem;
 }
 
 .navbar .navGroup .navItem > a {
 	text-decoration: none;
-	color: @textColorDefault;
+	color: @textColorDarkDefault;
 	width: 100%;
 	height: 100%;
 	display: flex;
@@ -114,7 +114,7 @@
 	
 	.leftNav {
 		height: 100vh;
-		width: 10rem;
+		width: 12rem;
 		background-color: @navBackgroundColor;
 		z-index: 10;
 		transition: width 0.25s ease-in;
@@ -124,8 +124,13 @@
 		display: flex;
         flex-direction: column;
 
+        // Everything in the left nav needs to be light text
+        span {
+        	color: @textColorDarkDefault ~'!important';
+        }
+
         .divider {
-        	border-bottom: 1px solid @textColorDefault;
+        	border-bottom: 1px solid @textColorDarkDefault;
         	margin: 0.5rem 1rem;
         }
 
@@ -183,8 +188,8 @@
 			padding: 0.5rem;
 			margin: 0 0.5rem;
 			cursor: pointer;
-			color: @textColorDefault;
-			font-size: 1.15rem;
+			color: @textColorDarkDefault;
+			font-size: 1rem;
 			text-decoration: none;
 		    white-space: nowrap;
 		    overflow: hidden;
@@ -232,6 +237,7 @@
 		}
 
 		&.collapsed {
+			width: 4rem;
 
 			.navItem {
 				span:not(.glyphicon) {

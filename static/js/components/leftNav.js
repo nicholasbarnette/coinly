@@ -328,9 +328,13 @@ export default class LeftNav extends React.Component {
 										<Glyphicon glyph="home" />
 										<span>Home</span>
 									</a>
-									<a className="navItem" href="/explore">
+                                    <a className="navItem" href="/collections">
+                                        <Glyphicon glyph="duplicate" />
+                                        <span>Collections</span>
+                                    </a>
+									<a className="navItem" href="/inventory">
 										<Glyphicon glyph="search" />
-										<span>Explore</span>
+										<span>Inventory</span>
 									</a>
 								</div>
 								<div className="navBottom">
@@ -348,6 +352,10 @@ export default class LeftNav extends React.Component {
                         				<Glyphicon glyph="home" />
 										<span>Home</span>
 									</a>
+                                    <a className="navItem" href="/collections">
+                                        <Glyphicon glyph="duplicate" />
+                                        <span>Collections</span>
+                                    </a>
                         		</div>
 		                        <div className="navBottom">
 		                        	<Button click={this.toggleDialogOpen} params={1} type=""><Glyphicon glyph="log-in" /><span>Login</span></Button>

@@ -20,8 +20,7 @@
 .dialog {
     min-height: 20%;
     min-width: 30rem;
-    background-color: @navBackgroundColor;
-    border: 1px solid lighten(@navBackgroundColor, 40%);
+    background-color: @containerBackgroundColor;
     border-radius: 2px;
     display: flex;
     flex-direction: column;
@@ -32,7 +31,7 @@
 
     .header {
         padding: @dialogSpacing;
-        border-bottom: 1px solid #fff;
+        border-bottom: 1px solid @textColorDefault;
         @dialogSpacingDouble: 2 * @dialogSpacing;
         width: calc(100% - @dialogSpacingDouble);
         align-self: center;
@@ -59,8 +58,8 @@
         flex-wrap: nowrap;
         align-items: center;
         justify-content: flex-end;
-        padding: @dialogSpacing 0;
-        border-top: 1px solid #fff;
+        padding: (@dialogSpacing * 2) 0 @dialogSpacing 0;
+        border-top: 1px solid @textColorDefault;
         @dialogSpacingDouble: 2 * @dialogSpacing;
         width: calc(100% - @dialogSpacingDouble);
         align-self: center;
@@ -68,6 +67,11 @@
 
         .button {
             margin-right: 0;
+            border-radius: 2px;
+
+            .inner {
+                border-radius: 2px; 
+            }
         }
     }
 }

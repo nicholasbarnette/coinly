@@ -5,6 +5,8 @@
 //*******************************************************
 @import '../colorPalette.less';
 
+@tileBorderColor: #4528BA;
+
 .tileContainer {
     display: flex;
     flex-direction: row;
@@ -12,28 +14,39 @@
     flex: 1 1 auto;
     overflow: auto;
     justify-content: center;
+    padding: 1rem 0;
+    margin-top: 1rem;
 }
 
 .tile {
     height: 100%;
-    width: 250px;
-    border: 1px solid darken(#FFFFFF, 60%);
+    width: 200px;
+    border: 1px solid #CDCDCD;
     border-radius: 2px;
     margin: 0 1rem 2rem 1rem;
-    transition: all 0.15s linear;
+    transition: transform 0.15s ease-in-out;
     overflow: hidden;
 
+    .clickable {
+        cursor: pointer;
+
+        * {
+            cursor: pointer;
+        }
+    }
+
     * {
+        -webkit-user-select: none;
         user-select: none;
     }
 
     .tileImage {
-        height: 5rem;
+        height: 7.5rem;
         width: 100%;
         background-size: contain;
         background-repeat: no-repeat;
         background-position: 50% 50%;
-        margin: 1rem 0;
+        margin: 0.5rem;
     }
 
     .tileContent {
@@ -41,12 +54,12 @@
         width: 100%;
         color: @textColorDefault;
         padding: 1rem;
-        background-color: lighten(@navBackgroundColor, 5%);
+        border-top: 4px solid #878787;
+        background-color: @containerBackgroundColor;
         overflow: hidden;
 
         & :first-child {
             font-size: 1.25rem;
-            color: @accentColor;
             margin-bottom: 0.5rem;
             margin-top: 0;
             white-space: nowrap;
@@ -61,8 +74,20 @@
     }
 
     &.clickable:hover {
-        border-color: darken(#FFFFFF, 30%);
-        cursor: pointer;
+        transform: scale(1.05);
+    }
+
+    &:nth-child(4n) .tileContent {
+        border-top-color: #878787;
+    }
+    &:nth-child(4n+1) .tileContent {
+        border-top-color: #4528BA;
+    }
+    &:nth-child(4n+2) .tileContent {
+        border-top-color: #5EDCB2;
+    }
+    &:nth-child(4n+3) .tileContent {
+        border-top-color: #D6AA1D;
     }
 
 }
