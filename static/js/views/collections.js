@@ -97,7 +97,7 @@ export default class Collections extends React.Component {
                         {
                             <div className="tileContent">
                                 {n.map ((m) => {
-                                    if (m.includes('.jpg') || m.includes('.jpeg') || m.includes('.png') || m == '' || m == 'Notes: ' || m == '-1' || m == '0' || m == '1') {
+                                    if (m.includes('.jpg') || m.includes('.jpeg') || m.includes('.png') || m == '' || m == 'Notes: ' || m == '-1' || m == '0' || m == '1' || m == '2') {
                                         return;
                                     } else {
                                         return <p>{m}</p>;
