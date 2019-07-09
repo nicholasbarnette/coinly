@@ -419,7 +419,7 @@ def explore():
                 # Turns data into a json string
                 jsonString = '{"values": ['
                 for data in info:
-                    jsonString += '{"name": "' + data[0] + '", "value": "' + valueLookupInt(data[1]) + '", "years": "' + str(data[2]) + ' ' + str(data[3]) + '", "image": "' + str(data[5]) + '", "grade": "' + str(data[6]) + '", "note": "Notes: ' + str(data[7]) + '"},'
+                    jsonString += '{"name": "' + data[0] + '", "value": "' + valueLookupInt(data[1]) + '", "years": "' + str(data[2]) + ' ' + str(data[3]) + '", "grade": "' + str(data[6]) + '", "note": "Notes: ' + str(data[7]) + '", "image": "' + str(data[5]) + '"},'
                 jsonString = jsonString[:-1] + (']', '[]')[jsonString == '{"values": [']
 
                 jsonString += ',"header": "' + info[0][0] + '"'

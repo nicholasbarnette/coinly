@@ -93,7 +93,6 @@ export default class Inventory extends React.Component {
 
 
     createContent() {
-
         if (this.state.tileContent.length > 0) {
 
             var tempArray = [];
@@ -104,7 +103,6 @@ export default class Inventory extends React.Component {
                 });
                 tempArray.push(temp);
             });
-
 
             return	tempArray.map ((n) => {
                         return <Tile image={n[n.length-1]} click={this.selectTile} data1={n[0]} data2={n[1]} type={this.state.level != 2 ? "clickable" : ""}>
