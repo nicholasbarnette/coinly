@@ -93,11 +93,11 @@ export default class Collections extends React.Component {
 
 
             return	tempArray.map ((n) => {
-                        return <Tile image={n[n.length-1]} click={this.selectTile} data1={n[0]} data2={n[1]} type={this.state.level != 2 ? "clickable" : ""}>
+                        return <Tile image={n[n.length-2]} click={this.selectTile} data1={n[0]} data2={n[1]} type={this.state.level != 2 ? "clickable" : ""} completed={n[n.length-1]}>
                         {
                             <div className="tileContent">
                                 {n.map ((m) => {
-                                    if (m.includes('.jpg') || m.includes('.jpeg') || m.includes('.png') || m == '' || m == 'Notes: ') {
+                                    if (m.includes('.jpg') || m.includes('.jpeg') || m.includes('.png') || m == '' || m == 'Notes: ' || m == '-1' || m == '0' || m == '1') {
                                         return;
                                     } else {
                                         return <p>{m}</p>;

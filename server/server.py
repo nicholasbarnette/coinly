@@ -183,7 +183,7 @@ def collections():
                 # Turns data into a json string
                 jsonString = '{"values": ['
                 for data in info:
-                    jsonString += '{"name": "", "value": "' + valueLookupInt(data[0]) + '", "years": "' + str(data[1]) + ' - ' + str(data[2]) + '", "image": "' + str(data[3]) + '"},'
+                    jsonString += '{"name": "", "value": "' + valueLookupInt(data[0]) + '", "years": "' + str(data[1]) + ' - ' + str(data[2]) + '", "image": "' + str(data[3]) + '", "owned": "2"},'
                 jsonString = jsonString[:-1] + ']'
 
                 jsonString += ',"header": "Value"'
@@ -193,17 +193,21 @@ def collections():
 
             elif level == 1:
                 # Gets data
-                query = 'SELECT M.nickname, M.value, MIN(M.year) AS year, MAX(M.year), T.image FROM Mintage M, CoinTypes T ' \
-                            'WHERE M.value=' + str(valueLookupStr(value)) + ' AND T.coinTypeID=M.coinTypeID ' \
-                            'GROUP BY M.name ' \
-                            'ORDER BY year ASC'
+                query = 'SELECT TMP2.nickname, TMP2.value, TMP2.year1, TMP2.year2, T.image, TMP2.owned, TMP2.total, CASE WHEN TMP2.owned=TMP2.total THEN "1" WHEN TMP2.owned>0 THEN "0" ELSE "-1" END FROM ' \
+                            '(SELECT M2.nickname AS nickname, M2.coinTypeID AS coinTypeID, M2.value AS value, MIN(M2.year) AS year1, MAX(M2.year) AS year2, COUNT(DISTINCT M2.mintageID) AS total, TMP.owned AS owned FROM Mintage M2 ' \
+                                'LEFT JOIN (SELECT M.coinTypeID, COUNT(DISTINCT C.mintageID) AS owned FROM Mintage M, Coins C WHERE M.value="' + str(valueLookupStr(value)) + '" AND C.mintageID=M.mintageID AND C.userID="' + str(session.get("userID") if session.get("userID") != None else "") + '") AS TMP ' \
+                                    'ON M2.coinTypeID=TMP.coinTypeID ' \
+                                'WHERE M2.value="' + str(valueLookupStr(value)) + '" ' \
+                                'GROUP BY M2.name) AS TMP2, CoinTypes T ' \
+                            'WHERE T.coinTypeID=TMP2.coinTypeID ' \
+                            'ORDER BY TMP2.year1 ASC'
                 c.execute(query)
                 info = c.fetchall()
 
                 # Turns data into a json string
                 jsonString = '{"values": ['
                 for data in info:
-                    jsonString += '{"name": "' + data[0] + '", "value": "' + valueLookupInt(data[1]) + '", "years": "' + str(data[2]) + ' - ' + str(data[3]) + '", "image": "' + str(data[4]) + '"},'
+                    jsonString += '{"name": "' + data[0] + '", "value": "' + valueLookupInt(data[1]) + '", "years": "' + str(data[2]) + ' - ' + str(data[3]) + '", "image": "' + str(data[4]) + '", "owned": "' + str(data[7]) + '"},'
                 jsonString = jsonString[:-1] + ']'
 
                 jsonString += ',"header": "' + valueLookupInt(info[0][1]) + '"'
@@ -212,16 +216,18 @@ def collections():
                 return jsonify(jsonString), 202
             elif level == 2:
                 # Gets data
-                query = 'SELECT M.nickname, M.value, M.year, M.mint, M.quantity, M.note, T.image FROM CoinTypes T, Mintage M ' \
+                query = 'SELECT M.nickname, M.value, M.year, M.mint, M.quantity, M.note, T.image, CASE C.mintageID WHEN M.mintageID THEN "1" ELSE "-1" END FROM CoinTypes T, Mintage M ' \
+                            'LEFT JOIN Coins C ON (M.mintageID=C.mintageID AND C.userID="' + str(session.get("userID") if session.get("userID") != None else "") + '")' \
                             'WHERE M.value=' + str(valueLookupStr(value)) + ' AND T.coinTypeID=M.coinTypeID AND M.nickname="' + str(nickname) + '" ' \
                             'ORDER BY year ASC'
+                print(query)
                 c.execute(query)
                 info = c.fetchall()
 
                 # Turns data into a json string
                 jsonString = '{"values": ['
                 for data in info:
-                    jsonString += '{"name": "' + data[0] + '", "value": "' + valueLookupInt(data[1]) + '", "years": "' + str(data[2]) + ' ' + str(data[3]) + '", "quantity": "Mintage: ' + "{:,d}".format(data[4]) + '", "note": "Notes: ' + str(data[5]) + '", "image": "' + str(data[6]) + '"},'
+                    jsonString += '{"name": "' + data[0] + '", "value": "' + valueLookupInt(data[1]) + '", "years": "' + str(data[2]) + ' ' + str(data[3]) + '", "quantity": "Mintage: ' + "{:,d}".format(data[4]) + '", "note": "Notes: ' + str(data[5]) + '", "image": "' + str(data[6]) + '", "owned": "' + str("1" if data[7] == "1" else (2 if session.get("userID") == None else "-1")) + '"},'
                 jsonString = jsonString[:-1] + ']'
 
                 jsonString += ',"header": "' + info[0][0] + '"'
