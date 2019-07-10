@@ -195,7 +195,7 @@ def collections():
                 # Gets data
                 query = 'SELECT TMP2.nickname, TMP2.value, TMP2.year1, TMP2.year2, T.image, TMP2.owned, TMP2.total, CASE WHEN TMP2.owned=TMP2.total THEN "1" WHEN TMP2.owned>0 THEN "0" ELSE "-1" END FROM ' \
                             '(SELECT M2.nickname AS nickname, M2.coinTypeID AS coinTypeID, M2.value AS value, MIN(M2.year) AS year1, MAX(M2.year) AS year2, COUNT(DISTINCT M2.mintageID) AS total, TMP.owned AS owned FROM Mintage M2 ' \
-                                'LEFT JOIN (SELECT M.coinTypeID, COUNT(DISTINCT C.mintageID) AS owned FROM Mintage M, Coins C WHERE M.value="' + str(valueLookupStr(value)) + '" AND C.mintageID=M.mintageID AND C.userID="' + str(session.get("userID") if session.get("userID") != None else "") + '") AS TMP ' \
+                                'LEFT JOIN (SELECT M.coinTypeID, COUNT(DISTINCT C.mintageID) AS owned FROM Mintage M, Coins C WHERE M.value="' + str(valueLookupStr(value)) + '" AND C.mintageID=M.mintageID AND C.userID="' + str(session.get("userID") if session.get("userID") != None else "") + '" GROUP BY M.coinTypeID) AS TMP ' \
                                     'ON M2.coinTypeID=TMP.coinTypeID ' \
                                 'WHERE M2.value="' + str(valueLookupStr(value)) + '" ' \
                                 'GROUP BY M2.name) AS TMP2, CoinTypes T ' \
@@ -219,15 +219,15 @@ def collections():
                 query = 'SELECT M.nickname, M.value, M.year, M.mint, M.quantity, M.note, T.image, CASE C.mintageID WHEN M.mintageID THEN "1" ELSE "-1" END FROM CoinTypes T, Mintage M ' \
                             'LEFT JOIN Coins C ON (M.mintageID=C.mintageID AND C.userID="' + str(session.get("userID") if session.get("userID") != None else "") + '")' \
                             'WHERE M.value=' + str(valueLookupStr(value)) + ' AND T.coinTypeID=M.coinTypeID AND M.nickname="' + str(nickname) + '" ' \
+                            'GROUP BY M.mintageID ' \
                             'ORDER BY year ASC'
-                print(query)
                 c.execute(query)
                 info = c.fetchall()
 
                 # Turns data into a json string
                 jsonString = '{"values": ['
                 for data in info:
-                    jsonString += '{"name": "' + data[0] + '", "value": "' + valueLookupInt(data[1]) + '", "years": "' + str(data[2]) + ' ' + str(data[3]) + '", "quantity": "Mintage: ' + "{:,d}".format(data[4]) + '", "note": "Notes: ' + str(data[5]) + '", "image": "' + str(data[6]) + '", "owned": "' + str("1" if data[7] == "1" else (2 if session.get("userID") == None else "-1")) + '"},'
+                    jsonString += '{"name": "' + data[0] + '", "value": "' + valueLookupInt(data[1]) + '", "year": "' + str(data[2]) + '", "mint": "' + str(data[3]) + '", "quantity": "Mintage: ' + "{:,d}".format(data[4]) + '", "note": "Notes: ' + str(data[5]) + '", "image": "' + str(data[6]) + '", "owned": "' + str("1" if data[7] == "1" else (2 if session.get("userID") == None else "-1")) + '"},'
                 jsonString = jsonString[:-1] + ']'
 
                 jsonString += ',"header": "' + info[0][0] + '"'
@@ -278,14 +278,12 @@ def selectData():
             values = c.execute('SELECT year, mint, note FROM Mintage WHERE value= ' + str(valueLookupStr(value)) + ' AND nickname="' + nickname + '"').fetchall()
             valueArray = '{"items": ['
             for val in values:
-                if val[2]:
-                    valueArray += '"' + val[0] + '-' + val[1] + ' -- ' + val[2] + '",'
-                else:
-                    if not val[1] == '':
-                        valueArray += '"' + val[0] + '-' + val[1] + '",'
-                    else:
-                        valueArray += '"' + val[0] + '",'
-
+                valueArray += '"' + val[0]
+                if not val[1] == '':
+                    valueArray += '-' + val[1]
+                if not val[2] == '':
+                    valueArray += ' -- ' + val[2]
+                valueArray += '",'
 
             valueArray = valueArray[:-1] + ']}'
             return jsonify(valueArray), 202
@@ -305,6 +303,8 @@ def addCoin():
         conn = sqlite3.connect('coins.db')
         c = conn.cursor()
 
+        print(request.json)
+
         value = request.json["value"]
         nickname = request.json["nickname"]
         coin = request.json["coin"]
@@ -317,7 +317,7 @@ def addCoin():
         coinArray = coin.split(" -- ")
         note = ''
         if (len(coinArray) == 2):
-            note = coinArray[1]
+            note = coinArray[1][7:]
         coinArray = coinArray[0].split("-")
         year = coinArray[0]
         mint = ''
@@ -544,8 +544,7 @@ def test():
     # Sets up/connects to DB
     conn = sqlite3.connect('coins.db')
     c = conn.cursor()
-    print('hello world')
-    query = 'SELECT COUNT(*) FROM Coins'
+    query = 'SELECT M.coinTypeID, C.mintageID, COUNT(DISTINCT C.mintageID) AS owned FROM Mintage M, Coins C WHERE M.value="7" AND C.mintageID=M.mintageID AND C.userID="3" GROUP BY M.coinTypeID'
     res = c.execute(query).fetchall()
     print(res)
 

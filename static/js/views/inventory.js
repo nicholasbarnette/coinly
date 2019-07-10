@@ -149,8 +149,9 @@ export default class Inventory extends React.Component {
         };
         params = JSON.stringify(params);
 
+        var n = window.location;
         $.ajax({
-            url: "/inventory",
+            url: n.protocol + '//' + n.host + "/inventory",
             method: 'POST',
             contentType: 'application/json',
             data: params
@@ -187,7 +188,7 @@ export default class Inventory extends React.Component {
 	    });
 	}
 
-    openAddCoinDialog () {
+    openAddCoinDialog() {
         this.loadOptions(0, '', '');
         this.setState({
             dialogOpen: true
@@ -219,7 +220,7 @@ export default class Inventory extends React.Component {
         params = JSON.stringify(params);
 
         var coin = false;
-        if (this.state.coinOption != '' ) {
+        if (this.state.coinOption != '') {
             coin = true;
         }
         let grade = this.state.grade.length != '';
@@ -229,8 +230,9 @@ export default class Inventory extends React.Component {
             return;
         }
 
+        var n = window.location;
         $.ajax({
-            url: "/inventory/coin/add",
+            url: n.protocol + '//' + n.host + "/inventory/coin/add",
             method: 'POST',
             contentType: 'application/json',
             data: params
@@ -267,8 +269,9 @@ export default class Inventory extends React.Component {
         };
         params = JSON.stringify(params);
 
+        var n = window.location;
         $.ajax({
-            url: "/collections/select",
+            url: n.protocol + '//' + n.host + "/collections/select",
             method: 'POST',
             contentType: 'application/json',
             data: params
@@ -409,7 +412,7 @@ export default class Inventory extends React.Component {
                                         {this.state.levelOption == 2 ? <Select items={this.state.coinOptions} hasLabel="true" labelText="Year/Mint: "name="yearSelect" change={this.onCoinSelectChange} params={2} /> : ''}
                                         <div className="horizontalDivider"></div>
                                         <Select items={grades} hasLabel="true" labelText="Grade:" name="gradeSelect" change={this.onInputSelectChange} params={0} error={this.state.gradeError} />
-                                        <Input hasLabel="true" labelText="Purchase Date:" name="buyDate" type="date" placeholderText="Purchase Date" change={this.onInputSelectChange} params={1} error={this.state.dateError} />
+                                        <Input hasLabel="true" labelText="Purchase Date:" name="buyDate" type="date" placeholderText="YYYY-mm-dd" change={this.onInputSelectChange} params={1} error={this.state.dateError} />
                                         <Input hasLabel="true" labelText="Purchase Price:" name="buyPrice" type="number" placeholderText="Purchase Price" change={this.onInputSelectChange} params={2} error={this.state.priceError} />
                                         <Input hasLabel="true" labelText="Notes:" name="notes" type="text" placeholderText="Notes" change={this.onInputSelectChange} params={3} />
                                     </Form>

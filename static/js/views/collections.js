@@ -42,12 +42,25 @@ export default class Collections extends React.Component {
             buyDate: '',
             buyPrice: 0,
             notes: '',
-            notification: ''
+            notification: '',
+            loggedIn: false,
+            gradeError: false,
+            dateError: false,
+            priceError: false
         };
 
         //Tile and Collection Navigation Functions
         this.selectTile = this.selectTile.bind(this);
         this.backButtonClick = this.backButtonClick.bind(this);
+
+        //Dialog Functions
+        this.openAddCoinDialog = this.openAddCoinDialog.bind(this);
+        this.closeAddCoinDialog = this.closeAddCoinDialog.bind(this);
+        this.submitAddCoinDialog = this.submitAddCoinDialog.bind(this);
+
+        //Select Functions
+        this.onCoinSelectChange = this.onCoinSelectChange.bind(this);
+        this.onInputSelectChange = this.onInputSelectChange.bind(this);
 
         //Notification
         this.closeNotification = this.closeNotification.bind(this);
@@ -55,6 +68,10 @@ export default class Collections extends React.Component {
 
         //Logged In
         this.setLoggedIn = this.setLoggedIn.bind(this);
+
+        //Coin Functions
+        this.setCoinOption = this.setCoinOption.bind(this);
+        this.createCoin = this.createCoin.bind(this);
     }
 
     selectTile(n, v) {
@@ -71,10 +88,28 @@ export default class Collections extends React.Component {
         this.loadData(n,v,l,h);
     }
 
+    setCoinOption(n) {
+        console.log(n);
+        this.setState({
+            coinOption: n
+        });
+    }
+
     setLoggedIn(l) {
         this.setState({
             loggedIn: l
         });
+    }
+
+    createCoin(n) {
+        var coin = n[2];
+        if (n[3] != '') {
+            coin += '-' + n[3];
+        }
+        if (n[5] != '') {
+            coin += ' -- ' + n[5];
+        }
+        return coin;
     }
 
 
@@ -92,8 +127,11 @@ export default class Collections extends React.Component {
             });
 
 
-            return	tempArray.map ((n) => {
-                        return <Tile image={n[n.length-2]} click={this.selectTile} data1={n[0]} data2={n[1]} type={this.state.level != 2 ? "clickable" : ""} completed={n[n.length-1]}>
+            return	tempArray.map ((n,i) => {
+                        return <Tile image={n[n.length-2]} click={this.selectTile} data1={n[0]} data2={n[1]} type={this.state.level != 2 ? "clickable" : ""}
+                                    completed={this.state.loggedIn ? n[n.length-1] : 2} canAdd={this.state.level !== 2 ? false : (this.state.loggedIn ? true : false)}
+                                    openAddCoinDialog={this.state.level === 2 ? this.openAddCoinDialog : ''} 
+                                    setCoinOption={this.setCoinOption} coinOption={this.createCoin(n)}>
                         {
                             <div className="tileContent">
                                 {n.map ((m) => {
@@ -136,14 +174,16 @@ export default class Collections extends React.Component {
         };
         params = JSON.stringify(params);
 
+        var n = window.location;
         $.ajax({
-            url: "/collections",
+            url: n.protocol + '//' + n.host + "/collections",
             method: 'POST',
             contentType: 'application/json',
             data: params
         })
         .done(data => {
             data = JSON.parse(data);
+            console.log(data);
             this.setState({
                 tileContent: data.values,
                 header: data.header,
@@ -175,6 +215,188 @@ export default class Collections extends React.Component {
 	    });
 	}
 
+    openAddCoinDialog() {
+        // this.loadOptions(2, this.state.value, this.state.nickname);
+        this.setState({
+            dialogOpen: true,
+        });
+    }
+
+    closeAddCoinDialog() {
+        this.setState({
+            dialogOpen: false,
+            coinOptions: []
+        });
+    }
+
+    submitAddCoinDialog() {
+        var params = {
+            value: this.state.value,
+            nickname: this.state.nickname,
+            coin: this.state.coinOption,
+            grade: this.state.grade,
+            buyDate: this.state.buyDate,
+            buyPrice: this.state.buyPrice,
+            notes: this.state.notes
+        };
+        params = JSON.stringify(params);
+
+        console.log(params);
+
+        var coin = false;
+        if (this.state.coinOption != '') {
+            coin = true;
+        }
+        let grade = this.state.grade.length != '';
+        let date = this.dateValidation(this.state.buyDate);
+        let price = parseInt(this.state.buyPrice) >= 0;
+        if (!coin || !grade || !date || !price) {
+            return;
+        }
+
+        var n = window.location;
+        $.ajax({
+            url: n.protocol + '//' + n.host + "/inventory/coin/add",
+            method: 'POST',
+            contentType: 'application/json',
+            data: params
+        })
+        .done(data => {
+            data = JSON.parse(data);
+            this.setState({
+                notification: ''
+            });
+        })
+        .fail((xhr, status, error) => {
+            this.setState({
+                notification: JSON.parse(xhr.responseJSON).message
+            });
+            return;
+        });
+        this.loadData(this.state.nickname,this.state.value,this.state.level,this.state.header);
+        this.closeAddCoinDialog();
+    }
+
+    loadOptions(l,v,n,c) {
+
+        this.setState({
+            levelOption: l,
+            valueOption: v,
+            nicknameOption: n,
+            coinOption: c
+        });
+
+        var params = {
+            level: l,
+            value: v,
+            nickname: n
+        };
+        params = JSON.stringify(params);
+
+        var n = window.location;
+        $.ajax({
+            url: n.protocol + '//' + n.host + "/collections/select",
+            method: 'POST',
+            contentType: 'application/json',
+            data: params
+        })
+        .done(data => {
+            data = JSON.parse(data);
+            if (this.state.levelOption == 0) {
+                this.setState({
+                    valueOptions: data.items
+                });
+            } else if (this.state.levelOption == 1) {
+                this.setState({
+                    nicknameOptions: data.items
+                });
+            } else if (this.state.levelOption == 2) {
+                this.setState({
+                    coinOptions: data.items
+                });
+            }
+            this.setState({
+                notification: ''
+            });
+        })
+        .fail((xhr, status, error) => {
+            this.setState({
+                notification: JSON.parse(xhr.responseJSON).message
+            });
+        });
+    }
+
+    onCoinSelectChange(c,v) {
+        if (c == 0) {
+            this.loadOptions(1, v, this.state.nicknameOption, this.state.coinOption);
+        } else if (c == 1) {
+            this.loadOptions(2, this.state.valueOption, v, this.state.coinOption);
+        } else {
+            this.loadOptions(2, this.state.valueOption, this.state.nicknameOption, v);
+        }
+    }
+
+    onInputSelectChange(c,v) {
+        if (c == 0) {
+            this.setState({
+                grade: v
+            });
+        } else if (c == 1) {
+            this.setState({
+                buyDate: v
+            });
+        } else if (c == 2) {
+            this.setState({
+                buyPrice: v
+            });
+        } else {
+            this.setState({
+                notes: v
+            });
+        }
+    }
+
+    dateValidation(d) {
+
+        if (d.length == 0) {
+            this.setState({
+                birthdayError: true
+            });
+            return false;
+        }
+
+        let dArray = d.split('-');
+        if (dArray.length != 3) {
+            this.setState({
+                birthdayError: true
+            });
+            return false;
+        }
+
+        let year = parseInt(dArray[0]);
+        let month = parseInt(dArray[1]) - 1;
+        let day = parseInt(dArray[2]);
+
+        if (month < 0 && month > 11 && year > new Date().getFullYear() - 100 && year < new Date().getFullYear()) {
+            this.setState({
+                birthdayError: true
+            });
+            return false;
+        }
+
+        if (isNaN((new Date(year, month, day)).getFullYear())) {
+            this.setState({
+                birthdayError: true
+            });
+            return false;
+        }
+
+        this.setState({
+            birthdayError: false
+        });
+        return true;
+    }
+
 	render() {
 
 	    var grades = ['Not Graded','Ungradeable','PO-1','FR-2','AG-3','G-4','G-6','VG-8','VG-10','F-12',
@@ -202,6 +424,20 @@ export default class Collections extends React.Component {
                             </div>
                         }
                         </PageNav>
+                        {
+                            this.state.dialogOpen ?
+
+                                <Dialog dialogName="add" header="Add to Your Collection" closeDialog={this.closeAddCoinDialog} submitDialog={this.submitAddCoinDialog}>
+                                    <Form>
+                                        <Select items={grades} hasLabel="true" labelText="Grade:" name="gradeSelect" change={this.onInputSelectChange} params={0} error={this.state.gradeError} />
+                                        <Input hasLabel="true" labelText="Purchase Date:" name="buyDate" type="date" placeholderText="YYYY-mm-dd" change={this.onInputSelectChange} params={1} error={this.state.dateError} />
+                                        <Input hasLabel="true" labelText="Purchase Price:" name="buyPrice" type="number" placeholderText="Purchase Price" change={this.onInputSelectChange} params={2} error={this.state.priceError} />
+                                        <Input hasLabel="true" labelText="Notes:" name="notes" type="text" placeholderText="Notes" change={this.onInputSelectChange} params={3} />
+                                    </Form>
+                                </Dialog>
+
+                            : ''
+                        }
                     </div>;
 	}
 }

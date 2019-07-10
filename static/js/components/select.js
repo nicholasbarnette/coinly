@@ -7,8 +7,6 @@ import '../../css/components/select.less';
 export default class Select extends React.Component {
 
     handleChange(e) {
-        console.log('The cheated');
-        console.log(e.target.value);
         if (e.target.value != "unselected") {
             this.props.change(this.props.params, e.target.value);
         }
