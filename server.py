@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, Response, jsonify, session
+from flask import Flask, render_template, request, jsonify, session
 import sqlite3
 import json, sys
 import time, datetime
@@ -99,15 +99,6 @@ try:
     print(c.execute('''SELECT COUNT(*) FROM Mintage''').fetchall())
     print(c.execute('''SELECT quantity FROM Mintage LIMIT 1''').fetchall())
     print(c.execute('''SELECT COUNT(*) FROM CoinTypes''').fetchall())
-
-    # print()
-    # print()
-    # print(c.execute('''SELECT COUNT(*) FROM Users''').fetchall())
-    # password = c.execute('''SELECT password FROM Users LIMIT 1''').fetchall()[0][0]
-    # if bcrypt.checkpw(b'Test', str.encode(password)):
-    #     print("It Matches!")
-    # else:
-    #     print("It Does not Match :(")
 
 
 except Exception as e:
