@@ -24,3 +24,5 @@ yarn-error.log*
 
 venv
 server/__pycache__
+
+/__pycache__
