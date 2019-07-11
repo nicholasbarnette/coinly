@@ -104,25 +104,43 @@
 
 .leftNavContainer {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	flex-wrap: nowrap;
 	flex: 1 1 auto;
 	
 	> :not(.leftNav) {
 		flex: 1 1 auto;
+		padding-top: 4rem;
 	}
 	
 	.leftNav {
-		height: 100vh;
-		width: 12rem;
 		background-color: @navBackgroundColor;
 		z-index: 10;
-		transition: width 0.25s ease-in;
+		position: absolute;
+		left: 0;
+    	top: 0;
+		width: 100%;
+		height: 100%;
+		padding: 0;
+		transition: height 0.25s ease-in;
 		overflow: hidden;
-		padding-top: 1rem;
 		flex-shrink: 0;
 		display: flex;
         flex-direction: column;
+
+        .skinnyNav {
+		    height: 4rem;
+		    min-height: 4rem;
+		    width: 100%;
+		    display: flex;
+		    justify-content: flex-start;
+		    align-items: center;
+		    padding: 0 1rem;
+
+		    > .glyphicon {
+		    	font-size: 1.5rem;
+		    }
+		}
 
         // Everything in the left nav needs to be light text
         span {
@@ -132,6 +150,7 @@
         .divider {
         	border-bottom: 1px solid @textColorDarkDefault;
         	margin: 0.5rem 1rem;
+        	display: none;
         }
 
         .navTop,
@@ -216,7 +235,7 @@
 			}
 
 			&.pin {
-				display: flex;
+				display: none;
 				justify-content: flex-end;
 
 				> a {
@@ -237,27 +256,92 @@
 		}
 
 		&.collapsed {
-			width: 4rem;
+			width: 100%;
+			height: 4rem;
 
 			.navItem {
 				span:not(.glyphicon) {
-					display: none;
+					display: block;
 				}
 
 				.glyphicon {
-					margin-right: 0;
+					margin-right: 0.5rem;
 				}
 			}
 
 			.button .inner {
 				span:not(.glyphicon) {
-					display: none;
+					display: block;
 				}
 
 				.glyphicon {
-					margin-right: 0;
+					margin-right: 0.5rem;
 				}
 			}
 		}
 	}
+}
+
+
+@media only screen and (min-width: 768px) {
+	.leftNavContainer {
+		flex-direction: row;
+
+		> :not(.leftNav) {
+			padding: 0;
+		}
+
+		.leftNav {
+			position: static;
+			height: 100vh;
+			width: 12rem;
+			padding-top: 1rem;
+			transition: width 0.25s ease-in;
+
+			.skinnyNav {
+			    display: none;
+			}
+
+			.navBottom {
+
+				.divider {
+					display: block;
+				}
+
+				.navItem {
+
+					&.pin {
+						display: block;
+					}
+				}
+			}
+
+			&.collapsed {
+				width: 4rem;
+				height: 100vh;
+
+
+				.navItem {
+					span:not(.glyphicon) {
+						display: none;
+					}
+
+					.glyphicon {
+						margin-right: 0;
+					}
+				}
+
+				.button .inner {
+					span:not(.glyphicon) {
+						display: none;
+					}
+
+					.glyphicon {
+						margin-right: 0;
+					}
+				}
+			}
+		}
+	}
+
 }

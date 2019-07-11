@@ -85,7 +85,7 @@ export default class LeftNav extends React.Component {
     }
 
 	toggleLeftNav() {
-		this.props.openLeftNav();
+		this.props.toggleLeftNav();
 	}
 
     toggleDialogOpen(n) {
@@ -323,6 +323,9 @@ export default class LeftNav extends React.Component {
 					{
 						this.state.loggedIn ?
 							<nav className={this.props.collapsed ? "leftNav collapsed" : "leftNav"} style={{width: this.props.width}}>
+                                <div className="skinnyNav" onClick={e => this.toggleLeftNav()}>
+                                    <Glyphicon glyph="menu-hamburger" />
+                                </div>
 								<div className="navTop">
 									<a className="navItem" href="/">
 										<Glyphicon glyph="home" />
@@ -346,7 +349,10 @@ export default class LeftNav extends React.Component {
 								</div>
 							</nav>
                         :
-                        	<nav className="leftNav" style={{width: this.props.width}}>
+                        	<nav className={this.props.collapsed ? "leftNav collapsed" : "leftNav"}>
+                                <div className="skinnyNav" onClick={e => this.toggleLeftNav()}>
+                                    <Glyphicon glyph="menu-hamburger" />
+                                </div>
                         		<div className="navTop">
                         			<a className="navItem" href="/">
                         				<Glyphicon glyph="home" />

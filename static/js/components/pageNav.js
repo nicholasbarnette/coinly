@@ -10,12 +10,11 @@ export default class PageNav extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			width: '12rem',
 			notificationOpen: false,
 			loggedIn: false,
 			collapsed: false
 		};
-		this.openLeftNav = this.openLeftNav.bind(this);
+		this.toggleLeftNav = this.toggleLeftNav.bind(this);
 		this.toggleNotification = this.toggleNotification.bind(this);
 		this.closeNotification = this.closeNotification.bind(this);
 		this.setNotification = this.setNotification.bind(this);
@@ -24,17 +23,15 @@ export default class PageNav extends React.Component {
 
 	componentDidMount() {
 		this.setState({
-			width: localStorage.getItem('leftNavWidth') === "null" ? "12rem" : localStorage.getItem('leftNavWidth'),
-			collapsed: localStorage.getItem('leftNavWidth') === "4rem" ? true : false
+			collapsed: localStorage.getItem('leftNavCollapsed')
 		});
     }
 
-	openLeftNav() {
+	toggleLeftNav() {
 		this.setState({
-			width: this.state.width === '12rem' ? '4rem' : '12rem',
-			collapsed: this.state.width === '12rem' ? true : false
+			collapsed: !this.state.collapsed
 		});
-		localStorage.setItem('leftNavWidth', this.state.width === '12rem' ? '4rem' : '12rem');
+		localStorage.setItem('leftNavCollapsed', !this.state.collapsed);
 	}
 
 	toggleNotification() {
@@ -60,7 +57,7 @@ export default class PageNav extends React.Component {
 
 	render() {
 		return	<div className="navContainer">
-					<LeftNav width={this.state.width} openLeftNav={this.openLeftNav} setNotification={this.setNotification} setLoggedIn={this.setLoggedIn} collapsed={this.state.collapsed}>
+					<LeftNav toggleLeftNav={this.toggleLeftNav} setNotification={this.setNotification} setLoggedIn={this.setLoggedIn} collapsed={this.state.collapsed}>
 					{
 						<div className="bodyContainer">
 							{this.props.children}
