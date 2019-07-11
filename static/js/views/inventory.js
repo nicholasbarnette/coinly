@@ -112,7 +112,7 @@ export default class Inventory extends React.Component {
                                     if (m.includes('.jpg') || m.includes('.jpeg') || m.includes('.png') || m == '' || m == 'Notes: ') {
                                         return;
                                     } else {
-                                        return <p>{m}</p>;
+                                        return <p title={m}>{m}</p>;
                                     }
                                 })}
                             </div>
