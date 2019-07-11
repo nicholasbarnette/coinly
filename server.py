@@ -11,7 +11,7 @@ conn = sqlite3.connect('coins.db')
 c = conn.cursor()
 
 
-app = Flask(__name__, static_folder='../static/dist', template_folder='../static')
+app = Flask(__name__, static_folder='static/dist', template_folder='static')
 app.secret_key = "19Me19Rc97uR01yD08iME16D"
 
 
