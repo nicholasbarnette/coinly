@@ -6,17 +6,6 @@ import bcrypt, webbrowser
 from initFunctions import *
 
 
-
-# Redis Session Management
-# http://flask.pocoo.org/snippets/75/
-
-
-# Set the desired host and port
-hostName = '127.0.0.1'
-portNumber = 8000
-
-
-
 # Sets up/connects to DB
 conn = sqlite3.connect('coins.db')
 c = conn.cursor()
@@ -552,4 +541,4 @@ def test():
 
 if __name__ == '__main__':
     # Runs the application
-    app.run(host=hostName, port=portNumber)
+    app.run()
