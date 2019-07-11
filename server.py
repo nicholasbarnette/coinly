@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, Response, jsonify, session
 import sqlite3
 import json, sys
 import time, datetime
-import bcrypt, webbrowser
+import bcrypt
 from initFunctions import *
 
 
@@ -113,12 +113,6 @@ try:
 except Exception as e:
     printErr(e)
 
-
-# Specify browser path to open URL
-# chrome_path = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
-
-# Opens URL
-# webbrowser.get(chrome_path).open(hostName + ':' + str(portNumber), new=2)
 
 
 @app.before_request
