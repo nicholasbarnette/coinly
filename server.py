@@ -1,14 +1,23 @@
 from flask import Flask, render_template, request, jsonify, session
-import sqlite3
+# import sqlite3
+import mysql.connector
 import json, sys
 import time, datetime
 import bcrypt
 from initFunctions import *
 
+mydb = mysql.connector.connect(
+  host="107.180.34.199",
+  user="server_admin",
+  passwd="ann7ohio",
+  database="coins"
+)
+
+c = mydb.cursor()
 
 # Sets up/connects to DB
-conn = sqlite3.connect('coins.db')
-c = conn.cursor()
+# conn = sqlite3.connect('coins.db')
+# c = conn.cursor()
 
 
 app = Flask(__name__, static_folder='static/dist', template_folder='static')
@@ -20,7 +29,7 @@ try:
     # Mintage Table
     c.execute('''
 	    CREATE TABLE Mintage(
-            mintageID INTEGER PRIMARY KEY,
+            mintageID INTEGER AUTO_INCREMENT PRIMARY KEY,
             coinTypeID INTEGER,
             year TEXT,
             mint TEXT,
@@ -49,7 +58,7 @@ try:
     # Coins Table
     c.execute('''
 	    CREATE TABLE Coins(
-	        coinID INTEGER PRIMARY KEY,
+	        coinID INTEGER AUTO_INCREMENT PRIMARY KEY,
 	        userID INTEGER,
 	        mintageID INTEGER,
             buyDate TEXT,
@@ -64,7 +73,7 @@ try:
     # Users Table
     c.execute('''
     	    CREATE TABLE Users(
-    	        userID INTEGER PRIMARY KEY,
+    	        userID INTEGER AUTO_INCREMENT PRIMARY KEY,
                 email TEXT,
                 password TEXT,
                 firstName TEXT,
@@ -74,7 +83,7 @@ try:
             )
     	''')
 
-except sqlite3.Error as e:
+except Exception as e:
     printErr(e)
 
 
@@ -91,14 +100,18 @@ try:
     query, query2 = initCoinDB()
     c.execute(query)
     c.execute(query2)
-    conn.commit()
+    # conn.commit()
+    mydb.commit()
     print("Data inserted successfully.")
 
 
     # Prints the count of rows in each table
-    print(c.execute('''SELECT COUNT(*) FROM Mintage''').fetchall())
-    print(c.execute('''SELECT quantity FROM Mintage LIMIT 1''').fetchall())
-    print(c.execute('''SELECT COUNT(*) FROM CoinTypes''').fetchall())
+    c.execute('SELECT COUNT(*) FROM Mintage')
+    print(c.fetchall())
+    c.execute('''SELECT quantity FROM Mintage LIMIT 1''')
+    print(c.fetchall())
+    c.execute('''SELECT COUNT(*) FROM CoinTypes''')
+    print(c.fetchall())
 
 
 except Exception as e:
@@ -124,8 +137,8 @@ def collections():
 
     try:
         # Sets up/connects to DB
-        conn = sqlite3.connect('coins.db')
-        c = conn.cursor()
+        # conn = sqlite3.connect('coins.db')
+        # c = conn.cursor()
 
         if request.method == 'GET':
             return render_template('index.html')
@@ -138,12 +151,6 @@ def collections():
             level = request.json["level"]
             value = request.json["value"]
             nickname = request.json["nickname"]
-
-            # print('', file=sys.stderr)
-            # print(level, file=sys.stderr)
-            # print(value, file=sys.stderr)
-            # print(nickname, file=sys.stderr)
-            # print('', file=sys.stderr)
 
             if level == 0:
                 # Gets data
@@ -212,7 +219,7 @@ def collections():
                 return jsonify('{"message": "Invalid level."}'), 404
 
     except Exception as e:
-        print(e, file=sys.stderr)
+        print(e)
         return jsonify('{"message": "' + str(e) + '"}'), 404
 
 # Returns arrays of items to select from the coins in the mintage table
@@ -221,8 +228,8 @@ def selectData():
 
     try:
         # Sets up/connects to DB
-        conn = sqlite3.connect('coins.db')
-        c = conn.cursor()
+        # conn = sqlite3.connect('coins.db')
+        # c = conn.cursor()
 
         # Gets the level
         # Level 0 - Value List
@@ -233,7 +240,8 @@ def selectData():
         nickname = request.json["nickname"]
 
         if level == 0:
-            values = c.execute('SELECT value FROM Mintage GROUP BY value').fetchall()
+            c.execute('SELECT value FROM Mintage GROUP BY value')
+            values = c.fetchall()
             valueArray = '{"items": ['
             for val in values:
                 valueArray += '"' + valueLookupInt(val[0]) + '",'
@@ -241,7 +249,8 @@ def selectData():
             valueArray = valueArray[:-1] + ']}'
             return jsonify(valueArray), 202
         elif level == 1:
-            values = c.execute('SELECT nickname FROM Mintage WHERE value= ' + str(valueLookupStr(value)) + ' GROUP BY nickname').fetchall()
+            c.execute('SELECT nickname FROM Mintage WHERE value= ' + str(valueLookupStr(value)) + ' GROUP BY nickname')
+            values = c.fetchall()
             valueArray = '{"items": ['
             for val in values:
                 valueArray += '"' + val[0] + '",'
@@ -249,7 +258,8 @@ def selectData():
             valueArray = valueArray[:-1] + ']}'
             return jsonify(valueArray), 202
         elif level == 2:
-            values = c.execute('SELECT year, mint, note FROM Mintage WHERE value= ' + str(valueLookupStr(value)) + ' AND nickname="' + nickname + '"').fetchall()
+            c.execute('SELECT year, mint, note FROM Mintage WHERE value= ' + str(valueLookupStr(value)) + ' AND nickname="' + nickname + '"')
+            values = c.fetchall()
             valueArray = '{"items": ['
             for val in values:
                 valueArray += '"' + val[0]
@@ -274,8 +284,8 @@ def addCoin():
 
     try:
         # Sets up/connects to DB
-        conn = sqlite3.connect('coins.db')
-        c = conn.cursor()
+        # conn = sqlite3.connect('coins.db')
+        # c = conn.cursor()
 
         print(request.json)
 
@@ -304,14 +314,15 @@ def addCoin():
                             'M.nickname="' + nickname + '" AND M.value=' + str(valueLookupStr(value)) + ' ' \
                             'AND M.note="' + note + '")' \
                     ', "' + str(session["userID"]) + '", "' + buyDate + '", ' + buyPrice + ', + "' + grade + '", "' + notes + '")'
-        print(query, file=sys.stderr)
+        print(query)
         c.execute(query)
-        conn.commit()
+        # conn.commit()
+        mydb.commit()
 
         return jsonify('{"message": "Successfully added coin to collection."}'), 202
 
     except Exception as e:
-        print(e, file=sys.stderr)
+        print(e)
         return jsonify('{"message": "' + str(e) + '"}'), 404
 
 # Returns an array of a users personal collection
@@ -321,8 +332,8 @@ def explore():
     try:
 
         # Sets up/connects to DB
-        conn = sqlite3.connect('coins.db')
-        c = conn.cursor()
+        # conn = sqlite3.connect('coins.db')
+        # c = conn.cursor()
 
         if request.method == 'GET':
             return render_template('index.html')
@@ -404,7 +415,7 @@ def explore():
                 return jsonify('{"message": "Invalid level."}'), 404
 
     except Exception as e:
-        print(e, file=sys.stderr)
+        print(e)
         return jsonify('{"message": "' + str(e) + '"}'), 404
 
 # Creates an account for a user
@@ -413,8 +424,8 @@ def createAccount():
 
     try:
         # Sets up/connects to DB
-        conn = sqlite3.connect('coins.db')
-        c = conn.cursor()
+        # conn = sqlite3.connect('coins.db')
+        # c = conn.cursor()
 
         email = request.json["email"]
         password = request.json["password"].encode()
@@ -425,7 +436,8 @@ def createAccount():
 
 
         # Check if email is in use already
-        if not len(c.execute('SELECT U.email FROM Users U WHERE U.email="' + email + '"').fetchall()) == 0:
+        c.execute('SELECT U.email FROM Users U WHERE U.email="' + email + '"')
+        if not len(c.fetchall()) == 0:
             return jsonify('{"message": "Email is in use."}'), 404
 
 
@@ -434,12 +446,13 @@ def createAccount():
 
         query = 'INSERT INTO Users (email, password, firstName, lastName, birthday, joinDate) VALUES ("' + email + '","' + str(password.decode()) + '","' + firstName + '","' + lastName + '","' + birthday + '","' + joinDate + '")'
         c.execute(query)
-        conn.commit()
+        # conn.commit()
+        mydb.commit()
 
         return jsonify('{"message": "Successfully created the account."}'), 202
 
     except Exception as e:
-        print(e, file=sys.stderr)
+        print(e)
         return jsonify('{"message": "' + str(e) + '"}'), 404
 
 
@@ -449,15 +462,16 @@ def login():
 
     try:
         # Sets up/connects to DB
-        conn = sqlite3.connect('coins.db')
-        c = conn.cursor()
+        # conn = sqlite3.connect('coins.db')
+        # c = conn.cursor()
 
         # Gets parameters
         email = request.json["email"]
         password = request.json["password"].encode()
 
         query = 'SELECT U.userID, U.password FROM Users U WHERE U.email="' + email + '"'
-        res = c.execute(query).fetchall()
+        c.execute(query)
+        res = c.fetchall()
 
         if len(res) == 0:
             return jsonify('{"message": "User not found."}'), 404
@@ -472,15 +486,15 @@ def login():
             session["userID"] = userID
             session["email"] = email
 
-            print("Logging in...", file=sys.stderr)
-            print(session, file=sys.stderr)
+            print("Logging in...")
+            print(session)
 
             return jsonify('{"message": "User has been logged in."}'), 202
         else:
             return jsonify('{"message": "Could not login."}'), 404
 
     except Exception as e:
-        print(e, file=sys.stderr)
+        print(e)
         return jsonify('{"message": "' + str(e) + '"}'), 404
 
 
@@ -491,12 +505,12 @@ def logout():
         # Clears the session
         session.clear()
 
-        print("Logging out...", file=sys.stderr)
-        print(session, file=sys.stderr)
+        print("Logging out...")
+        print(session)
 
         return jsonify('"{message": "User has been logged out."}'), 202
     except Exception as e:
-        print(e, file=sys.stderr)
+        print(e)
         return jsonify('{"message": "' + str(e) + '"}'), 404
 
 
@@ -509,17 +523,18 @@ def loginCheck():
         else:
             return jsonify('{"message": "User is not logged in.", "loggedIn": false}'), 202
     except Exception as e:
-        print("error", file=sys.stderr)
-        print(e, file=sys.stderr)
+        print("error")
+        print(e)
         return jsonify('{"message": "' + str(e) + '"}'), 404
 
 @app.route('/test', methods = ['POST', 'GET'])
 def test():
     # Sets up/connects to DB
-    conn = sqlite3.connect('coins.db')
-    c = conn.cursor()
+    # conn = sqlite3.connect('coins.db')
+    # c = conn.cursor()
     query = 'SELECT M.coinTypeID, C.mintageID, COUNT(DISTINCT C.mintageID) AS owned FROM Mintage M, Coins C WHERE M.value="7" AND C.mintageID=M.mintageID AND C.userID="3" GROUP BY M.coinTypeID'
-    res = c.execute(query).fetchall()
+    c.execute(query)
+    res = c.fetchall()
     print(res)
 
 
