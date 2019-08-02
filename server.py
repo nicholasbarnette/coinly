@@ -136,12 +136,12 @@ def index():
 # Returns an array of the whole collections data
 @app.route('/collections', methods = ['POST', 'GET'])
 def collections():
-    c = mydb.cursor()
 
     try:
         # Sets up/connects to DB
         # conn = sqlite3.connect('coins.db')
         # c = conn.cursor()
+        c = mydb.cursor()
 
         if request.method == 'GET':
             return render_template('index.html')
