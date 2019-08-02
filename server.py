@@ -7,9 +7,9 @@ import bcrypt
 from initFunctions import *
 
 mydb = mysql.connector.connect(
-  host="107.180.34.199",
+  host="107.180.41.160",
   user="server_admin",
-  passwd="ann7ohio",
+  passwd="gocoinlygo16!",
   database="coins"
 )
 
