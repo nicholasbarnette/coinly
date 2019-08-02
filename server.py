@@ -117,6 +117,8 @@ try:
 except Exception as e:
     printErr(e)
 
+c.close()
+
 
 
 @app.before_request
@@ -134,6 +136,7 @@ def index():
 # Returns an array of the whole collections data
 @app.route('/collections', methods = ['POST', 'GET'])
 def collections():
+    c = mydb.cursor()
 
     try:
         # Sets up/connects to DB
@@ -169,6 +172,8 @@ def collections():
 
                 jsonString += ',"header": "Value"'
                 jsonString += '}'
+
+                c.close()
 
                 return jsonify(jsonString), 202
 
@@ -214,17 +219,23 @@ def collections():
                 jsonString += ',"header": "' + info[0][0] + '"'
                 jsonString += '}'
 
+                c.close()
+
                 return jsonify(jsonString), 202
             else:
+                c.close()
                 return jsonify('{"message": "Invalid level."}'), 404
 
     except Exception as e:
         print(e)
+        c.close()
         return jsonify('{"message": "' + str(e) + '"}'), 404
 
 # Returns arrays of items to select from the coins in the mintage table
 @app.route('/collections/select', methods = ['POST'])
 def selectData():
+
+    c = mydb.cursor()
 
     try:
         # Sets up/connects to DB
@@ -247,6 +258,7 @@ def selectData():
                 valueArray += '"' + valueLookupInt(val[0]) + '",'
 
             valueArray = valueArray[:-1] + ']}'
+            c.close()
             return jsonify(valueArray), 202
         elif level == 1:
             c.execute('SELECT nickname FROM Mintage WHERE value= ' + str(valueLookupStr(value)) + ' GROUP BY nickname')
@@ -256,6 +268,7 @@ def selectData():
                 valueArray += '"' + val[0] + '",'
 
             valueArray = valueArray[:-1] + ']}'
+            c.close()
             return jsonify(valueArray), 202
         elif level == 2:
             c.execute('SELECT year, mint, note FROM Mintage WHERE value= ' + str(valueLookupStr(value)) + ' AND nickname="' + nickname + '"')
@@ -270,9 +283,11 @@ def selectData():
                 valueArray += '",'
 
             valueArray = valueArray[:-1] + ']}'
+            c.close()
             return jsonify(valueArray), 202
 
     except Exception as e:
+        c.close()
         return jsonify('{"message": "' + str(e) + '"}'), 404
 
 # Adds a coin to your personal collection
@@ -286,6 +301,7 @@ def addCoin():
         # Sets up/connects to DB
         # conn = sqlite3.connect('coins.db')
         # c = conn.cursor()
+        c = mydb.cursor()
 
         print(request.json)
 
@@ -318,11 +334,14 @@ def addCoin():
         c.execute(query)
         # conn.commit()
         mydb.commit()
+        c.close()
 
         return jsonify('{"message": "Successfully added coin to collection."}'), 202
 
     except Exception as e:
         print(e)
+        if c:
+            c.close()
         return jsonify('{"message": "' + str(e) + '"}'), 404
 
 # Returns an array of a users personal collection
@@ -338,6 +357,8 @@ def explore():
         if request.method == 'GET':
             return render_template('index.html')
         else:
+
+            c = mydb.cursor()
 
             if "userID" not in session:
                 return jsonify('{"message": "User is not logged in."}'), 404
@@ -369,6 +390,8 @@ def explore():
                 jsonString += ',"header": "Value"'
                 jsonString += '}'
 
+                c.close()
+
                 return jsonify(jsonString), 202
 
             elif level == 1:
@@ -391,6 +414,8 @@ def explore():
                 jsonString += ',"header": "' + valueLookupInt(info[0][1]) + '"'
                 jsonString += '}'
 
+                c.close()
+
                 return jsonify(jsonString), 202
             elif level == 2:
                 # Gets data
@@ -410,12 +435,16 @@ def explore():
                 jsonString += ',"header": "' + info[0][0] + '"'
                 jsonString += '}'
 
+                c.close()
+
                 return jsonify(jsonString), 202
             else:
+                c.close()
                 return jsonify('{"message": "Invalid level."}'), 404
 
     except Exception as e:
         print(e)
+        c.close()
         return jsonify('{"message": "' + str(e) + '"}'), 404
 
 # Creates an account for a user
@@ -426,6 +455,7 @@ def createAccount():
         # Sets up/connects to DB
         # conn = sqlite3.connect('coins.db')
         # c = conn.cursor()
+        c = mydb.cursor()
 
         email = request.json["email"]
         password = request.json["password"].encode()
@@ -448,11 +478,14 @@ def createAccount():
         c.execute(query)
         # conn.commit()
         mydb.commit()
+        c.close()
 
         return jsonify('{"message": "Successfully created the account."}'), 202
 
     except Exception as e:
         print(e)
+        if c:
+            c.close()
         return jsonify('{"message": "' + str(e) + '"}'), 404
 
 
@@ -464,6 +497,7 @@ def login():
         # Sets up/connects to DB
         # conn = sqlite3.connect('coins.db')
         # c = conn.cursor()
+        c = mydb.cursor()
 
         # Gets parameters
         email = request.json["email"]
@@ -478,6 +512,8 @@ def login():
 
         userID = res[0][0]
         passwordHash = res[0][1].encode()
+
+        c.close()
 
 
         if bcrypt.checkpw(password, passwordHash):
@@ -495,6 +531,8 @@ def login():
 
     except Exception as e:
         print(e)
+        if c:
+            c.close()
         return jsonify('{"message": "' + str(e) + '"}'), 404
 
 
@@ -532,10 +570,12 @@ def test():
     # Sets up/connects to DB
     # conn = sqlite3.connect('coins.db')
     # c = conn.cursor()
+    c = mydb.cursor()
     query = 'SELECT M.coinTypeID, C.mintageID, COUNT(DISTINCT C.mintageID) AS owned FROM Mintage M, Coins C WHERE M.value="7" AND C.mintageID=M.mintageID AND C.userID="3" GROUP BY M.coinTypeID'
     c.execute(query)
     res = c.fetchall()
     print(res)
+    c.close()
 
 
 
