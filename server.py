@@ -144,6 +144,7 @@ def collections():
         c = mydb.cursor()
 
         if request.method == 'GET':
+            c.close()
             return render_template('index.html')
         else:
 
@@ -199,6 +200,8 @@ def collections():
                 jsonString += ',"header": "' + valueLookupInt(info[0][1]) + '"'
                 jsonString += '}'
 
+                c.close()
+
                 return jsonify(jsonString), 202
             elif level == 2:
                 # Gets data
@@ -228,19 +231,19 @@ def collections():
 
     except Exception as e:
         print(e)
-        c.close()
+        if c:
+            c.close()
         return jsonify('{"message": "' + str(e) + '"}'), 404
 
 # Returns arrays of items to select from the coins in the mintage table
 @app.route('/collections/select', methods = ['POST'])
 def selectData():
 
-    c = mydb.cursor()
-
     try:
         # Sets up/connects to DB
         # conn = sqlite3.connect('coins.db')
         # c = conn.cursor()
+        c = mydb.cursor()
 
         # Gets the level
         # Level 0 - Value List
@@ -287,7 +290,8 @@ def selectData():
             return jsonify(valueArray), 202
 
     except Exception as e:
-        c.close()
+        if c:
+            c.close()
         return jsonify('{"message": "' + str(e) + '"}'), 404
 
 # Adds a coin to your personal collection
@@ -353,14 +357,15 @@ def explore():
         # Sets up/connects to DB
         # conn = sqlite3.connect('coins.db')
         # c = conn.cursor()
+        c = mydb.cursor()
 
         if request.method == 'GET':
+            c.close()
             return render_template('index.html')
         else:
 
-            c = mydb.cursor()
-
             if "userID" not in session:
+                c.close()
                 return jsonify('{"message": "User is not logged in."}'), 404
 
             # Gets the level
@@ -444,7 +449,8 @@ def explore():
 
     except Exception as e:
         print(e)
-        c.close()
+        if c:
+            c.close()
         return jsonify('{"message": "' + str(e) + '"}'), 404
 
 # Creates an account for a user

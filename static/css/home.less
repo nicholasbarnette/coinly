@@ -46,6 +46,23 @@
 		text-transform: uppercase;
 	}
 
+	svg {
+		margin: 0 0 1.5rem 0;
+
+		&.small {
+			height: 4rem;
+			width: 4rem;
+		}
+		&.medium {
+			height: 6rem;
+			width: 6rem;
+		}
+		&.large {
+			height: 10rem;
+			width: 10rem;
+		}
+	}
+
 	h3 {
 		font-size: 2rem;
 		margin: 0 0 2.5rem 0;
@@ -58,5 +75,11 @@
 		margin: 0 0 2rem 0;
 		color: @textColorDefault;
 		max-width: 800px;
+	}
+
+	a {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 }
